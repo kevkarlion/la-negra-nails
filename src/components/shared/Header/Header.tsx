@@ -16,7 +16,7 @@ export const Header: React.FC = () => {
   };
 
   return (
-    <header className="bg-primary-onix shadow-md p-4 border-b w-full flex">
+    <header className="bg-primary-onix shadow-md p-4 border-b w-full flex z-10">
       <div className="mx-auto md:mx-4 md:justify-between flex justify-around items-center flex-1">
         {/* Menú hamburguesa (lado izquierdo en mobile) */}
         <div className="flex items-center lg:hidden">
@@ -71,7 +71,7 @@ export const Header: React.FC = () => {
 
         {/* Menú de navegación (visible en mobile si el menú está abierto) */}
         <nav
-          className={`absolute top-16 left-0 w-full bg-white shadow-lg lg:shadow-none lg:flex lg:items-center lg:relative lg:top-0 lg:w-auto transition-all duration-300 ease-in-out ${
+          className={`absolute top-16 left-0 w-full bg-white shadow-lg lg:shadow-none lg:flex lg:items-center lg:relative lg:top-0 lg:w-auto transition-all duration-300 ease-in-out z-40 ${
             isMenuOpen ? 'max-h-40 opacity-100' : 'max-h-0 opacity-0 overflow-hidden'
           }`}
         >

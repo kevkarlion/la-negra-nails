@@ -14,12 +14,12 @@ const config: Config = {
         primary: {
           DEFAULT: '#FFFFFF',      // Blanco
           onix: '#0A0A0A',         // Negro Onix
+          darkCeniza: 'rgb(19, 19, 19)', //Negro Ceniza
           darkGray: '#333333',     // Gris Oscuro
           mediumGray: 'rgb(128, 128, 128)',  // Gris Intermedio
         },
         secondary: {
           DEFAULT: '#ffc0db',      // Color principal secundario
-          lightPink: '#ffc0db',    // Rosa claro
           mediumPink: '#ff95c6',   // Rosa medio
           brightPink: '#ff5ba4',   // Rosa brillante
           deepPink: '#ff1a84',     // Rosa intenso
@@ -45,7 +45,7 @@ const config: Config = {
         'title-lg': ['3rem', '1.2'], // 48px
         'title-xl': ['4.25rem', '1.2'], // 68px
         'title-mobile-sm': ['1.75rem', '1.2'], // 28px
-        'title-mobile-md': ['2rem', '1.2'], // 32px
+        'title-mobile-md': ['2.25rem', '1.2'], // 32px
 
         // Subtítulos
         'subtitle-lg': ['2.25rem', '1.2'], // 36px
