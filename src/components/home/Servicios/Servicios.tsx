@@ -1,7 +1,7 @@
 import React from 'react';
 import { Dancing_Script } from 'next/font/google';
 import { ServiceCard } from '@/components/shared/ServiceCard'
-import { ButtonLink } from '@/components/shared/Button'
+import { ButtonLink, ButtonBorder } from '@/components/shared/Buttons'
 
 const dancingScript = Dancing_Script({
   subsets: ['latin'],
@@ -41,9 +41,9 @@ export const Servicios: React.FC<SectionProps> = ({ title, subtitle}) => {
         </div>
 
         {/* Espacio para botones */}
-        <div className="flex flex-col justify-center mt-8 mb-8">
-          <ButtonLink text='Conocé más' href='#' borderColor='border-[#ff5ba4]'/>
-          <ButtonLink text='Contactanos' href='#' bgColor='bg-[#ff5ba4]' border='none' textColor='text-black'/>
+        <div className="flex flex-col justify-center items-center mt-8 mb-8">
+          <ButtonBorder text='Conocé más' href='#'  />
+          <ButtonLink text='Contactanos' href='#' borderColor='border-[#ff1a84]' />
         </div>
       </div>
     </section>

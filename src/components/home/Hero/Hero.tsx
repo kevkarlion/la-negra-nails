@@ -3,21 +3,21 @@
 import React from 'react';
 import Image from 'next/image';
 import { BackgroundWithLogo } from './BackgroundImage'
-import { ButtonLink } from '@/components/shared/Button'
+import { ButtonLink } from '@/components/shared/Buttons'
 
 export const Hero: React.FC = () => {
   return (
     <section className="relative w-full h-auto flex items-center justify-center bg-cover bg-center z-0 " style={{ backgroundImage: 'url(/path/to/your/background-image.jpg)' }}>
       {/* Filtro de fondo */}
-      <div className="absolute inset-0 bg-primary-darkCeniza opacity-50 w-full" />
+      <div className="absolute inset-0 bg-black opacity-50 w-full" />
             <div className='mt-28 w-full'>
 
                   {/* Contenedor del contenido del hero */}
-                  <div className="relative z-10 flex flex-col items-center text-center px-6 md:px-12  mb-28">
+                  <div className="relative z-10 flex flex-col items-center text-center px-6 md:px-12 mb-28 mt-20">
                   {/* Logo */}
                   <div className="mb-4 w-[28rem] h-[12rem] md:w-[32rem] md:h-[18rem] relative">
                   <Image
-                        src="/logos/logo-dorado-white.png" // Cambia esto por la ruta de tu logo
+                        src="/logos/logo-dorado-white-nvo.png" // Cambia esto por la ruta de tu logo
                         alt="Logo"
                         fill={true}
                         style={{ objectFit: 'contain' }}

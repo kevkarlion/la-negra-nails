@@ -23,3 +23,34 @@ body {
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+
+/* Definición de animación de fondo fluido */
+@keyframes fluidBackground {
+  0% {
+    background-position: 100% 50%;
+  }
+  50% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+}
+
+/* Clase para el fondo fluido */
+@layer utilities {
+  .fluid-bg {
+    background: linear-gradient(45deg, #ff77ff, #ff9b9b, #fbd786, #f07c68, #f08a9e);
+    background-size: 400% 400%;
+    animation: fluidBackground 5s ease infinite;
+  }
+}
+
+
+
+
+
+
+
+
