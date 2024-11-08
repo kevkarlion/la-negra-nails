@@ -48,6 +48,15 @@ body {
 }
 
 
+/* En tu archivo CSS */
+@layer utilities {
+  .mask-bottom-shadow {
+    mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.5) 100%);
+  }
+}
+
+
+
 
 
 

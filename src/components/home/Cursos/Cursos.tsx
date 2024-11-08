@@ -71,28 +71,30 @@ export const Cursos: React.FC<SectionProps> = ({ title, subtitle, header, childr
             />
           </div>
           <div className="flex flex-col items-start justify-start w-1/2">
-            <h1 className="text-start font-bold text-gray-800 text-[3.5rem] sm:text-[4rem] lg:text-[5rem]">{title}</h1>
-            <p className="md:text-base md:text-left md:flex lg:text-xl xl:text-2xl mt-4 font-subtitle text-subtitle-mobile-md font-medium text-black">
-            Nuestros cursos de uñas están diseñados para ofrecerte la mejor formación en técnicas de manicura, adaptándose a tu estilo de vida y nivel de experiencia. Ya sea que prefieras clases presenciales para una experiencia práctica o cursos online para mayor flexibilidad, cada modalidad cubre desde los conceptos básicos hasta técnicas avanzadas en diseño y aplicación de uñas. Sumérgete en el mundo de la belleza de uñas y aprende a llevar tus habilidades al siguiente nivel con capacitaciones que combinan teoría, práctica y tendencias actuales. ¡Transforma tu pasión en una verdadera profesión!
-            </p>
+            <div className="flex flex-col items-start justify-start w-full">
+              <h1 className="text-start font-bold text-gray-800 text-[3.5rem] sm:text-[4rem] lg:text-[5rem]">{title}</h1>
+              <p className="md:text-base md:text-left md:flex lg:text-xl  mt-4 font-subtitle text-subtitle-mobile-md font-medium text-black">
+              Nuestros cursos de uñas están diseñados para ofrecerte la mejor formación en técnicas de manicura, adaptándose a tu estilo de vida y nivel de experiencia. Ya sea que prefieras clases presenciales para una experiencia práctica o cursos online para mayor flexibilidad, cada modalidad cubre desde los conceptos básicos hasta técnicas avanzadas en diseño y aplicación de uñas. Sumérgete en el mundo de la belleza de uñas y aprende a llevar tus habilidades al siguiente nivel con capacitaciones que combinan teoría, práctica y tendencias actuales. ¡Transforma tu pasión en una verdadera profesión!
+              </p>
+            </div>
+            <h3 className="hidden md:flex md:self-center md:mt-12 md:mb-6 text-black text-[2rem] font-title sm:text-[3rem]">
+              Modalidades
+            </h3>
+            <div className="hidden md:grid gap-4 w-3/4 max-w-screen-lg mx-auto md:grid-cols-2 md:grid-rows-2 md:grid-flow-row">
+              <div className="bg-white p-6 rounded-lg shadow-lg flex items-center justify-center fluid-bg">
+                <h3 className="text-3xl font-semibold text-black">Presencial</h3>
+              </div>
+              <div className="bg-white p-6 rounded-lg shadow-lg flex items-center justify-center fluid-bg">
+                <h3 className="text-3xl  font-semibold text-black">Online</h3>
+              </div>
+              <div className="bg-white p-6 rounded-lg shadow-lg flex items-center justify-center fluid-bg col-span-2">
+                <h3 className="text-3xl  font-semibold text-black">Mira nuestras clases</h3>
+              </div>
+            </div>
           </div>
         </div>
       </div>
 
-      <h3 className="hidden md:flex md:justify-center md:mt-12 md:mb-6 text-black text-[4rem] font-title sm:text-[5rem]">
-        Modalidades
-      </h3>
-      <div className="hidden md:grid gap-4 w-3/4 max-w-screen-lg mx-auto md:grid-cols-2 md:grid-rows-2 md:grid-flow-row">
-        <div className="bg-white p-6 rounded-lg shadow-lg flex items-center justify-center fluid-bg">
-          <h3 className="text-lg font-semibold text-black">Presencial</h3>
-        </div>
-        <div className="bg-white p-6 rounded-lg shadow-lg flex items-center justify-center fluid-bg">
-          <h3 className="text-lg font-semibold text-black">Online</h3>
-        </div>
-        <div className="bg-white p-6 rounded-lg shadow-lg flex items-center justify-center fluid-bg col-span-2">
-          <h3 className="text-lg font-semibold text-black">Mira nuestras clases</h3>
-        </div>
-      </div>
     </section>
   );
 };
