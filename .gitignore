@@ -19,6 +19,9 @@
 
 # production
 /build
+/dist/
+/out/
+
 
 # misc
 .DS_Store
@@ -38,3 +41,35 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+
+.env
+
+.env.local
+
+.env.*.local
+
+
+# Archivos de configuración locales de herramientas
+.vscode/             # Configuraciones locales de VSCode
+.idea/               # Configuraciones de WebStorm o IntelliJ
+.DS_Store            # Archivos del sistema macOS
+Thumbs.db            # Archivos del sistema Windows
+
+
+
+/.cache/             # Cachés de herramientas o frameworks
+/logs/               # Archivos de logs
+*.log                # Logs en cualquier carpeta
+yarn-error.log       # Errores de Yarn
+npm-debug.log*       # Debug de npm
+
+
+
+/.vercel/            # Configuración local de Vercel
+/.netlify/           # Configuración local de Netlify
+
+
+
+*.swp                # Archivos de swap de editores (Vim, etc.)
+*.lock               # Bloqueos temporales de herramientas
