@@ -14,7 +14,7 @@ export const Servicios: React.FC<SectionProps> = ({ title, subtitle }) => {
   return (
     <section
       className="px-4 py-6 md:px-8 md:py-10 lg:pt-16 h-auto bg-cover bg-secondary"
-      style={{ backgroundImage: 'url(/bg/bg-section.svg)' }}
+      style={{ backgroundImage: 'url(/bg/bg-section.svg)' }} id='servicios'
     >
       <div className="max-w-screen-lg mx-auto text-center mt-9 flex flex-col items-center">
         {/* Título principal */}
@@ -23,7 +23,7 @@ export const Servicios: React.FC<SectionProps> = ({ title, subtitle }) => {
         </h1>
 
         {/* Subtítulo */}
-        <p className="w-4/6  text-black font-subtitle text-base md:text-lg lg:text-xl">
+        <p className="w-4/6 font-sans text-black font-light  text-lg sm:text-xl md:text-lg lg:text-xl">
           {subtitle}
         </p>
 
@@ -63,8 +63,8 @@ export const Servicios: React.FC<SectionProps> = ({ title, subtitle }) => {
 
         {/* Espacio para botones */}
         <div className="flex flex-col justify-center items-center mt-8 mb-8 md:hidden">
-          <ButtonBorder text="Conocé más" href="#" />
-          <ButtonLink text="Contactanos" href="#" borderColor="border-[#ff1a84]" />
+          <ButtonBorder text="Conocé más" href="#"  />
+          <ButtonLink text="Contactanos" href="#" borderColor="border-[#ff1a84]" textColor='text-black' />
         </div>
 
          {/* Espacio para botones */}
@@ -72,8 +72,8 @@ export const Servicios: React.FC<SectionProps> = ({ title, subtitle }) => {
             <Link href='#' className="bg-white w-1/2 p-6 rounded-lg shadow-lg flex items-center justify-center fluid-bg">
               <h3 className={` text-3xl font-title  font-semibold text-black`}>Conocé más</h3>
             </Link>
-            <Link href='' className="bg-white w-1/2 p-6 rounded-lg shadow-lg flex items-center justify-center fluid-bg">
-            <h3 className={` text-3xl font-title  font-semibold text-black`}>Contactanos</h3>
+            <Link href='#footer' className="bg-white w-1/2 p-6 rounded-lg shadow-lg flex items-center justify-center fluid-bg">
+              <h3 className={` text-3xl font-title  font-semibold text-black`}>Contactanos</h3>
             </Link>
           </div>
       </div>

@@ -3,31 +3,28 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { FiMenu, FiX } from 'react-icons/fi';
-import { TbMinusVertical } from 'react-icons/tb';
 import { FaInstagram, FaWhatsapp, FaFacebookF } from 'react-icons/fa';
 import Image from 'next/image';
 
 export const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  const [scrollDirection, setScrollDirection] = useState<'up' | 'down'>('up');
   const [lastScrollY, setLastScrollY] = useState(0);
+  const [isVisible, setIsVisible] = useState(true);
 
-  // Función para alternar el menú
   const toggleMenu = () => {
     setIsMenuOpen((prevState) => !prevState);
   };
 
-  // Efecto para verificar el scroll y actualizar el estado
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
-      if (currentScrollY > lastScrollY && scrollDirection !== 'down') {
-        setScrollDirection('down');
-        setIsScrolled(false);
-      } else if (currentScrollY < lastScrollY && scrollDirection !== 'up') {
-        setScrollDirection('up');
-        setIsScrolled(true);
+      setIsScrolled(currentScrollY > 50);
+
+      if (currentScrollY > lastScrollY && currentScrollY > 50) {
+        setIsVisible(false);
+      } else {
+        setIsVisible(true);
       }
       setLastScrollY(currentScrollY);
     };
@@ -36,127 +33,113 @@ export const Header: React.FC = () => {
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
-  }, [lastScrollY, scrollDirection]);
+  }, [lastScrollY]);
 
   return (
     <header
-      className={`fixed w-full z-40 transition-all duration-300 ease-in-out ${
-        isScrolled ? 'bg-black/90 p-2 shadow-lg' : 'transform -translate-y-full'
-      } `}
-     
+      className={`fixed w-full z-40 !p-0 md:!p-4 transition-all duration-300 ease-in-out  ${
+        isVisible ? 'top-0' : '-top-full'
+      } ${isScrolled ? 'bg-black/90 shadow-lg' : 'bg-black'} p-3`} id='#inicio'
     >
-      <div className="mx-auto md:mx-4 md:justify-between flex justify-around items-center flex-1">
-        {/* Menú hamburguesa (lado izquierdo en mobile) */}
-        <div className="flex items-center lg:hidden">
+      <div className="flex justify-between items-center mx-auto px-4 md:px-10">
+        {/* Menú hamburguesa en móvil */}
+        <div className="lg:hidden">
           <button
             onClick={toggleMenu}
             aria-label="Toggle Menu"
             className="text-white focus:outline-none"
           >
-            {isMenuOpen ? <FiX size={24} /> : <FiMenu size={24} />}
+            {isMenuOpen ? <FiX size={28} /> : <FiMenu size={28} />}
           </button>
         </div>
 
-        {/* Menú de navegación (visible en desktop y mobile) */}
-        <nav className="flex items-center space-x-4 ml-6">
-          <Link href="/" className="text-white title-mobile-sm font-subtitle hover:text-pink-600 font-semibold hidden lg:block">
+        {/* Logo central en móvil */}
+        <Link href='#inicio'>
+          <div className="flex items-center">
+            <Image
+              src="/header/logo-dorado-limpio.png"
+              alt="Logo"
+              width={150}
+              height={60}
+              className="object-contain"
+            />
+          </div>
+        </Link>
+
+        {/* Menú de navegación en desktop */}
+        <nav className="hidden lg:flex items-center space-x-6">
+          <Link href="#inicio" className="text-white font-semibold hover:text-gray-400 transition-all duration-200">
             Inicio
           </Link>
-          <TbMinusVertical className="hidden lg:block" />
-          <Link href="/cursos" className="text-white title-mobile-sm font-subtitle hover:text-pink-600 font-semibold">
+          <Link href="#cursos" className="text-white font-semibold hover:text-gray-400 transition-all duration-200">
             Cursos
           </Link>
-          <TbMinusVertical />
-          <Link href="/" className="text-white title-mobile-sm font-subtitle hover:text-pink-600 font-semibold">
-            La negra uñas
+          <Link href="#servicios" className="text-white font-semibold hover:text-gray-400 transition-all duration-200">
+            Servicios
           </Link>
-          <TbMinusVertical className="hidden lg:block" />
-          <Link href="/" className="text-white title-mobile-sm font-subtitle hover:text-pink-600 font-semibold hidden lg:block">
+          <Link href="#creaciones" className="text-white font-semibold hover:text-gray-400 transition-all duration-200">
             Creaciones
           </Link>
-          <TbMinusVertical className="hidden lg:block" />
-          <Link href="/" className="text-white title-mobile-sm font-subtitle hover:text-pink-600 font-semibold hidden lg:block">
+          <Link href="#about" className="text-white font-semibold hover:text-gray-400 transition-all duration-200">
             Sobre mí
           </Link>
-          <TbMinusVertical className="hidden lg:block" />
-          <Link href="/" className="text-white title-mobile-sm font-subtitle hover:text-pink-600 font-semibold hidden lg:block">
+          <Link href="#footer" className="text-white font-semibold hover:text-gray-400 transition-all duration-200">
             Contacto
           </Link>
         </nav>
 
-        {/* Logo a la derecha (versión mobile) */}
-        <div className="flex items-center space-x-2 ml-auto md:hidden">
-          <div className="w-32 h-16 flex-shrink-0 relative">
-            <Image
-              src="/header/logo-dorado-limpio.png"
-              alt="Logo Maridania Garcia"
-              fill={true}
-              style={{ objectFit: 'contain' }}
-              className="w-full"
-            />
-          </div>
-        </div>
-
-        {/* Menú de navegación (visible en mobile si el menú está abierto) */}
-        <nav
-          className={`absolute top-16 left-0 w-full bg-white shadow-lg lg:shadow-none lg:flex lg:items-center lg:relative lg:top-0 lg:w-auto transition-all duration-300 ease-in-out ${
-            isMenuOpen ? 'max-h-40 opacity-100 z-50' : 'max-h-0 opacity-0 overflow-hidden z-50'
-          }`}
-        >
-          <ul className="flex flex-col p-4 lg:p-0 ">
-            <li>
-              <Link href="/" className="text-gray-800 hover:text-pink-600 font-semibold">
-                Inicio
-              </Link>
-            </li>
-            <li>
-              <Link href="/servicios" className="text-gray-800 hover:text-pink-600 font-semibold">
-                Servicios
-              </Link>
-            </li>
-            <li>
-              <Link href="/creaciones" className="text-gray-800 hover:text-pink-600 font-semibold">
-                Creaciones
-              </Link>
-            </li>
-            <li>
-              <Link href="/sobre-mi" className="text-gray-800 hover:text-pink-600 font-semibold">
-                Sobre mí
-              </Link>
-            </li>
-            <li>
-              <Link href="/contacto" className="text-gray-800 hover:text-pink-600 font-semibold">
-                Contacto
-              </Link>
-            </li>
-          </ul>
-        </nav>
-
-        {/* Enlaces a redes sociales (visible en desktop) */}
-        <div className="hidden md:flex items-center space-x-4 ml-10">
+        {/* Redes sociales en desktop */}
+        <div className="hidden md:flex items-center space-x-4">
           <Link href="https://instagram.com" target="_blank" aria-label="Instagram">
-            <FaInstagram className="text-white hover:text-pink-600" size={20} />
+            <FaInstagram className="text-white hover:text-gray-400 transition-all duration-200" size={20} />
           </Link>
           <Link href="https://wa.me" target="_blank" aria-label="WhatsApp">
-            <FaWhatsapp className="text-white hover:text-pink-600" size={20} />
+            <FaWhatsapp className="text-white hover:text-gray-400 transition-all duration-200" size={20} />
           </Link>
           <Link href="https://facebook.com" target="_blank" aria-label="Facebook">
-            <FaFacebookF className="text-white hover:text-pink-600" size={20} />
+            <FaFacebookF className="text-white hover:text-gray-400 transition-all duration-200" size={20} />
           </Link>
         </div>
 
-        {/* Logo a la derecha (versión desktop) */}
-        <div className="hidden md:flex items-center space-x-2 ml-2">
-          <div className="w-48 h-20 lg:w-52 lg:h-28 flex-shrink-0 relative ">
-            <Image
-              src="/header/logo-dorado-limpio.png"
-              alt="Logo Maridania Garcia"
-              fill={true}
-              style={{ objectFit: 'contain' }}
-              className="w-full"
-            />
-          </div>
-        </div>
+        {/* Menú desplegable en móvil */}
+        {isMenuOpen && (
+          <nav
+            className="absolute top-16 left-0 w-full bg-black/95 backdrop-blur-md shadow-xl transition-all duration-300 ease-in-out z-50"
+          >
+            <ul className="flex flex-col items-center py-6 space-y-4 text-white">
+              <li>
+                <Link href="#inicio" className="text-lg font-semibold hover:text-gray-400 transition-all duration-200">
+                  Inicio
+                </Link>
+              </li>
+              <li>
+                <Link href="#cursos" className="text-lg font-semibold hover:text-gray-400 transition-all duration-200">
+                  Cursos
+                </Link>
+              </li>
+              <li>
+                <Link href="#servicios" className="text-lg font-semibold hover:text-gray-400 transition-all duration-200">
+                  Servicios
+                </Link>
+              </li>
+              <li>
+                <Link href="#creaciones" className="text-lg font-semibold hover:text-gray-400 transition-all duration-200">
+                  Creaciones
+                </Link>
+              </li>
+              <li>
+                <Link href="#about" className="text-lg font-semibold hover:text-gray-400 transition-all duration-200">
+                  Sobre mí
+                </Link>
+              </li>
+              <li>
+                <Link href="#footer" className="text-lg font-semibold hover:text-gray-400 transition-all duration-200">
+                  Contacto
+                </Link>
+              </li>
+            </ul>
+          </nav>
+        )}
       </div>
     </header>
   );

@@ -18,6 +18,12 @@
   }
 }
 
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 10px;
+}
+
+
 body {
   color: var(--foreground);
   background: var(--background);

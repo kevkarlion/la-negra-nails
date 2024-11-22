@@ -1,100 +1,148 @@
-'use client'
-import React, { useState } from 'react';
-import Image from 'next/image';
-import Link from 'next/link';
-import { Dancing_Script } from 'next/font/google';
-
+"use client";
+import React, { useState, useEffect } from "react";
+import Image from "next/image";
+import Link from "next/link";
+import { Dancing_Script } from "next/font/google";
+import { ButtonLink } from "@/components/shared/Buttons/Button";
 const images = [
-  { src: '/images/carrusel/image1.webp', leftDetail: 'Detalle izquierdo 1', rightDetail: 'Detalle derecho 1' },
-  { src: '/images/carrusel/image2.webp', leftDetail: 'Detalle izquierdo 2', rightDetail: 'Detalle derecho 2' },
-  { src: '/images/carrusel/image3.webp', leftDetail: 'Detalle izquierdo 3', rightDetail: 'Detalle derecho 3' },
+  {
+    src: "/images/carrusel/image1.webp",
+    leftDetail: "Detalle izquierdo 1",
+    rightDetail: "Detalle derecho 1",
+  },
+  {
+    src: "/images/carrusel/image2.webp",
+    leftDetail: "Detalle izquierdo 2",
+    rightDetail: "Detalle derecho 2",
+  },
+  {
+    src: "/images/carrusel/image3.webp",
+    leftDetail: "Detalle izquierdo 3",
+    rightDetail: "Detalle derecho 3",
+  },
 ];
 
 const dancingScript = Dancing_Script({
-  subsets: ['latin'],
-  weight: ['400', '700'],
+  subsets: ["latin"],
+  weight: ["400", "700"],
 });
 
 export const Creaciones = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [fadeTransition, setFadeTransition] = useState(false);
+  const [rotation, setRotation] = useState<number[]>(
+    Array(images.length).fill(0)
+  );
+
+  useEffect(() => {
+    const checkImageOrientation = async () => {
+      const newRotation = await Promise.all(
+        images.map(async (image) => {
+          const img = document.createElement("img"); // Crea un elemento de imagen HTML
+          img.src = image.src; // Asigna la fuente
+          return new Promise<number>((resolve) => {
+            img.onload = () => {
+              resolve(img.height > img.width ? 90 : 0); // Si es vertical, rota 90°
+            };
+          });
+        })
+      );
+      setRotation(newRotation);
+    };
+
+    checkImageOrientation();
+  }, []);
 
   const handlePrev = () => {
-    setFadeTransition(true);
-    setTimeout(() => {
-      setCurrentIndex(prevIndex => (prevIndex === 0 ? images.length - 1 : prevIndex - 1));
-      setFadeTransition(false);
-    }, 500);
+    setCurrentIndex((prevIndex) =>
+      prevIndex === 0 ? images.length - 1 : prevIndex - 1
+    );
   };
 
   const handleNext = () => {
-    setFadeTransition(true);
-    setTimeout(() => {
-      setCurrentIndex(prevIndex => (prevIndex === images.length - 1 ? 0 : prevIndex + 1));
-      setFadeTransition(false);
-    }, 500);
+    setCurrentIndex((prevIndex) =>
+      prevIndex === images.length - 1 ? 0 : prevIndex + 1
+    );
   };
 
   return (
-    <section className="py-16" style={{ background: 'linear-gradient(115deg, rgba(255,26,132,1) 0%, rgba(255,255,255,1) 97%)' }}>
-      <div className="max-w-screen-lg mx-auto text-center flex flex-col items-center">
-        <h1 className={`${dancingScript.className} font-bold text-black text-[2.25rem] sm:text-[3rem] lg:text-[4rem]`}>
+    <section
+      className="py-16 bg-gradient-to-br from-secondary-brightPink to-secondary-hotPink relative text-white"
+      id="creaciones"
+    >
+      <div className="absolute inset-0 bg-[url('/images/marble-texture.png')] opacity-10 pointer-events-none"></div>
+
+      <div className="max-w-screen-lg mx-auto text-center px-4">
+        <h1
+          className={`${dancingScript.className} font-bold text-black text-6xl sm:text-5xl lg:text-[5rem]`}
+        >
           Creaciones
         </h1>
-        <p className="w-4/6 text-black font-subtitle text-base md:text-lg lg:text-xl">
-          Cada diseño de uñas es una expresión única de estilo y personalidad. Utilizamos técnicas innovadoras y productos de alta calidad para ofrecerte resultados que combinan arte y precisión.
+        <p className="mt-4 text-black font-light text-lg sm:text-xl">
+          Cada diseño de uñas es una expresión única de estilo y personalidad.
+          Usamos técnicas innovadoras y productos de alta calidad para ofrecerte
+          arte y precisión.
         </p>
       </div>
 
-      <div className="flex items-center justify-center min-h-screen p-6">
-        <div className="relative w-full max-w-5xl mx-auto bg-white/20 backdrop-blur-lg rounded-lg shadow-lg p-8 flex flex-row items-center">
-          
-          <div className={`w-1/4 hidden lg:flex flex-col text-gray-700 p-4 transition-opacity duration-500 ${fadeTransition ? 'opacity-0' : 'opacity-100'}`}>
-            <p className="text-lg font-semibold mb-2">{images[currentIndex].leftDetail}</p>
-          </div>
-          
-          <div className="w-full lg:w-1/2 relative flex justify-center items-center">
-            <div className="relative w-full h-96 bg-black overflow-hidden rounded-lg shadow-lg">
-              {images.map((image, index) => (
-                <div
-                  key={index}
-                  className={`absolute inset-0 transition-opacity duration-500 ${index === currentIndex ? 'opacity-100' : 'opacity-0'}`}
-                >
-                  <Image
-                    src={image.src}
-                    alt={`Imagen ${index + 1}`}
-                    layout="fill"
-                    objectFit="cover"
-                    className="rounded-lg"
-                  />
-                </div>
-              ))}
-              
-              <button
-                onClick={handlePrev}
-                className="absolute left-0 top-1/2 transform -translate-y-1/2 bg-black/30 hover:bg-black/50 text-white p-2 rounded-full"
+      <div className="flex items-center justify-center mt-10 p-6">
+        <div className="relative w-full max-w-6xl overflow-hidden">
+          <div
+            className="flex transition-transform duration-700"
+            style={{ transform: `translateX(-${currentIndex * 100}%)` }}
+          >
+            {images.map((image, index) => (
+              <div
+                key={index}
+                className="min-w-full flex items-center justify-center bg-white"
+                style={{ height: "600px" }}
               >
-                ❮
-              </button>
-              <button
-                onClick={handleNext}
-                className="absolute right-0 top-1/2 transform -translate-y-1/2 bg-black/30 hover:bg-black/50 text-white p-2 rounded-full"
-              >
-                ❯
-              </button>
-            </div>
+                <Image
+                  src={image.src}
+                  alt={`Imagen ${index + 1}`}
+                  width={600}
+                  height={400}
+                  objectFit="contain"
+                  className="rounded-lg shadow-lg"
+                  style={{
+                    transform: `rotate(${rotation[index]}deg)`, // Rotación dinámica
+                  }}
+                />
+              </div>
+            ))}
           </div>
 
-          <div className={`w-1/4 hidden lg:flex flex-col text-gray-700 p-4 transition-opacity duration-500 ${fadeTransition ? 'opacity-0' : 'opacity-100'}`}>
-            <p className="text-lg font-semibold mb-2">{images[currentIndex].rightDetail}</p>
-          </div>
+          <button
+            onClick={handlePrev}
+            className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-quaternary-red/80 hover:bg-quaternary-darkPink/90 text-white p-3 rounded-full"
+          >
+            ❮
+          </button>
+          <button
+            onClick={handleNext}
+            className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-quaternary-red/80 hover:bg-quaternary-darkPink/90 text-white p-3 rounded-full"
+          >
+            ❯
+          </button>
         </div>
       </div>
 
       <div className="hidden md:flex md:justify-center w-full mx-auto mt-14">
-        <Link href="" className="bg-white p-6 w-1/2 rounded-lg shadow-lg flex items-center justify-center fluid-bg">
-          <h3 className="text-lg font-semibold text-black">Contáctanos</h3>
+        <Link
+          href="#footer"
+          className="bg-white p-6 w-1/2 rounded-lg shadow-lg flex items-center justify-center fluid-bg"
+        >
+          <h3 className="text-3xl font-title  font-semibold text-black">
+            ¡Reservá tu cita!
+          </h3>
         </Link>
+      </div>
+      <div className="flex flex-col justify-center items-center mt-8 mb-8 md:hidden">
+        <ButtonLink
+          text="¡Reservá tu cita!"
+          href="#"
+          borderColor="border-[#ff1a84]"
+          textColor="text-black"
+        />
       </div>
     </section>
   );

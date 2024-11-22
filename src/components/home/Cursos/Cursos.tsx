@@ -39,7 +39,7 @@ export const Cursos: React.FC<SectionProps> = ({ title, subtitle, header, childr
   }, []);
 
   return (
-    <section className="px-4 py-6 md:px-8 md:py-10 lg:py-16 bg-gray-100 h-auto bg-cover"
+    <section className="px-4 py-6 md:px-8 md:py-10 lg:py-16 bg-gray-100 h-auto bg-cover" id='cursos'
     style={{
       backgroundImage: 'url("/background/cursos.svg")',
       backgroundAttachment: 'fixed',
@@ -47,14 +47,16 @@ export const Cursos: React.FC<SectionProps> = ({ title, subtitle, header, childr
       backgroundPosition: 'center',
     }}
     >
+
+      {/* Vista mobile */}
       <div className={`${dancingScript.className} mx-auto text-center mt-9 flex flex-col md:flex-row items-center md:items-start`}>
         <div className="md:hidden flex flex-col items-center justify-center">
           <h1 className="font-bold text-gray-800 text-[2.25rem] sm:text-[3rem]">{title}</h1>
-          <p className="md:text-base lg:text-lg w-7/12 sm:w-1/2 mt-4 font-subtitle text-subtitle-mobile-md font-medium text-black">
+          <p className="w-4/6 font-sans text-black font-light  text-lg sm:text-xl md:text-lg lg:text-xl">
             {subtitle}
           </p>
         </div>
-        <h2 className="text-[2.25rem] font-title font-semibold text-black md:hidden md:text-xl lg:text-2xl mt-28 mb-3">
+        <h2 className="text-[2.25rem] font-title font-semibold text-black md:hidden md:text-xl lg:text-2xl mt-20 mb-3">
           {header}
         </h2>
         <div className="flex justify-center mb-8 md:hidden">{children}</div>
@@ -73,7 +75,7 @@ export const Cursos: React.FC<SectionProps> = ({ title, subtitle, header, childr
           <div className="flex flex-col items-start justify-start w-1/2">
             <div className="flex flex-col items-start justify-start w-full">
               <h1 className="text-start font-bold text-gray-800 text-[3.5rem] sm:text-[4rem] lg:text-[5rem]">{title}</h1>
-              <p className="md:text-base md:text-left md:flex lg:text-xl  mt-4 font-subtitle text-subtitle-mobile-md font-medium text-black">
+              <p className="md:text-base md:text-left md:flex lg:text-xl  mt-4 font-sans text-subtitle-mobile-md font-medium text-black">
               Nuestros cursos de uñas están diseñados para ofrecerte la mejor formación en técnicas de manicura, adaptándose a tu estilo de vida y nivel de experiencia. Ya sea que prefieras clases presenciales para una experiencia práctica o cursos online para mayor flexibilidad, cada modalidad cubre desde los conceptos básicos hasta técnicas avanzadas en diseño y aplicación de uñas. Sumérgete en el mundo de la belleza de uñas y aprende a llevar tus habilidades al siguiente nivel con capacitaciones que combinan teoría, práctica y tendencias actuales. ¡Transforma tu pasión en una verdadera profesión!
               </p>
             </div>

@@ -19,10 +19,8 @@ export default function Home() {
         </Cursos>
         <Servicios title='Nuestros Servicios' subtitle='Descubre nuestro servicio de uñas diseñados para realzar tu estilo, combinando arte y cuidado profesional para que luzcas manos impecables en cada ocasión'/>
         <Creaciones />
-        <Banner logoSrc='/logos/logo-negro.webp' bgColor='bg-[#efb810]'/>
-        <SobreMi title='Sobre Mi' subtitle='Soy Maridania Garcia, y mi pasión por el cuidado de las uñas empezó como un hobby, pero pronto se convirtió en mi vocación. A lo largo de los años, me he formado en técnicas avanzadas que me permiten no solo crear diseños únicos y creativos, sino también asegurarme de que las uñas de mis clientas se mantengan saludables y fuertes. Para mí, el cuidado de las uñas va más allá de lo estético; es una combinación de belleza y salud. Estoy en constante aprendizaje para seguir perfeccionando mi trabajo y brindar una experiencia de calidad en cada servicio.' imageUrl='/images/sobre-mi.webp'> 
-          <ButtonLink text='Contactanos' href='#'textColor='text-black' bgColor='bg-[#ffc0db]'/>
-        </SobreMi>
+        <Banner logoSrc='/logos/logo-dorado-white-nvo.png' />
+        <SobreMi />
     </div>
   );
 }

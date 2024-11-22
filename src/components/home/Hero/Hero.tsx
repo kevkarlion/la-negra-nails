@@ -1,41 +1,51 @@
-// components/Hero.tsx
-
-import React from 'react';
-import Image from 'next/image';
-import { BackgroundWithLogo } from './BackgroundImage'
-import { ButtonLink } from '@/components/shared/Buttons'
+import React from "react";
+import Image from "next/image";
+import { ButtonLink } from "@/components/shared/Buttons";
+import Link from 'next/link';
 
 export const Hero: React.FC = () => {
   return (
-    <section className="relative w-full h-auto flex items-center justify-center bg-cover bg-center z-0 " style={{ backgroundImage: 'url(/path/to/your/background-image.jpg)' }}>
+    <section
+      className="relative mt-[3rem] w-full min-h-screen flex items-center justify-center bg-cover bg-top pt-16 md:pt-20"
+      style={{ backgroundImage: "url(/images/la-negra-hero.webp)" }}
+    >
       {/* Filtro de fondo */}
-      <div className="absolute inset-0 bg-black opacity-50 w-full" />
-            <div className='mt-28 w-full'>
+      <div className="absolute inset-0 bg-gradient-to-b from-black via-transparent to-black opacity-70"></div>
 
-                  {/* Contenedor del contenido del hero */}
-                  <div className="relative z-10 flex flex-col items-center text-center px-6 md:px-12 mb-28 mt-20">
-                  {/* Logo */}
-                  <div className="mb-4 w-[28rem] h-[12rem] md:w-[32rem] md:h-[18rem] relative">
-                  <Image
-                        src="/logos/logo-dorado-white-nvo.png" // Cambia esto por la ruta de tu logo
-                        alt="Logo"
-                        fill={true}
-                        style={{ objectFit: 'contain' }}
-                        className="w-full"
-                  />
-                  </div>
+      {/* Contenedor del contenido del hero */}
+      <div className="relative z-10 flex flex-col items-center text-center p-6 md:px-12 max-w-screen-lg mx-auto space-y-6 md:space-y-8">
+        {/* Logo grande y centrado */}
+        <div className="relative w-[16rem]  h-[12rem] md:w-[32rem] md:h-[24rem] ">
+          <Image
+            src="/logos/logo-dorado-white-nvo.png" // Cambia esto por la ruta de tu logo
+            alt="Logo"
+            fill
+            style={{ objectFit: "contain" }}
+          />
+        </div>
 
-                  {/* Subtítulo */}
-                  <h2 className="text-white font-subtitle title-mobile-sm md:text-2xl font-bold w-3/4 mb-10">
-                  Estilo y elegancia con el cuidado que tus uñas merecen. Luce impecable y saludable!
-                  </h2>
+        {/* Subtítulo con fuente moderna */}
+        <h2 className="text-white text-xl md:text-3xl font-semibold w-4/5 md:w-3/5 leading-snug md:leading-relaxed tracking-wide">
+          Estilo y elegancia con el cuidado que tus uñas merecen. ¡Luce
+          impecable y saludable!
+        </h2>
 
-                  {/* Botón */}
-                  <ButtonLink text='Contactanos' href='#' textColor='text-primary-onix'  bgColor='bg-secondary' />
-            </div>
-            <BackgroundWithLogo backgroundUrl='/images/la-negra-hero.webp'  logoUrl='/logos/logo-negro.webp'/>
+        {/* Botón de llamada a la acción */}
+        <ButtonLink
+          text="Contáctanos"
+          href="#footer"
+          textColor="text-black"
+          bgColor="bg-primary-onix hover:bg-opacity-80 transition duration-300"
+        />
+
+        <div className="hidden  w-3/4 !mt-8 !mb-24 h-10 md:flex justify-center   mx-auto">
+          <div className="hidden md:flex md:justify-center w-full mx-auto mt-14">
+              <Link href="#footer" className="bg-white p-6 w-1/2 rounded-lg shadow-lg flex items-center justify-center fluid-bg">
+                <h3 className="text-3xl font-title  font-semibold text-black">¡Contáctanos!</h3>
+              </Link>
+          </div>
+        </div>
       </div>
     </section>
   );
 };
-

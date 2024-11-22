@@ -2,14 +2,16 @@
 
 import Image from 'next/image';
 import { FC } from 'react';
+import { ButtonLink } from '@/components/shared/Buttons/Button'
+import Link from 'next/link';
 
 export const SobreMi: FC = () => {
   return (
-    <section id="about" className="py-16 bg-gradient-to-r from-pink-400 via-purple-500 to-indigo-600">
+    <section id="about" className="py-16 bg-gradient-to-r from-secondary-brightPink via-secondary-deepPink to-secondary-hotPink">
       <div className="max-w-screen-xl mx-auto px-6 md:px-12">
         <div className="text-center mb-12">
           <h2 className="font-title text-[2.25rem] sm:text-[3rem] lg:text-[4rem] font-extrabold text-white">Sobre Maridania García</h2>
-          <p className="font-subtitle text-base md:text-lg lg:text-2xl  leading-relaxed mt-4">
+          <p className="font-sanse text-lg lg:text-xl  leading-relaxed mt-4">
             Una apasionada profesional del arte de las uñas, siempre buscando nuevas formas de expresarme a través de cada diseño.
           </p>
         </div>
@@ -28,29 +30,31 @@ export const SobreMi: FC = () => {
 
           {/* Información sobre Maridania */}
           <div className="lg:w-2/3">
-            <h3 className="text-2xl  font-semibold text-white text-[2rem] font-title sm:text-[3rem]">Mi Historia</h3>
-            <p className="font-subtitle text-base md:text-lg lg:text-xl  leading-relaxed mt-4">
+            <h3 className="font-semibold text-white text-[2.5rem] font-title sm:text-[3rem] mb-4">Mi Historia</h3>
+            <p className="font-sans text-lg lg:text-xl  leading-relaxed mt-4">
               Mi nombre es Maridania García, soy una profesional dedicada al arte de las uñas con más de 7 años de experiencia. 
               A lo largo de mi carrera, he logrado combinar técnicas innovadoras y tendencias de diseño para ofrecer a mis clientes una experiencia única.
             </p>
 
-            <p className="font-subtitle text-base md:text-lg lg:text-xl  leading-relaxed mt-4">
+            <p className="font-sans text-lg lg:text-xl  leading-relaxed mt-4">
               Me encanta jugar con colores, texturas y detalles para crear diseños que reflejan la personalidad y estilo de cada cliente. 
               Cada uno de mis trabajos es una pieza única, pensada cuidadosamente para que mis clientes se sientan especiales y satisfechos.
             </p>
 
-            <p className="font-subtitle text-base md:text-lg lg:text-xl  leading-relaxed mt-4">
+            <p className="font-sans text-lg lg:text-xl  leading-relaxed mt-4">
               Mi misión es ofrecer una experiencia excepcional a través de un servicio personalizado, siempre con la mejor calidad en productos y una atención al detalle inigualable.
             </p>
 
             {/* CTA */}
-            <div className="mt-8">
-              <a
-                href="#contact"
-                className="inline-block bg-white text-pink-600 font-bold py-3 px-6 rounded-full shadow-lg hover:bg-pink-600 hover:text-white transition-all duration-300"
-              >
-                ¡Hablemos de tu diseño!
-              </a>
+            <div className="mt-8 flex justify-center md:hidden">
+              <ButtonLink text='¡Hablemos de tu diseño!' href='#' textColor='text-black'/>
+            </div>
+            
+            {/* CTA MD */}
+            <div className="hidden md:flex md:justify-center w-full mx-auto mt-14">
+              <Link href="" className="bg-white p-6 w-1/2 rounded-lg shadow-lg flex items-center justify-center fluid-bg">
+                <h3 className="text-3xl font-title  font-semibold text-black">¡Hablemos sobre tu diseño!</h3>
+              </Link>
             </div>
           </div>
         </div>

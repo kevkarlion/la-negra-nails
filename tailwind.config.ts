@@ -40,13 +40,14 @@ const config: Config = {
         title: ['"Dancing Script"', 'cursive'],
         subtitle: ['Lora', 'serif'],
         body: ['Montserrat', 'sans-serif'],
+        sans: ['Arial', 'Helvetica', 'sans-serif'],
       },
       fontSize: {
         // Títulos
         'title-lg': ['3rem', '1.2'], // 48px
         'title-xl': ['4.25rem', '1.2'], // 68px
-        'title-mobile-sm': ['1.75rem', '1.2'], // 28px
-        'title-mobile-md': ['2.25rem', '1.2'], // 32px
+        'title-mobile-sm': ['1.3rem', '1.2'], // 20.8px
+        'title-mobile-md': ['2.25rem', '1.2'], // 36px
 
         // Subtítulos
         'subtitle-lg': ['2.25rem', '1.2'], // 36px
