@@ -23,7 +23,7 @@ export const Servicios: React.FC<SectionProps> = ({ title, subtitle }) => {
         </h1>
 
         {/* Subtítulo */}
-        <p className="w-4/6 font-sans text-black font-light  text-lg sm:text-xl md:text-lg lg:text-xl">
+        <p className="w-full sm:w-4/6 font-sans text-black font-light  text-lg sm:text-xl md:text-lg lg:text-xl">
           {subtitle}
         </p>
 
@@ -57,7 +57,7 @@ export const Servicios: React.FC<SectionProps> = ({ title, subtitle }) => {
           <ServiceCard
             propertyClassName="shadow-lg transition-all duration-700 ease-in-out transform hover:scale-105 hover:shadow-2xl"
             title="Capping gel"
-            description="Un producto que se aplica sobre las uñas para sellar y proteger diseños o esmaltes, ofreciendo un acabado brillante y duradero. Ideal para mantener la belleza de tus uñas por más tiempo."
+            description="Técnica que cubre y protege las uñas naturales con una capa de gel, acrílico o polygel, sin extender su longitud. Esta técnica es ideal para reforzar la uña natural, evitar que se quiebre y proporcionar un acabado más resistente y duradero."
           />
         </div>
 

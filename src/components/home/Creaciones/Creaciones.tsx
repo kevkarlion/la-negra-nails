@@ -71,13 +71,13 @@ export const Creaciones = () => {
     >
       <div className="absolute inset-0 bg-[url('/images/marble-texture.png')] opacity-10 pointer-events-none"></div>
 
-      <div className="max-w-screen-lg mx-auto text-center px-4">
+      <div className="max-w-screen-lg mx-auto text-center px-4 flex flex-col items-center">
         <h1
           className={`${dancingScript.className} font-bold text-black text-6xl sm:text-5xl lg:text-[5rem]`}
         >
           Creaciones
         </h1>
-        <p className="mt-4 text-black font-light text-lg sm:text-xl">
+        <p className="mt-2 w-full sm:w-4/6 text-black font-light text-lg sm:text-xl">
           Cada diseño de uñas es una expresión única de estilo y personalidad.
           Usamos técnicas innovadoras y productos de alta calidad para ofrecerte
           arte y precisión.

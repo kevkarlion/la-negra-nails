@@ -52,7 +52,7 @@ export const Cursos: React.FC<SectionProps> = ({ title, subtitle, header, childr
       <div className={`${dancingScript.className} mx-auto text-center mt-9 flex flex-col md:flex-row items-center md:items-start`}>
         <div className="md:hidden flex flex-col items-center justify-center">
           <h1 className="font-bold text-gray-800 text-[2.25rem] sm:text-[3rem]">{title}</h1>
-          <p className="w-4/6 font-sans text-black font-light  text-lg sm:text-xl md:text-lg lg:text-xl">
+          <p className="w-full sm:w-4/6 mt-2 font-sans text-black font-light  text-lg sm:text-xl md:text-lg lg:text-xl">
             {subtitle}
           </p>
         </div>
