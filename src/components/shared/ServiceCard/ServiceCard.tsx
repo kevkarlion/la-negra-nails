@@ -1,6 +1,6 @@
 import React from "react";
 
-import { HiOutlineStar } from "react-icons/hi2";
+import { HiOutlineStar } from "react-icons/hi";
 
 interface ServiceCardProps {
   title: string;
@@ -19,7 +19,7 @@ export const ServiceCard: React.FC<ServiceCardProps> = ({
     >
       {/* Logo */}
       <div className="flex z-10 relative justify-center items-center mb-2 bg-black rounded-full w-14 h-14">
-        <HiOutlineStar size={24} className="z-40 relative"/>
+        <HiOutlineStar size={24} className="z-40 relative" color="white"/>
       </div>
 
       {/* Título del servicio */}
