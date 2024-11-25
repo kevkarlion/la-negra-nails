@@ -22,7 +22,7 @@ export default function RootLayout({
       <body
         
       >
-        <main>
+        <main className="flex flex-col min-h-screen">
           <Header /> 
           <SocialCTA />                           
           { children }

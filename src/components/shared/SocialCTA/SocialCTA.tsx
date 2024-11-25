@@ -7,9 +7,9 @@ export const SocialCTA = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const links = [
-    { href: 'h#', icon: FaWhatsapp, label: 'WhatsApp' },
-    { href: '#', icon: FaInstagram, label: 'Instagram' },
-    { href: '#', icon: FaFacebook, label: 'Facebook' },
+    { href: 'tel:+5492984207525', icon: FaWhatsapp, label: 'WhatsApp' },
+    { href: 'https://www.instagram.com/lanegra_bymaridania', icon: FaInstagram, label: 'Instagram' },
+    { href: 'https://www.facebook.com/lanegraunas', icon: FaFacebook, label: 'Facebook' },
   ];
 
   return (

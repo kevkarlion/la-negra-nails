@@ -5,7 +5,7 @@ import { FaMapMarkerAlt, FaPhoneAlt, FaEnvelope, FaInstagram, FaYoutube, FaFaceb
 
 export const Footer: React.FC = () => {
   return (
-    <footer className="bg-black text-white py-10" id='footer'>
+    <footer className="bg-black text-white py-10 mt-auto w-full" id='footer' >
       <div className="container mx-auto px-6 lg:px-10">
         {/* Logo */}
         <div className="flex justify-center mb-8">

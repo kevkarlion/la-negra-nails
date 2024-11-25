@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from 'react';
 import { Dancing_Script } from 'next/font/google';
 import Image from 'next/image';
+import Link from 'next/link';
 
 const dancingScript = Dancing_Script({
   subsets: ['latin'],
@@ -84,13 +85,13 @@ export const Cursos: React.FC<SectionProps> = ({ title, subtitle, header, childr
             </h3>
             <div className="hidden md:grid gap-4 w-3/4 max-w-screen-lg mx-auto md:grid-cols-2 md:grid-rows-2 md:grid-flow-row">
               <div className="bg-white p-6 rounded-lg shadow-lg flex items-center justify-center fluid-bg">
-                <h3 className="text-3xl font-semibold text-black">Presencial</h3>
+                <Link href='/cursos/presencial' className="text-3xl font-semibold text-black">Presencial</Link>
               </div>
               <div className="bg-white p-6 rounded-lg shadow-lg flex items-center justify-center fluid-bg">
-                <h3 className="text-3xl  font-semibold text-black">Online</h3>
+                <Link href='/cursos/online' className="text-3xl  font-semibold text-black">Online</Link>
               </div>
               <div className="bg-white p-6 rounded-lg shadow-lg flex items-center justify-center fluid-bg col-span-2">
-                <h3 className="text-3xl  font-semibold text-black">Mira nuestras clases</h3>
+                <Link href='/cursos/clases' className="text-3xl  font-semibold text-black">Mira nuestras clases</Link>
               </div>
             </div>
           </div>

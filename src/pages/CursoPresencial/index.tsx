@@ -1,0 +1,1 @@
+export { CursoPresencial } from './CursoPresencial'
