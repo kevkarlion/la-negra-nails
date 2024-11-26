@@ -1,9 +1,9 @@
 'use client';
 
 import { useParams } from "next/navigation";
-import { CursoPresencial } from "@/pages/CursoPresencial";
-import { CursoOnline } from '@/pages/CursoOnline';
-import { MiraNuestrasClases } from '@/pages/CursoClases';
+import CursoPresencial from "@/pages/CursoPresencial/CursoPresencial";
+import CursoOnline from "@/pages/CursoOnline/CursoOnline";
+import MiraNuestrasClases from "@/pages/CursoClases/CursoClases";
 
 const Page = () => {
   const params = useParams();

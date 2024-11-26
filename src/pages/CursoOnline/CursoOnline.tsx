@@ -19,7 +19,7 @@ const imagePaths = [
   "/images/cursosOnline/online3.webp",
 ];
 
-export const CursoOnline = () => {
+const CursoOnline = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [fade, setFade] = useState(true);
 
@@ -125,3 +125,4 @@ export const CursoOnline = () => {
   );
 };
 
+export default CursoOnline

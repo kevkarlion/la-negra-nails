@@ -19,7 +19,7 @@ const imagePaths = [
   "/images/carrusel/image3.webp",
 ];
 
-export const CursoPresencial = () => {
+const CursoPresencial = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [fade, setFade] = useState(true);
 
@@ -138,4 +138,5 @@ export const CursoPresencial = () => {
   );
 };
 
+export default CursoPresencial
 

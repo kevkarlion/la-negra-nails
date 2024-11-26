@@ -1,1 +1,0 @@
-export { MiraNuestrasClases } from './CursoClases'

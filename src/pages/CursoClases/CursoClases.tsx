@@ -31,7 +31,7 @@ const classDetails = [
   },
 ];
 
-export const MiraNuestrasClases = () => {
+ const MiraNuestrasClases = () => {
   return (
     <main className="bg-gradient-to-br from-blue-50 to-blue-100 min-h-screen text-gray-800">
       <section className="px-4 py-16 md:px-8 md:py-24 lg:py-24">
@@ -94,3 +94,5 @@ export const MiraNuestrasClases = () => {
     </main>
   );
 };
+
+export default MiraNuestrasClases
