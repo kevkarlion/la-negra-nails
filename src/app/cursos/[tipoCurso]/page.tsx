@@ -1,32 +1,34 @@
 'use client';
 
 import { useParams } from "next/navigation";
-import {CursoPresencial} from "@/pages/CursoPresencial"; // Componente para cursos presenciales
-import { CursoOnline } from '@/pages/CursoOnline'
-import { MiraNuestrasClases } from '@/pages/CursoClases'
-// import NotFoundPage from "@/components/NotFoundPage"; // Opcional
+import { CursoPresencial } from "@/pages/CursoPresencial";
+import { CursoOnline } from '@/pages/CursoOnline';
+import { MiraNuestrasClases } from '@/pages/CursoClases';
 
 const Page = () => {
   const params = useParams();
 
-  // Asegúrate de que params sea definido antes de acceder a sus propiedades
-  const tipoCurso = params?.TipoCurso as string;
+  // Convertir params.tipoCurso en string si es un array, o manejar undefined
+  const tipoCurso = Array.isArray(params?.tipoCurso)
+    ? params.tipoCurso[0] // Tomar el primer elemento si es un array
+    : params?.tipoCurso; // Si no, usarlo directamente como string
 
   // Mapeo de los valores del parámetro a componentes
   const pages: Record<string, JSX.Element> = {
     presencial: <CursoPresencial />,
     online: <CursoOnline />,
-    clases: <MiraNuestrasClases />
-    // online: <OnlineCoursePage />,
+    clases: <MiraNuestrasClases />,
   };
 
   // Si no se encuentra el parámetro, renderiza un mensaje de error
-  const ComponentToRender = pages[params.tipoCurso] || (
-    <div>
-      <h1>Componente no encontrado</h1>
-      <p>Por favor, verifica la URL.</p>
-    </div>
-  );
+  const ComponentToRender = tipoCurso && pages[tipoCurso]
+    ? pages[tipoCurso]
+    : (
+      <div>
+        <h1>Componente no encontrado</h1>
+        <p>Por favor, verifica la URL.</p>
+      </div>
+    );
 
   return <>{ComponentToRender}</>;
 };
