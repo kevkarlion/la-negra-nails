@@ -52,7 +52,7 @@ export const Cursos: React.FC<SectionProps> = ({ title, subtitle, header, childr
       {/* Vista mobile */}
       <div className={`${dancingScript.className} mx-auto text-center mt-9 flex flex-col md:flex-row items-center md:items-start`}>
         <div className="md:hidden flex flex-col items-center justify-center">
-          <h1 className="font-bold text-gray-800 text-[2.25rem] sm:text-[3rem]">{title}</h1>
+          <h1 className="font-title font-bold text-gray-800 text-[2.25rem] sm:text-[3rem]">{title}</h1>
           <p className="w-full sm:w-4/6 mt-2 font-sans text-black font-light  text-lg sm:text-xl md:text-lg lg:text-xl">
             {subtitle}
           </p>
@@ -84,13 +84,13 @@ export const Cursos: React.FC<SectionProps> = ({ title, subtitle, header, childr
               Modalidades
             </h3>
             <div className="hidden md:grid gap-4 w-3/4 max-w-screen-lg mx-auto md:grid-cols-2 md:grid-rows-2 md:grid-flow-row">
-              <div className="bg-white p-6 rounded-lg shadow-lg flex items-center justify-center fluid-bg">
+              <div className="font-title bg-white p-6 rounded-lg shadow-lg flex items-center justify-center fluid-bg">
                 <Link href='/cursos/presencial' className="text-3xl font-semibold text-black">Presencial</Link>
               </div>
-              <div className="bg-white p-6 rounded-lg shadow-lg flex items-center justify-center fluid-bg">
+              <div className=" font-title bg-white p-6 rounded-lg shadow-lg flex items-center justify-center fluid-bg">
                 <Link href='/cursos/online' className="text-3xl  font-semibold text-black">Online</Link>
               </div>
-              <div className="bg-white p-6 rounded-lg shadow-lg flex items-center justify-center fluid-bg col-span-2">
+              <div className="font-title bg-white p-6 rounded-lg shadow-lg flex items-center justify-center fluid-bg col-span-2">
                 <Link href='/cursos/clases' className="text-3xl  font-semibold text-black">Mira nuestras clases</Link>
               </div>
             </div>

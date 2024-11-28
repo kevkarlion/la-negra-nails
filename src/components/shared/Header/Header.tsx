@@ -5,7 +5,10 @@ import { useRouter, usePathname } from "next/navigation";
 
 import { FiMenu, FiX } from "react-icons/fi";
 import { FaInstagram, FaWhatsapp, FaFacebookF } from "react-icons/fa";
+import { GoTriangleDown } from "react-icons/go";
+
 import Image from "next/image";
+import Link from "next/link";
 
 export const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -19,6 +22,7 @@ export const Header: React.FC = () => {
     setIsMenuOpen((prevState) => !prevState);
   };
 
+  //navegacion de entre paginas o pagina principal
   const handleNavigate = async (hash: string) => {
     try {
       if (pathname === "/") {
@@ -35,6 +39,7 @@ export const Header: React.FC = () => {
     }
   };
 
+  //oculta o muestra el menu
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
@@ -65,6 +70,16 @@ export const Header: React.FC = () => {
 
     return () => clearTimeout(timer);
   }, [pathname]);
+
+  const [showMenu, setShowMenu] = useState(false);
+
+  const handleCursosHover = () => {
+    setShowMenu(true);
+  };
+
+  const handleMouseLeave = () => {
+    setShowMenu(false);
+  };
 
   return (
     <header
@@ -97,6 +112,17 @@ export const Header: React.FC = () => {
         </button>
 
         <nav className="hidden lg:flex items-center space-x-6">
+          {/* <div className={`flex flex-col  `}>
+            
+            <Link className="flex items-center text-white font-semibold hover:text-gray-400 transition-all duration-200" href='#cursos'  onMouseEnter={()=>handleCursosHover()} onMouseLeave={()=>handleMouseLeave()} >Cursos <span ><GoTriangleDown/></span> </Link>
+            {showMenu && 
+              <nav  onMouseEnter={()=>handleCursosHover()} onMouseLeave={()=>handleMouseLeave()} className={`${isScrolled ? "bg-black/90 shadow-lg" : "bg-black"} space-y-2 text-white absolute z-50 flex flex-col top-[60px]  bg-black p-3 list-none	`}>
+                    <li className="text-white font-medium hover:text-gray-400 transition-all duration-200"><Link href='#' >Presencial</Link></li>
+                    <li className="text-white font-medium hover:text-gray-400 transition-all duration-200"><Link href='#' >Online</Link></li>
+                    <li className="text-white font-medium hover:text-gray-400 transition-all duration-200"><Link href='#' >Mira nuestras clases</Link></li>
+              </nav>
+            }
+          </div> */}
           {[
             { label: "Inicio", hash: "#inicio" },
             { label: "Cursos", hash: "#cursos" },
@@ -107,10 +133,54 @@ export const Header: React.FC = () => {
           ].map(({ label, hash }) => (
             <button
               key={hash}
-              onClick={() => handleNavigate(hash)}
+
+              //solo se ejecuta onClick si no es cursos 
+              onClick={() => {
+                if (label !== 'Cursos') {
+                  handleNavigate(hash)
+                }
+              }}
               className="text-white font-semibold hover:text-gray-400 transition-all duration-200"
             >
-              {label}
+
+              {/* Manejo de Cursos y submenus segun el url*/}
+              {label === "Cursos" ? (
+                <div className={`flex flex-col  `}>
+                  <button
+                    className="flex items-center text-white font-semibold hover:text-gray-400 transition-all duration-200"
+                    onClick={()=>handleNavigate('#cursos')}
+                    onMouseEnter={() => handleCursosHover()}
+                    onMouseLeave={() => handleMouseLeave()}
+                  >
+                    Cursos{" "}
+                    <span>
+                      <GoTriangleDown />
+                    </span>{" "}
+                  </button>
+                  {showMenu && (
+                    <nav
+                      onMouseEnter={() => handleCursosHover()}
+                      onMouseLeave={() => handleMouseLeave()}
+                      
+                      className={`${
+                        isScrolled ? "bg-black/90 shadow-lg" : "bg-black"
+                      } space-y-2 text-white absolute z-50 flex flex-col items-start top-[60px]  bg-black p-3 list-none	`}
+                    >
+                      <li   className="text-white font-medium hover:text-gray-400 transition-all duration-200">
+                        <Link  href="/cursos/presencial">Presencial</Link>
+                      </li>
+                      <li  className="text-white font-medium hover:text-gray-400 transition-all duration-200">
+                        <Link  href="/cursos/online">Online</Link>
+                      </li>
+                      <li  className="text-white font-medium hover:text-gray-400 transition-all duration-200">
+                        <Link  href="/cursos/clases">Mira nuestras clases</Link>
+                      </li>
+                    </nav>
+                  )}
+                </div>
+              ) : (
+                label
+              )}
             </button>
           ))}
         </nav>

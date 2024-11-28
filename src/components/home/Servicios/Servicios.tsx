@@ -63,13 +63,13 @@ export const Servicios: React.FC<SectionProps> = ({ title, subtitle }) => {
 
         {/* Espacio para botones */}
         <div className="flex flex-col justify-center items-center mt-8 mb-8 md:hidden">
-          <ButtonBorder text="Conocé más" href="#"  />
+          <ButtonBorder text="Conocé más" href="/servicios"  />
           <ButtonLink text="Contactanos" href="#" borderColor="border-[#ff1a84]" textColor='text-black' />
         </div>
 
          {/* Espacio para botones */}
           <div className="hidden md:flex gap-4 w-3/4  mx-auto md:grid-cols-2 mt-14">
-            <Link href='#' className="bg-white w-1/2 p-6 rounded-lg shadow-lg flex items-center justify-center fluid-bg">
+            <Link href='/servicios' className="bg-white w-1/2 p-6 rounded-lg shadow-lg flex items-center justify-center fluid-bg">
               <h3 className={` text-3xl font-title  font-semibold text-black`}>Conocé más</h3>
             </Link>
             <Link href='#footer' className="bg-white w-1/2 p-6 rounded-lg shadow-lg flex items-center justify-center fluid-bg">
