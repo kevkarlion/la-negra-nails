@@ -77,7 +77,7 @@ export const Creaciones = () => {
         >
           Creaciones
         </h1>
-        <p className="mt-2 w-full sm:w-4/6 text-black font-light text-lg sm:text-xl">
+        <p className="mt-2 w-full sm:w-4/6 text-black font-medium text-lg sm:text-xl">
           Cada diseño de uñas es una expresión única de estilo y personalidad.
           Usamos técnicas innovadoras y productos de alta calidad para ofrecerte
           arte y precisión.
