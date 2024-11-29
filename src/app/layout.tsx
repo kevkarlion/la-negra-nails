@@ -19,10 +19,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <link rel="preload" href="/images/la-negra-hero.webp" as="image" />
       <body
         
       >
-        <main className="flex flex-col min-h-screen">
+        <main className="flex flex-col min-h-screen bg-transparent">
           <Header /> 
           <SocialCTA />                           
           { children }

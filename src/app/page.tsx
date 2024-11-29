@@ -10,7 +10,7 @@ import { SobreMi } from '@/components/home/SobreMi'
 
 export default function Home() {
   return (
-    <div className='w-full'>
+    <div className='w-full relative z-0'>
         <Hero />
         <Cursos title='Cursos Profesionales' subtitle='Descubre nuestras modalidades de cursos de uñas, diseñado para adaptarse a tu estilo de vida. ¡Lleva tu pasión al siguente nivel!' header='Modalidades'>
           <div className='flex flex-col'>

@@ -5,9 +5,10 @@ import Link from 'next/link';
 
 export const Hero: React.FC = () => {
   return (
+   
     <section
-      className="relative mt-[3rem] w-full min-h-screen flex items-center justify-center bg-cover bg-top pt-16 md:pt-20 scroll-m-10"
-      style={{ backgroundImage: "url(/images/la-negra-hero.webp)" }}
+      className="relative z-30 w-full min-h-screen flex items-center justify-center bg-cover  bg-top pt-16 md:pt-20 "
+      style={{ backgroundImage: "url(/images/la-negra-hero.webp)" } }
       id="inicio"
     >
       {/* Filtro de fondo */}
@@ -21,6 +22,7 @@ export const Hero: React.FC = () => {
             src="/logos/logo-dorado-white-nvo.png" // Cambia esto por la ruta de tu logo
             alt="Logo"
             fill
+            priority
             style={{ objectFit: "contain" }}
           />
         </div>
