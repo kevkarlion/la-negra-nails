@@ -1,5 +1,4 @@
-// hooks/usePageLoad.js
-'use client'
+'use client';
 import { useState, useEffect } from 'react';
 
 const usePageLoad = () => {
@@ -8,10 +7,13 @@ const usePageLoad = () => {
   useEffect(() => {
     const handleLoad = () => setIsLoaded(true);
 
-    if (typeof window !== 'undefined') {
+    // Verificar si la página ya está cargada
+    if (document.readyState === 'complete') {
+      setIsLoaded(true);
+    } else if (typeof window !== 'undefined') {
       window.addEventListener('load', handleLoad);
-
-      // Limpieza del evento al desmontar el componente
+      
+      // Limpieza del evento
       return () => window.removeEventListener('load', handleLoad);
     }
   }, []);

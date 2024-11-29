@@ -47,12 +47,12 @@ export const SobreMi: FC = () => {
 
             {/* CTA */}
             <div className="mt-8 flex justify-center md:hidden">
-              <ButtonLink text='¡Hablemos de tu diseño!' href='#' textColor='text-black'/>
+              <ButtonLink text='¡Hablemos de tu diseño!' href="tel:+5492984207525" textColor='text-black'/>
             </div>
             
             {/* CTA MD */}
             <div className="hidden md:flex md:justify-center w-full mx-auto mt-14">
-              <Link href="" className="bg-white p-6 w-1/2 rounded-lg shadow-lg flex items-center justify-center fluid-bg">
+              <Link href="tel:+5492984207525" className="bg-white p-6 w-1/2 rounded-lg shadow-lg flex items-center justify-center fluid-bg">
                 <h3 className="text-3xl font-title  font-semibold text-black">¡Hablemos sobre tu diseño!</h3>
               </Link>
             </div>

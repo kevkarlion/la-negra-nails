@@ -6,6 +6,8 @@ import { Creaciones } from '@/components/home/Creaciones'
 
 import { Banner } from '@/components/shared/Banner'
 import { SobreMi } from '@/components/home/SobreMi'
+
+
 export default function Home() {
   return (
     <div className='w-full'>

@@ -6,8 +6,9 @@ import Link from 'next/link';
 export const Hero: React.FC = () => {
   return (
     <section
-      className="relative mt-[3rem] w-full min-h-screen flex items-center justify-center bg-cover bg-top pt-16 md:pt-20"
+      className="relative mt-[3rem] w-full min-h-screen flex items-center justify-center bg-cover bg-top pt-16 md:pt-20 scroll-m-10"
       style={{ backgroundImage: "url(/images/la-negra-hero.webp)" }}
+      id="inicio"
     >
       {/* Filtro de fondo */}
       <div className="absolute inset-0 bg-gradient-to-b from-black via-transparent to-black opacity-70"></div>

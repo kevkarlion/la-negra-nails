@@ -19,7 +19,7 @@ const services: Service[] = [
     title: "Manicura tradicional",
     description:
       "Embellece tus manos con limado, pulido y esmaltado para un acabado elegante.",
-    image: "/images/services/manicura-tradicional.jpg",
+    image: "/images/carrusel/image6.webp",
     benefits: [
       "Acabado limpio y elegante.",
       "Fortalece y protege las uñas.",
@@ -70,10 +70,10 @@ const services: Service[] = [
     ],
   },
   {
-    title: "Capping Gel",
+    title: "Kapping Gel",
     description:
       "Refuerza las uñas naturales con una capa de gel, sin alargar su longitud.",
-    image: "/images/carrusel/image9.webp",
+    image: "/images/carrusel/image7.webp",
     benefits: [
       "Protege las uñas naturales.",
       "Aumenta la resistencia a quiebres.",
