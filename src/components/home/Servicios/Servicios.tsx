@@ -1,9 +1,6 @@
-'use client'
-import React, { useEffect } from "react";
-import AOS from "aos";
-import "aos/dist/aos.css";
+import React from "react";
 import { ServiceCard } from "@/components/shared/ServiceCard";
-import { ButtonLink, ButtonBorder } from "@/components/shared/Buttons";
+import { ButtonLink } from "@/components/shared/Buttons";
 import Link from "next/link";
 
 interface SectionProps {
@@ -12,12 +9,6 @@ interface SectionProps {
 }
 
 export const Servicios: React.FC<SectionProps> = ({ title, subtitle }) => {
-  useEffect(() => {
-    AOS.init({ duration: 1000, once: true }); // Inicializa AOS con animaciones suaves
-  }, []);
-
-  const isMobile = typeof window !== "undefined" && window.innerWidth <= 768;
-
   return (
     <section
       className="px-4 py-6 md:px-8 md:py-10 lg:pt-16 h-auto bg-cover bg-secondary"
@@ -74,42 +65,41 @@ export const Servicios: React.FC<SectionProps> = ({ title, subtitle }) => {
             <ServiceCard
               key={index}
               propertyClassName={
-                isMobile
-                  ? `aos-animate shadow-lg transform hover:scale-105`
-                  : `shadow-lg transition-transform duration-400 ease-out transform hover:scale-105 hover:shadow-2xl`
+                // Aseguramos que las animaciones solo se apliquen en dispositivos >= "md" (tabletas y desktop)
+                `shadow-lg transform transition-all duration-300 ease-in-out ${
+                  // Solo aplicar las animaciones y transiciones en pantallas grandes
+                  "md:hover:scale-105 md:hover:shadow-2xl"
+                }`
               }
               title={service.title}
               description={service.description}
-              data-aos={isMobile ? "fade-up" : undefined} // Animación en mobile
             />
           ))}
         </div>
 
         {/* Botones */}
         <div className="flex flex-col justify-center items-center mt-8 mb-8 md:hidden">
-          <ButtonBorder text="Conocé más" href="/servicios" />
+          <ButtonLink
+            text="Conocé más"
+            href="/servicios"
+            textColor="text-black"
+          />
           <ButtonLink
             text="Contactanos"
-            href="#"
-            borderColor="border-[#ff1a84]"
+            href="tel:+5492984207525"
             textColor="text-black"
           />
         </div>
 
-        <div className="hidden md:flex gap-4 w-3/4  mx-auto md:grid-cols-2 mt-14">
-          <Link
-            href="/servicios"
-            className="bg-white w-1/2 p-6 rounded-lg shadow-lg flex items-center justify-center fluid-bg"
-          >
-            <h3 className={` text-3xl font-title  font-semibold text-black`}>
-              Conocé más
-            </h3>
-          </Link>
+        <div className="hidden md:flex gap-4 w-3/4 mx-auto md:grid-cols-2 mt-14">
+          
           <Link
             href="#footer"
             className="bg-white w-1/2 p-6 rounded-lg shadow-lg flex items-center justify-center fluid-bg"
           >
-            <h3 className={` text-3xl font-title  font-semibold text-black`}>
+            <h3
+              className={`  md:text-[27px] lg:text-3xl font-title  font-semibold text-black`}
+            >
               Contactanos
             </h3>
           </Link>

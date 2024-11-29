@@ -53,7 +53,7 @@ export const SobreMi: FC = () => {
             {/* CTA MD */}
             <div className="hidden md:flex md:justify-center w-full mx-auto mt-14">
               <Link href="tel:+5492984207525" className="bg-white p-6 w-1/2 rounded-lg shadow-lg flex items-center justify-center fluid-bg">
-                <h3 className="text-3xl font-title  font-semibold text-black">¡Hablemos sobre tu diseño!</h3>
+                <h3 className=" md:text-[27px] lg:text-3xl font-title  font-semibold text-black">¡Hablemos sobre tu diseño!</h3>
               </Link>
             </div>
           </div>

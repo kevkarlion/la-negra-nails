@@ -14,9 +14,9 @@ export default function Home() {
         <Hero />
         <Cursos title='Cursos Profesionales' subtitle='Descubre nuestras modalidades de cursos de uñas, diseñado para adaptarse a tu estilo de vida. ¡Lleva tu pasión al siguente nivel!' header='Modalidades'>
           <div className='flex flex-col'>
-            <ButtonLink text='Presencial' href='/cursos/presencial'textColor='text-black' borderColor='border-[#ff5ba4]'border='border'/>
-            <ButtonLink text='Online' href='/cursos/online' textColor='text-black '  borderColor='border-[#ff5ba4]' border='border'/>
-            <ButtonLink text='Mirá nuestas clases' href='/cursos/clases'textColor='text-black' bgColor='bg-[#ff5ba4]'/>
+            <ButtonLink text='Presencial' href='/cursos/presencial'textColor='text-black' />
+            <ButtonLink text='Online' href='/cursos/online' textColor='text-black '  />
+            <ButtonLink text='Mirá nuestas clases' href='/cursos/clases'textColor='text-black' />
           </div>
         </Cursos>
         <Servicios title='Nuestros Servicios' subtitle='Descubre nuestro servicio de uñas diseñados para realzar tu estilo, combinando arte y cuidado profesional para que luzcas manos impecables en cada ocasión'/>

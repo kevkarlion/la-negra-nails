@@ -44,7 +44,7 @@ export const Hero: React.FC = () => {
         <div className="hidden  w-3/4 !mt-8 !mb-24 h-10 md:flex justify-center   mx-auto">
           <div className="hidden md:flex md:justify-center w-full mx-auto mt-14">
               <Link href="#footer" className="bg-white p-6 w-1/2 rounded-lg shadow-lg flex items-center justify-center fluid-bg">
-                <h3 className="text-3xl font-title  font-semibold text-black">¡Contáctanos!</h3>
+                <h3 className=" md:text-[27px] lg:text-3xl font-title  font-semibold text-black">¡Contáctanos!</h3>
               </Link>
           </div>
         </div>

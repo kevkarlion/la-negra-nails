@@ -131,7 +131,7 @@ export const Creaciones = () => {
           href="#footer"
           className="bg-white p-6 w-1/2 rounded-lg shadow-lg flex items-center justify-center fluid-bg"
         >
-          <h3 className="text-3xl font-title  font-semibold text-black">
+          <h3 className=" md:text-[27px] lg:text-3xl font-title  font-semibold text-black">
             ¡Reservá tu cita!
           </h3>
         </Link>

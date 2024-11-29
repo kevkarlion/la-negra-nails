@@ -84,14 +84,14 @@ export const Cursos: React.FC<SectionProps> = ({ title, subtitle, header, childr
               Modalidades
             </h3>
             <div className="hidden md:grid gap-4 w-3/4 max-w-screen-lg mx-auto md:grid-cols-2 md:grid-rows-2 md:grid-flow-row">
-              <div className="font-title bg-white p-6 rounded-lg shadow-lg flex items-center justify-center fluid-bg">
-                <Link href='/cursos/presencial' className="text-3xl font-semibold text-black">Presencial</Link>
+              <div className="font-title w-auto bg-white p-6 rounded-lg shadow-lg flex items-center justify-center fluid-bg">
+                <Link href='/cursos/presencial' className="md:text-[27px] lg:text-3xl  font-semibold text-black">Presencial</Link>
               </div>
               <div className=" font-title bg-white p-6 rounded-lg shadow-lg flex items-center justify-center fluid-bg">
-                <Link href='/cursos/online' className="text-3xl  font-semibold text-black">Online</Link>
+                <Link href='/cursos/online' className="md:text-[27px] lg:text-3xl  font-semibold text-black">Online</Link>
               </div>
               <div className="font-title bg-white p-6 rounded-lg shadow-lg flex items-center justify-center fluid-bg col-span-2">
-                <Link href='/cursos/clases' className="text-3xl  font-semibold text-black">Mira nuestras clases</Link>
+                <Link href='/cursos/clases' className="md:text-[27px] lg:text-3xl  font-semibold text-black">Mira nuestras clases</Link>
               </div>
             </div>
           </div>
