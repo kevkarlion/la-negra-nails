@@ -11,7 +11,7 @@ export const SobreMi: FC = () => {
       <div className="max-w-screen-xl mx-auto px-6 md:px-12">
         <div className="text-center mb-12 w-full flex flex-col items-center">
           <h2 className="font-title text-[2.25rem] sm:text-[3rem] lg:text-[4rem] font-extrabold text-white">Sobre Maridania García</h2>
-          <p className="w-full sm:w-4/6 text-center text-white  text-lg lg:text-xl mt-2 leading-relaxed">
+          <p className="w-full sm:w-4/6 text-center text-white font-light  text-lg lg:text-xl mt-2 leading-relaxed">
             Una apasionada profesional del arte de las uñas, siempre buscando nuevas formas de expresarme a través de cada diseño.
           </p>
         </div>
@@ -31,17 +31,17 @@ export const SobreMi: FC = () => {
           {/* Información sobre Maridania */}
           <div className="lg:w-2/3">
             <h3 className="text-center lg:text-left font-semibold text-white text-[2.5rem] font-title sm:text-[3rem] mb-4">Mi Historia</h3>
-            <p className="text-center lg:text-left font-sans text-lg lg:text-xl text-white   leading-relaxed mt-4">
+            <p className="text-center lg:text-left font-sans text-lg lg:text-xl text-white font-light  leading-relaxed mt-4">
               Mi nombre es Maridania García, soy una profesional dedicada al arte de las uñas con más de 7 años de experiencia. 
               A lo largo de mi carrera, he logrado combinar técnicas innovadoras y tendencias de diseño para ofrecer a mis clientes una experiencia única.
             </p>
 
-            <p className="text-center lg:text-left font-sans text-lg lg:text-xl text-white   leading-relaxed mt-4">
+            <p className="text-center lg:text-left font-sans text-lg lg:text-xl text-white font-light  leading-relaxed mt-4">
               Me encanta jugar con colores, texturas y detalles para crear diseños que reflejan la personalidad y estilo de cada cliente. 
               Cada uno de mis trabajos es una pieza única, pensada cuidadosamente para que mis clientes se sientan especiales y satisfechos.
             </p>
 
-            <p className="text-center lg:text-left font-sans text-lg lg:text-xl text-white  leading-relaxed mt-4">
+            <p className="text-center lg:text-left font-sans text-lg lg:text-xl text-white font-light  leading-relaxed mt-4">
               Mi misión es ofrecer una experiencia excepcional a través de un servicio personalizado, siempre con la mejor calidad en productos y una atención al detalle inigualable.
             </p>
 

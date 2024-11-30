@@ -19,7 +19,7 @@ export const Hero: React.FC = () => {
         {/* Logo grande y centrado */}
         <div className="relative w-[16rem]  h-[12rem] md:w-[32rem] md:h-[24rem] ">
           <Image
-            src="/logos/logo-dorado-white-nvo.png" // Cambia esto por la ruta de tu logo
+            src="/logos/logo-dorado-white-nvo.png" 
             alt="Logo"
             fill
             priority
@@ -36,14 +36,14 @@ export const Hero: React.FC = () => {
         {/* Botón de llamada a la acción */}
         <ButtonLink
           text="Contáctanos"
-          href="#footer"
+          href="https://wa.me/5492984207525"
           textColor="text-black"
           bgColor="bg-primary-onix hover:bg-opacity-80 transition duration-300"
         />
 
         <div className="hidden  w-3/4 !mt-8 !mb-24 h-10 md:flex justify-center   mx-auto">
           <div className="hidden md:flex md:justify-center w-full mx-auto mt-14">
-              <Link href="#footer" className="bg-white p-6 w-1/2 rounded-lg shadow-lg flex items-center justify-center fluid-bg">
+              <Link href="https://wa.me/5492984207525" target="_blank" rel="noopener noreferrer" className="bg-white p-6 w-1/2 rounded-lg shadow-lg flex items-center justify-center fluid-bg">
                 <h3 className=" md:text-[27px] lg:text-3xl font-title  font-semibold text-black">¡Contáctanos!</h3>
               </Link>
           </div>

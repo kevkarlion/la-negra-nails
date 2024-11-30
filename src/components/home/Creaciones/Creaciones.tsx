@@ -77,7 +77,7 @@ export const Creaciones = () => {
         >
           Creaciones
         </h1>
-        <p className="mt-2 w-full sm:w-4/6 text-black font-medium text-lg sm:text-xl">
+        <p className="mt-2 w-full sm:w-4/6 text-black font-light text-lg sm:text-xl">
           Cada diseño de uñas es una expresión única de estilo y personalidad.
           Usamos técnicas innovadoras y productos de alta calidad para ofrecerte
           arte y precisión.
@@ -128,7 +128,9 @@ export const Creaciones = () => {
 
       <div className="hidden md:flex md:justify-center w-full mx-auto mt-14">
         <Link
-          href="#footer"
+          href="https://wa.me/5492984207525"
+          target="_blank" 
+          rel="noopener noreferrer"
           className="bg-white p-6 w-1/2 rounded-lg shadow-lg flex items-center justify-center fluid-bg"
         >
           <h3 className=" md:text-[27px] lg:text-3xl font-title  font-semibold text-black">
@@ -139,7 +141,7 @@ export const Creaciones = () => {
       <div className="flex flex-col justify-center items-center mt-8 mb-8 md:hidden">
         <ButtonLink
           text="¡Reservá tu cita!"
-          href="#"
+          href="https://wa.me/5492984207525"
           borderColor="border-[#ff1a84]"
           textColor="text-black"
         />
