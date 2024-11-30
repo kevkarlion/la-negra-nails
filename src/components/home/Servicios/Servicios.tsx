@@ -85,7 +85,7 @@ export const Servicios: React.FC<SectionProps> = ({ title, subtitle }) => {
             textColor="text-black"
           />
           <ButtonLink
-            text="Contactanos"
+            text="Dónde encontrarnos"
             href="https://wa.me/5492984207525" 
             textColor="text-black"
           />
@@ -100,7 +100,17 @@ export const Servicios: React.FC<SectionProps> = ({ title, subtitle }) => {
             <h3
               className={`md:text-[27px] lg:text-3xl font-title  font-semibold text-black`}
             >
-              Contactanos
+              Dónde encontrarnos
+            </h3>
+          </Link>
+          <Link
+            href="/servicios"
+            className="bg-white w-1/2 p-6 rounded-lg shadow-lg flex items-center justify-center fluid-bg"
+          >
+            <h3
+              className={`md:text-[27px] lg:text-3xl font-title  font-semibold text-black`}
+            >
+              Conocé más
             </h3>
           </Link>
         </div>
