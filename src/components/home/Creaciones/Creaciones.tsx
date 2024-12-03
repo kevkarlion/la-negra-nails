@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { Dancing_Script } from "next/font/google";
+
 import { ButtonLink } from "@/components/shared/Buttons/Button";
 const images = [
   {
@@ -22,10 +22,6 @@ const images = [
   },
 ];
 
-const dancingScript = Dancing_Script({
-  subsets: ["latin"],
-  weight: ["400", "700"],
-});
 
 export const Creaciones = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -66,14 +62,14 @@ export const Creaciones = () => {
 
   return (
     <section
-      className="py-16 bg-gradient-to-br from-secondary-brightPink to-secondary-hotPink relative text-white"
+      className="p-6 bg-gradient-to-br from-secondary-brightPink to-secondary-hotPink relative text-white"
       id="creaciones"
     >
       <div className="absolute inset-0 bg-[url('/images/marble-texture.png')] opacity-10 pointer-events-none"></div>
 
       <div className="max-w-screen-lg mx-auto text-center px-4 flex flex-col items-center">
         <h1
-          className={`${dancingScript.className} font-bold text-black text-6xl sm:text-5xl lg:text-[5rem]`}
+          className={`font-title font-bold text-black text-6xl sm:text-5xl lg:text-[5rem]`}
         >
           Creaciones
         </h1>
@@ -84,7 +80,7 @@ export const Creaciones = () => {
         </p>
       </div>
 
-      <div className="flex items-center justify-center mt-10 p-6">
+      <div className="flex items-center justify-center mt-2 p-2 md:m-8">
         <div className="relative w-full max-w-6xl overflow-hidden">
           <div
             className="flex transition-transform duration-700"
@@ -93,15 +89,15 @@ export const Creaciones = () => {
             {images.map((image, index) => (
               <div
                 key={index}
-                className="min-w-full flex items-center justify-center bg-white"
-                style={{ height: "600px" }}
+                className="min-w-full h-[400px] md:h-[700px] flex items-center justify-center bg-black"
+                
               >
                 <Image
                   src={image.src}
                   alt={`Imagen ${index + 1}`}
-                  width={600}
-                  height={400}
-                  objectFit="contain"
+                  width={800}
+                  height={600}
+                  objectFit="cover"
                   className="rounded-lg shadow-lg"
                   style={{
                     transform: `rotate(${rotation[index]}deg)`, // Rotación dinámica

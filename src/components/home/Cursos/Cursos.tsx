@@ -1,14 +1,11 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import { Dancing_Script } from "next/font/google";
+
 import Image from "next/image";
 import Link from "next/link";
 import { ButtonLink } from "@/components/shared/Buttons";
 
-const dancingScript = Dancing_Script({
-  subsets: ["latin"],
-  weight: ["400", "700"],
-});
+
 
 interface SectionProps {
   title: string;
@@ -49,7 +46,7 @@ export const Cursos: React.FC<SectionProps> = ({
 
   return (
     <section
-      className="px-4 py-6 md:px-8 md:py-10 lg:py-16 bg-gray-100 h-auto bg-cover"
+      className="p-6 md:px-8 md:py-10 lg:py-16 bg-gray-100 h-auto bg-cover"
       id="cursos"
       style={{
         backgroundImage: 'url("/background/cursos.svg")',
@@ -60,10 +57,10 @@ export const Cursos: React.FC<SectionProps> = ({
     >
       {/* Vista mobile */}
       <div
-        className={`${dancingScript.className} mx-auto text-center mt-9 flex flex-col md:flex-row items-center md:items-start`}
+        className={`font-title mx-auto text-center mt-9 flex flex-col md:flex-row items-center md:items-start`}
       >
         <div className="md:hidden flex flex-col items-center justify-center">
-          <h1 className="font-title font-bold text-gray-800 text-[2.25rem] sm:text-[3rem]">
+          <h1 className="font-title text-[3.75rem] font-bold text-black sm:text-[3rem]">
             {title}
           </h1>
           <p className="w-full mb-4 sm:w-4/6 mt-2 font-sans text-black font-light  text-lg sm:text-xl md:text-lg lg:text-xl">

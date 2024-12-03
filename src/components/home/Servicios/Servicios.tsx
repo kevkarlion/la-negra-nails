@@ -18,7 +18,7 @@ export const Servicios: React.FC<SectionProps> = ({ title, subtitle }) => {
       <div className="max-w-screen-lg mx-auto text-center mt-9 flex flex-col items-center">
         {/* Título principal */}
         <h1
-          className={`font-title font-bold text-black text-[2.25rem] sm:text-[3rem] lg:text-[5rem]`}
+          className={`font-title font-bold text-black text-[3.75rem] sm:text-[3rem] lg:text-[5rem] mb-2`}
         >
           {title}
         </h1>

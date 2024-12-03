@@ -13,7 +13,7 @@ export const SobreMi: FC = () => {
     >
       <div className="max-w-screen-xl mx-auto px-6 md:px-12">
         <div className="text-center mb-12 w-full flex flex-col items-center">
-          <h2 className="font-title text-[2.25rem] sm:text-[3rem] lg:text-[4rem] font-extrabold text-white">
+          <h2 className="font-title text-[3.75rem] sm:text-[3rem] lg:text-[4rem] font-extrabold text-white">
             Sobre Maridania García
           </h2>
           <p className="w-full sm:w-4/6 text-center text-white font-light  text-lg lg:text-xl mt-2 leading-relaxed">
@@ -83,7 +83,7 @@ export const SobreMi: FC = () => {
             </div>
 
             {/* CTA MD */}
-            <div className="font-title bg-white lg:w-[21.37rem] p-6 rounded-lg shadow-lg flex items-center self-center mt-12 justify-center fluid-bg">
+            <div className="hidden font-title bg-white lg:w-[21.37rem] p-6 rounded-lg shadow-lg md:flex items-center self-center mt-12 justify-center fluid-bg">
                 <Link
                   href="https://wa.me/5492984207525"
                   className="md:text-[27px] lg:text-3xl  font-semibold text-black"
