@@ -16,7 +16,7 @@ const MiraNuestrasClases = () => {
       <section className="px-4 py-16 md:px-8 md:py-24 lg:py-24">
         {/* Encabezado */}
         <div className={`${dancingScript.className} text-center mt-9`}>
-          <h1 className="font-bold text-gray-900 text-[2.7rem] sm:text-[3rem] md:text-[4rem]">
+          <h1 className="font-bold text-black text-[2.7rem] sm:text-[3rem] md:text-[4rem]">
             Mira nuestras clases
           </h1>
           <p className="text-lg md:text-3xl  font-bold mb-2 sm:text-xl  text-black font-sans mt-2 md:!mb-4">

@@ -3,85 +3,13 @@ import React from "react";
 
 import Carrusel from '@/components/Carrusel/Carrusel'
 
-interface Service {
-  title: string;
-  description: string;
-  image: string;
-  benefits: string[];
-}
 
 interface FAQ {
   question: string;
   answer: string;
 }
 
-const services: Service[] = [
-  {
-    title: "Manicura tradicional",
-    description:
-      "Embellece tus manos con limado, pulido y esmaltado para un acabado elegante.",
-    image: "/images/carrusel/image6.webp",
-    benefits: [
-      "Acabado limpio y elegante.",
-      "Fortalece y protege las uñas.",
-      "Variedad de colores y estilos.",
-    ],
-  },
-  {
-    title: "Baños de parafina",
-    description:
-      "Hidrata y suaviza la piel mediante inmersión en parafina caliente.",
-    image: "/images/services/banos-parafina.jpg",
-    benefits: [
-      "Hidratación profunda para manos y pies.",
-      "Mejora la elasticidad de la piel.",
-      "Ideal para piel seca o agrietada.",
-    ],
-  },
-  {
-    title: "Pedicura Spa",
-    description:
-      "Cuida y rejuvenece tus pies con exfoliación, hidratación y masajes relajantes.",
-    image: "/images/services/pedicura-spa.jpg",
-    benefits: [
-      "Elimina células muertas y suaviza la piel.",
-      "Relaja los músculos de los pies.",
-      "Mejora la salud de las uñas.",
-    ],
-  },
-  {
-    title: "Uñas esculpidas",
-    description:
-      "Técnica avanzada para crear uñas de gel o acrílico personalizadas.",
-    image: "/images/carrusel/image8.webp",
-    benefits: [
-      "Durabilidad y resistencia superiores.",
-      "Posibilidad de personalización completa.",
-      "Perfectas para quienes buscan diseños únicos.",
-    ],
-  },
-  {
-    title: "Soft Gel",
-    description: "Gel ligero y flexible para un acabado natural y duradero.",
-    image: "/images/services/soft-gel.jpg",
-    benefits: [
-      "Ideal para un look natural.",
-      "Fácil aplicación y remoción.",
-      "Proporciona un brillo excepcional.",
-    ],
-  },
-  {
-    title: "Kapping Gel",
-    description:
-      "Refuerza las uñas naturales con una capa de gel, sin alargar su longitud.",
-    image: "/images/carrusel/image7.webp",
-    benefits: [
-      "Protege las uñas naturales.",
-      "Aumenta la resistencia a quiebres.",
-      "Proporciona un acabado más resistente.",
-    ],
-  },
-];
+
 
 const faqs: FAQ[] = [
   {
