@@ -16,10 +16,10 @@ const MiraNuestrasClases = () => {
       <section className="px-4 py-16 md:px-8 md:py-24 lg:py-24">
         {/* Encabezado */}
         <div className={`${dancingScript.className} text-center mt-9`}>
-          <h1 className="font-bold text-black text-[2.7rem] sm:text-[3rem] md:text-[4rem]">
+          <h1 className="font-bold text-black text-[3.75rem] sm:text-[3rem] md:text-[4rem]">
             Mira nuestras clases
           </h1>
-          <p className="text-lg md:text-3xl  font-bold mb-2 sm:text-xl  text-black font-sans mt-2 md:!mb-4">
+          <p className="text-2xl md:text-3xl  font-bold mb-2 sm:text-xl  text-black font-sans mt-2 md:!mb-4">
             Cursos especializados en salud ungueal y técnicas profesionales
           </p>
           <p className="text-lg xl:px-20 mb-9 sm:text-xl md:text-lg lg:text-xl text-black font-sans mt-2 md:!mb-4">
