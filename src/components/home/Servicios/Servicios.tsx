@@ -11,7 +11,7 @@ interface SectionProps {
 export const Servicios: React.FC<SectionProps> = ({ title, subtitle }) => {
   return (
     <section
-      className="px-4 py-6 md:px-8 md:py-10 lg:pt-16 h-auto bg-cover bg-secondary"
+      className="px-4 py-6 md:px-8 md:py-10 lg:pt-16 lg:pb-16 h-auto bg-cover bg-secondary-pinkWhite"
       style={{ backgroundImage: "url(/bg/bg-section.svg)" }}
       id="servicios"
     >

@@ -21,6 +21,7 @@ const config: Config = {
         },
         secondary: {
           DEFAULT: '#ffc0db',      // Color principal secundario
+          pinkWhite: '#ffc0db', 
           mediumPink: '#ff95c6',   // Rosa medio
           brightPink: '#ff5ba4',   // Rosa brillante
           deepPink: '#ff1a84',     // Rosa intenso

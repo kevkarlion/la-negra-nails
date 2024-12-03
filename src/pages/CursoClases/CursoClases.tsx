@@ -1,98 +1,93 @@
-'use client';
+"use client";
 
-import React from 'react';
-import { Dancing_Script } from 'next/font/google';
-import Image from 'next/image';
-import { HiOutlinePlusCircle } from 'react-icons/hi';
+import React from "react";
+import { Dancing_Script } from "next/font/google";
+import Carrusel from "@/components/Carrusel/Carrusel";
+import { ButtonLink } from "@/components/shared/Buttons/Button";
 
 const dancingScript = Dancing_Script({
-  subsets: ['latin'],
-  weight: ['400', '700'],
+  subsets: ["latin"],
+  weight: ["400", "700"],
 });
 
-const classDetails = [
-  {
-    src: '/images/classes/class1.webp',
-    title: 'Diseño Avanzado',
-    description: 'Perfecciona tus habilidades con técnicas modernas.',
-    seoKeywords: ['curso de diseño avanzado', 'técnicas modernas', 'clases de diseño'],
-  },
-  {
-    src: '/images/classes/class2.webp',
-    title: 'Técnicas Profesionales',
-    description: 'Aprende de expertos en un ambiente práctico.',
-    seoKeywords: ['técnicas profesionales', 'curso práctico', 'aprender de expertos'],
-  },
-  {
-    src: '/images/classes/class3.webp',
-    title: 'Conceptos Básicos',
-    description: 'Comienza desde cero con nuestras guías paso a paso.',
-    seoKeywords: ['conceptos básicos', 'cursos para principiantes', 'guías paso a paso'],
-  },
-];
-
- const MiraNuestrasClases = () => {
+const MiraNuestrasClases = () => {
   return (
-    <main className="bg-gradient-to-br from-blue-50 to-blue-100 min-h-screen text-gray-800">
+    <main className="pt-6 bg-gradient-to-br from-secondary-mediumPink to-secondary-brightPink min-h-screen text-gray-800">
       <section className="px-4 py-16 md:px-8 md:py-24 lg:py-24">
         {/* Encabezado */}
         <div className={`${dancingScript.className} text-center mt-9`}>
-          <h1 className="font-bold text-gray-900 text-[2.25rem] sm:text-[3rem] md:text-[4rem]">
+          <h1 className="font-bold text-gray-900 text-[2.7rem] sm:text-[3rem] md:text-[4rem]">
             Mira nuestras clases
           </h1>
-          <p className="text-lg sm:text-xl md:text-lg lg:text-xl text-gray-600 font-sans mt-2">
-            Descubre cómo nuestras clases transforman pasiones en habilidades
-            profesionales. Aprende con expertos y prepárate para destacar.
+          <p className="text-lg md:text-3xl  font-bold mb-2 sm:text-xl  text-black font-sans mt-2 md:!mb-4">
+            Cursos especializados en salud ungueal y técnicas profesionales
+          </p>
+          <p className="text-lg xl:px-20 mb-9 sm:text-xl md:text-lg lg:text-xl text-black font-sans mt-2 md:!mb-4">
+            En nuestras capacitaciones, priorizamos la salud de las uñas y el
+            uso de productos de alta calidad para garantizar resultados
+            duraderos y seguros. Creemos que una manicura exitosa comienza con
+            el cuidado responsable de las uñas naturales, combinando técnicas
+            avanzadas con una selección cuidadosa de materiales que respetan su
+            integridad.
           </p>
         </div>
 
         {/* Información y tarjetas */}
-        <div className="grid gap-6 mt-12 md:grid-cols-3">
-          {classDetails.map((classItem, index) => (
-            <div
-              key={index}
-              className="relative group overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 bg-white"
-            >
-              <Image
-                src={classItem.src}
-                alt={`${classItem.title} - ${classItem.seoKeywords.join(', ')}`}
-                width={400}
-                height={300}
-                className="w-full h-60 object-cover group-hover:scale-110 transition-transform duration-300"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-gray-900/80 to-transparent group-hover:from-gray-900/90 transition-colors duration-300"></div>
-              <div className="absolute bottom-4 left-4 text-white z-10">
-                <h2 className="text-lg font-semibold">{classItem.title}</h2>
-                <p className="text-sm mt-2">{classItem.description}</p>
-              </div>
-              <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <button className="flex items-center gap-2 bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-600 transition-all duration-300">
-                  <HiOutlinePlusCircle size={24} />
-                  Ver más
-                </button>
-              </div>
-            </div>
-          ))}
+        <Carrusel />
+        <div className={`text-center mt-9`}>
+          <p className="text-lg mb-2 xl:px-20 sm:text-xl md:text-lg lg:text-xl text-black font-sans mt-2 md:!mb-4">
+            Cada curso está diseñado para brindarte conocimientos sólidos, desde
+            las bases de la salud ungueal hasta las últimas tendencias en diseño
+            y estilos. Con un enfoque práctico y guiado, te acompañamos en cada
+            paso para que desarrolles habilidades profesionales que te destaquen
+            en el mercado.
+          </p>
+          <p className="text-3xl md:!text-[2.5rem] mb-8 font-bold mt-4 font-title lg:!text-[3rem] text-black  md:!mb-4">
+            Aprende a cuidar, crear y emprender con confianza.
+          </p>
         </div>
 
-        {/* Llamado a la acción */}
-        <div className="mt-16 text-center">
-          <h3 className="text-2xl font-semibold text-gray-900 mb-4">
+        {/* Llamado a la acción mobile */}
+        <div className="md:hidden mt-20 text-center flex flex-col justify-center items-center">
+          <h3 className="text-2xl font-semibold text-black mb-2">
             No esperes más para alcanzar tus metas
           </h3>
-          <p className="text-gray-700 text-base mb-6">
-            Inscríbete hoy y da el primer paso hacia tu éxito. Nuestros cursos están diseñados para todas las etapas, desde principiantes hasta profesionales.
+          <p className="mb-4 text-lg  sm:text-xl md:text-lg lg:text-xl text-black font-sans mt-2 md:!mb-4">
+            Inscríbete hoy y da el primer paso hacia tu éxito. Nuestros cursos
+            están diseñados para todas las etapas, desde principiantes hasta
+            profesionales.
           </p>
-          <a
-            href="tel:+5492984207525"
-            className="inline-block bg-blue-500 text-white text-lg font-medium py-3 px-8 rounded-lg hover:bg-blue-600 transition-colors duration-300"
-          >
-            ¡Contáctanos ahora!
-          </a>
+          <ButtonLink
+            text="¡Contactanos ahora!"
+            href="/cursos/online"
+            textColor="text-black"
+          />
+        </div>
+
+        {/* CTA desktop */}
+        <div className="hidden mt-20 text-center md:flex flex-col justify-center items-center">
+          <h3 className="text-2xl font-semibold text-black mb-2">
+            No esperes más para alcanzar tus metas
+          </h3>
+          <p className="mb-4 text-lg  sm:text-xl md:text-lg lg:text-xl text-black font-sans mt-2 md:!mb-4">
+            Inscríbete hoy y da el primer paso hacia tu éxito. Nuestros cursos
+            están diseñados para todas las etapas, desde principiantes hasta
+            profesionales.
+          </p>
+          <div className="font-title bg-white lg:w-[21.37rem] p-6 rounded-lg shadow-lg flex items-center self-center mt-6 justify-center fluid-bg">
+            <a
+              href="https://wa.me/5492984207525"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="md:text-[27px] lg:text-3xl  font-semibold text-black"
+            >
+              ¡Mirá nuestras clases!
+            </a>
+          </div>
         </div>
       </section>
     </main>
   );
 };
 
-export default MiraNuestrasClases
+export default MiraNuestrasClases;

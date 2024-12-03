@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
-import Image from "next/image";
+
+import Carrusel from '@/components/Carrusel/Carrusel'
 
 interface Service {
   title: string;
@@ -110,50 +111,18 @@ const DetalleServicios = () => {
     <section className="px-6 py-10 bg-gray-50">
       <div className="max-w-screen-lg mx-auto pt-20 md:pt-28 lg:pt-32">
         {/* Sección de Introducción */}
-        <h1 className="font-title text-center font-bold text-black text-[2.25rem] sm:text-[3rem] md:text-[4rem]">
+        <h1 className="font-title mb-6 text-center font-bold text-black text-[2.25rem] sm:text-[3rem] md:text-[4rem]">
           Descubre Nuestros Servicios
         </h1>
-        <p className="text-center text-lg text-black mb-12">
+        <p className="text-center text-lg text-black mb-6">
           Cada uno de nuestros servicios está diseñado para ofrecerte la mejor
           experiencia en cuidado y belleza. Elige el que mejor se adapte a tus
           necesidades y déjanos consentirte.
         </p>
 
-        {/* Cards de Servicios */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          {services.map((service, index) => (
-            <div
-              key={index}
-              className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300"
-            >
-              <div className="relative w-full h-56">
-                <Image
-                  src={service.image}
-                  alt={service.title}
-                  layout="fill"
-                  objectFit="cover"
-                  className="rounded-t-lg"
-                />
-              </div>
-              <div className="p-6">
-                <h2 className="text-2xl font-semibold text-gray-800 mb-4">
-                  {service.title}
-                </h2>
-                <p className="text-gray-600 mb-4">{service.description}</p>
-                <ul className="list-disc list-inside text-gray-700 mb-4">
-                  {service.benefits.map((benefit, i) => (
-                    <li key={i} className="mb-2">
-                      {benefit}
-                    </li>
-                  ))}
-                </ul>
-                <button className="bg-primary text-white px-4 py-2 rounded-md hover:bg-primary-dark transition-colors duration-300">
-                  Conoce Más
-                </button>
-              </div>
-            </div>
-          ))}
-        </div>
+        
+        <Carrusel />
+
 
         {/* Sección de Preguntas Frecuentes */}
         <div className="mt-16">

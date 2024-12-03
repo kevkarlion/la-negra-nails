@@ -23,7 +23,7 @@ export const ServiceCard: React.FC<ServiceCardProps> = ({
       </div>
 
       {/* Título del servicio */}
-      <h3 className="text-xl font-semibold mb-2 text-secondary">{title}</h3>
+      <h3 className="text-xl font-semibold mb-2 text-secondary-pinkWhite">{title}</h3>
 
       {/* Descripción */}
       <p className="w-2/3 text-black font-light  text-sm z-20">{description}</p>
