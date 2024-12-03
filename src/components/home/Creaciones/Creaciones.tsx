@@ -62,12 +62,12 @@ export const Creaciones = () => {
 
   return (
     <section
-      className="p-6 bg-gradient-to-br from-secondary-brightPink to-secondary-hotPink relative text-white"
+      className="p-6  bg-gradient-to-br from-secondary-brightPink to-secondary-hotPink relative text-white"
       id="creaciones"
     >
       <div className="absolute inset-0 bg-[url('/images/marble-texture.png')] opacity-10 pointer-events-none"></div>
 
-      <div className="max-w-screen-lg mx-auto text-center px-4 flex flex-col items-center">
+      <div className="max-w-screen-lg pt-9 mx-auto text-center px-4 flex flex-col items-center">
         <h1
           className={`font-title font-bold text-black text-6xl sm:text-5xl lg:text-[5rem]`}
         >
