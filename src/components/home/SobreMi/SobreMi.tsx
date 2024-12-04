@@ -8,7 +8,7 @@ export const SobreMi: FC = () => {
   return (
     <section
       id="about"
-      className="p-6 bg-gradient-to-r from-secondary-brightPink via-secondary-deepPink to-secondary-hotPink "
+      className="flex flex-col items-center p-6 bg-gradient-to-r from-secondary-brightPink via-secondary-deepPink to-secondary-hotPink "
     >
       <div className="max-w-screen-xl ">
         <div className="text-center mb-6 w-full flex flex-col items-center">
@@ -21,7 +21,7 @@ export const SobreMi: FC = () => {
           </p>
         </div>
 
-        <div className="xl:flex xl:justify-between mt-8 xl:items-start gap-12">
+        <div className="xl:flex xl:justify-between mt-10 xl:items-start gap-12">
           {/* Imagen de Maridania */}
           <div className="xl:w-1/2 mb-8 lg:mb-0">
             <Image
@@ -104,7 +104,7 @@ export const SobreMi: FC = () => {
         </div>
         {/* href="tel:+5492984207525" */}
         {/* Sección de Testimonios */}
-        <div className="mt-16">
+        <div className="mt-16 mb-16 flex flex-col items-center">
           <h3 className="text-[2.25rem] sm:text-[3rem] lg:text-[4rem] font-title text-white text-center mb-6">
             Lo que dicen mis clientes
           </h3>

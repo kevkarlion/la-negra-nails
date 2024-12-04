@@ -75,10 +75,10 @@ const CursoPresencial = () => {
 
           {/* Descripción */}
           <div className="lg:w-1/2 mt-12 md:p-6">
-            <h2 className="text-2xl text-center sm:text-left md:text-3xl font-semibold text-black mb-4">
+            <h2 className="text-4xl text-title text-center sm:text-left  font-semibold text-black mb-4">
               ¡Transforma tu pasión en una profesión!
             </h2>
-            <p className="text-black text-center sm:text-left text-base md:text-lg mb-6">
+            <p className="text-black font-sans text-center sm:text-left text-lg md:text-lg mb-6">
               Aprende las técnicas modernas de diseño de uñas con nuestros
               cursos presenciales, diseñados para proporcionarte una experiencia
               práctica, personalizada y profesional.
@@ -86,25 +86,25 @@ const CursoPresencial = () => {
             <div className="space-y-4 mb-12">
               <div className="flex items-center p-4 bg-white shadow-lg rounded-lg border-l-4 border-pink-600">
                 <HiOutlineUserGroup size={40} className="text-pink-600 mr-4" />
-                <span className="text-black text-lg font-medium">
+                <span className="text-black font-sans text-lg font-medium">
                   Clases prácticas en pequeños grupos.
                 </span>
               </div>
               <div className="flex items-center p-4 bg-white shadow-lg rounded-lg border-l-4 border-pink-600">
                 <HiOutlineBadgeCheck size={40} className="text-pink-600 mr-4" />
-                <span className="text-black text-lg font-medium">
+                <span className="text-black font-sans text-lg font-medium">
                   Certificación profesional incluida.
                 </span>
               </div>
               <div className="flex items-center p-4 bg-white shadow-lg rounded-lg border-l-4 border-pink-600">
                 <RiToolsLine size={40} className="text-pink-600 mr-4" />
-                <span className="text-black text-lg font-medium">
+                <span className="text-black font-sans text-lg font-medium">
                   Materiales de alta calidad proporcionados.
                 </span>
               </div>
               <div className="flex items-center p-4 bg-white shadow-lg rounded-lg border-l-4 border-pink-600">
                 <RiBookOpenLine size={40} className="text-pink-600 mr-4" />
-                <span className="text-black text-lg font-medium">
+                <span className="text-black font-sans text-lg font-medium">
                   Acceso a recursos exclusivos para alumnos.
                 </span>
               </div>
