@@ -15,7 +15,7 @@ export const ServiceCard: React.FC<ServiceCardProps> = ({
 }) => {
   return (
     <div
-      className={`${propertyClassName} rounded-lg flex my-3 justify-center flex-col items-center bg-white  p-6 w-full max-w-sm text-center h-auto border-secondary-deepPink border-2`}
+      className={`${propertyClassName} rounded-lg flex  justify-center flex-col items-center bg-white  p-6 w-full max-w-sm text-center h-auto border-secondary-deepPink border-2`}
     >
       {/* Logo */}
       <div className="flex z-10 relative justify-center items-center mb-2 bg-black rounded-full w-14 h-14">

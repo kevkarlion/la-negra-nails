@@ -29,7 +29,7 @@ export const Servicios: React.FC<SectionProps> = ({ title, subtitle }) => {
         </p>
 
         {/* Cards */}
-        <div className="grid grid-cols-1 justify-items-center gap-6 mt-8 w-full sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid grid-cols-1 justify-items-center gap-6 mt-6 w-full sm:grid-cols-2 lg:grid-cols-3">
           {[
             {
               title: "Manicura tradicional",
