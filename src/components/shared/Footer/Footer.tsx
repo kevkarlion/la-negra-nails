@@ -22,8 +22,8 @@ export const Footer: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10 text-center md:text-left">
           {/* Contact Information */}
           <div className="space-y-4">
-            <h3 className="font-bold  text-xl mb-4">Contacto</h3>
-            <div className="flex flex-col items-center md:items-start space-y-2">
+            <h3 className="font-bold font-sans text-xl mb-4">Contacto</h3>
+            <div className="flex flex-col items-center  space-y-2">
               <div className="flex items-center space-x-2">
                 <FaMapMarkerAlt className="text-lg text-gray-400" />
                 <p className="font-sans text-gray-300">Calle Falsa 123</p>
@@ -41,8 +41,8 @@ export const Footer: React.FC = () => {
 
           {/* Social Media */}
           <div className="space-y-4">
-            <h3 className="font-bold text-xl mb-4">Síguenos en Redes</h3>
-            <div className="flex justify-center md:justify-start space-x-6">
+            <h3 className="font-sans font-bold text-xl mb-4">Síguenos en Redes</h3>
+            <div className="flex justify-center  space-x-6">
               <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="text-2xl text-gray-300 hover:text-gray-500">
                 <FaInstagram />
               </a>
@@ -57,8 +57,8 @@ export const Footer: React.FC = () => {
 
           {/* Opening Hours */}
           <div className="space-y-4">
-            <h3 className="font-bold text-xl mb-4">Horarios de atención</h3>
-            <div className="flex flex-col items-center md:items-start space-y-1">
+            <h3 className="font-sans font-bold text-xl mb-4">Horarios de atención</h3>
+            <div className="flex flex-col items-center text-left space-y-1">
               <p className="font-sans text-gray-300">Lunes a Viernes: 8hs a 16hs</p>
               <p className="font-sans text-gray-300">Sábado y Domingo: Cerrado</p>
               <p className="font-sans text-gray-300">Feriado: Cerrado</p>

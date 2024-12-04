@@ -86,7 +86,7 @@ export const Servicios: React.FC<SectionProps> = ({ title, subtitle }) => {
           />
           <ButtonLink
             text="Dónde encontrarnos"
-            href="https://wa.me/5492984207525" 
+            href="#footer"
             textColor="text-black"
           />
         </div>
@@ -95,6 +95,7 @@ export const Servicios: React.FC<SectionProps> = ({ title, subtitle }) => {
           
           <Link
             href="#footer"
+            
             className="bg-white w-1/2 p-6 rounded-lg shadow-lg flex items-center justify-center fluid-bg"
           >
             <h3

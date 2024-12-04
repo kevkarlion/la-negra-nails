@@ -1,9 +1,9 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
-import Link from "next/link";
 
-import { ButtonLink } from "@/components/shared/Buttons/Button";
+
+
 const images = [
   {
     src: "/images/carrusel/image1.webp",
@@ -62,18 +62,18 @@ export const Creaciones = () => {
 
   return (
     <section
-      className="p-6  bg-gradient-to-br from-secondary-brightPink to-secondary-hotPink relative text-white"
+      className="p-6 bg-gradient-to-br from-secondary-brightPink to-secondary-hotPink relative text-white"
       id="creaciones"
     >
       <div className="absolute inset-0 bg-[url('/images/marble-texture.png')] opacity-10 pointer-events-none"></div>
 
-      <div className="max-w-screen-lg pt-9 mx-auto text-center px-4 flex flex-col items-center">
+      <div className="max-w-screen-lg pt-9 mx-auto text-center flex flex-col items-center">
         <h1
           className={`font-title font-bold text-black text-6xl sm:text-5xl lg:text-[5rem]`}
         >
           Creaciones
         </h1>
-        <p className="mt-2 w-full sm:w-4/6 text-black font-light text-lg sm:text-xl">
+        <p className="mt-2 font-sans w-full sm:w-4/6 text-black font-light text-lg sm:text-xl">
           Cada diseño de uñas es una expresión única de estilo y personalidad.
           Usamos técnicas innovadoras y productos de alta calidad para ofrecerte
           arte y precisión.
@@ -122,25 +122,33 @@ export const Creaciones = () => {
         </div>
       </div>
 
-      <div className="hidden md:flex md:justify-center w-full mx-auto mt-14">
-        <Link
-          href="https://wa.me/5492984207525"
-          target="_blank" 
-          rel="noopener noreferrer"
-          className="bg-white p-6 w-1/2 rounded-lg shadow-lg flex items-center justify-center fluid-bg"
-        >
-          <h3 className=" md:text-[27px] lg:text-3xl font-title  font-semibold text-black">
-            ¡Reservá tu cita!
-          </h3>
-        </Link>
+            {/* CTA desktop */}
+      <div className="hidden md:flex md:justify-center w-full mb-8 mx-auto mt-14">
+        <a
+            href="https://wa.me/5492984207525"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-white p-6 w-1/2 rounded-lg shadow-lg flex items-center justify-center fluid-bg"
+          >
+            <h3 className="text-xl md:text-[27px] lg:text-3xl font-title  font-semibold text-black">
+              ¡Reservá tu cita!
+            </h3>
+          </a>
       </div>
+      {/* Botón de llamada a la acción  mobile*/}
+
+      {/* CTA mobile */}
       <div className="flex flex-col justify-center items-center mt-8 mb-8 md:hidden">
-        <ButtonLink
-          text="¡Reservá tu cita!"
+      <a
           href="https://wa.me/5492984207525"
-          borderColor="border-[#ff1a84]"
-          textColor="text-black"
-        />
+          target="_blank"
+          rel="noopener noreferrer"
+          className="md:hidden w-[19rem] h-7 relative flex items-center justify-center px-6 py-2 text-md font-semibold transition duration-300 ease-in-out rounded-lg shadow-lg overflow-hidden group fluid-bg text-center mb-4"
+        >
+          <h3 className="text-xl md:text-[27px] lg:text-3xl font-title  font-semibold text-black">
+          ¡Reservá tu cita!
+          </h3>
+        </a>
       </div>
     </section>
   );

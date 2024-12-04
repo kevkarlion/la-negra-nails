@@ -7,6 +7,17 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import "./globals.css";
 
 
+import { Dancing_Script } from 'next/font/google';
+
+// Carga la fuente con pesos específicos
+const title = Dancing_Script({
+  subsets: ['latin'],
+  weight: ['400', '700'], // Opcional: ajusta según necesites
+  display: 'swap', // Mejora la experiencia de carga
+});
+
+
+
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -24,7 +35,7 @@ export default function RootLayout({
       <body
         
       >
-        <main className="flex flex-col min-h-screen bg-transparent">
+        <main className={` ${title.className} flex flex-col min-h-screen bg-transparent`}>
           <Header /> 
           <SocialCTA />                           
           { children }

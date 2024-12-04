@@ -117,7 +117,7 @@ export const Header: React.FC = () => {
               </div>
             </button>
 
-            <nav className={` hidden lg:flex items-center space-x-6`}>
+            <nav className={` hidden lg:flex items-center space-x-6 `}>
               {[
                 { label: "Inicio", hash: "#inicio" },
                 { label: "Cursos", hash: "#cursos" },
@@ -134,7 +134,7 @@ export const Header: React.FC = () => {
                       handleNavigate(hash);
                     }
                   }}
-                  className={` text-white text-sm font-semibold hover:text-gray-400 transition-all duration-200`}
+                  className={`font-sans text-white text-sm font-semibold hover:text-gray-400 transition-all duration-200`}
                 >
                   {/* Manejo de Cursos y submenus segun el url*/}
                   {label === "Cursos" ? (
