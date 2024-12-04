@@ -237,7 +237,7 @@ export const Header: React.FC = () => {
                             handleNavigate(hash);
                           }
                         }}
-                        className={` text-white font-semibold hover:text-gray-400 transition-all duration-200`}
+                        className={` text-white font-sans font-semibold hover:text-gray-400 transition-all duration-200`}
                       >
                         {/* Manejo de Cursos y submenus segun el url*/}
                         {label === "Cursos" ? (
