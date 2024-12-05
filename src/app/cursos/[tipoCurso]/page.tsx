@@ -2,7 +2,7 @@
 
 import { useParams } from "next/navigation";
 import CursoPresencial from "@/pages/CursoPresencial/CursoPresencial";
-import CursoOnline from "@/pages/CursoOnline/CursoOnline";
+// import CursoOnline from "@/pages/CursoOnline/CursoOnline";
 import MiraNuestrasClases from "@/pages/CursoClases/CursoClases";
 
 const Page = () => {
@@ -16,7 +16,7 @@ const Page = () => {
   // Mapeo de los valores del parámetro a componentes
   const pages: Record<string, JSX.Element> = {
     presencial: <CursoPresencial />,
-    online: <CursoOnline />,
+    // online: <CursoOnline />,
     clases: <MiraNuestrasClases />,
   };
 

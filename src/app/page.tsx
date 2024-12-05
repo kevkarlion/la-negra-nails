@@ -27,8 +27,14 @@ export default function Home() {
             href="/cursos/presencial"
             textColor="text-black"
           />
+          {/* <ButtonLink
+            text="Online (Próximamente)"
+            href="/cursos/online"
+            textColor="text-black "
+          /> */}
+          
           <ButtonLink
-            text="Online"
+            text="Online (Próximamente)"
             href="/cursos/online"
             textColor="text-black "
           />

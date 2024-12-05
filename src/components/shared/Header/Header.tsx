@@ -116,7 +116,7 @@ export const Header: React.FC = () => {
                 />
               </div>
             </button>
-
+            {/* Navbar desktop */}
             <nav className={` hidden lg:flex items-center space-x-6 `}>
               {[
                 { label: "Inicio", hash: "#inicio" },
@@ -159,11 +159,11 @@ export const Header: React.FC = () => {
                           } space-y-2 text-white absolute z-50 flex flex-col items-start top-[60px]  bg-black p-3 list-none transicion-all duration-500 ease-linear  opacity-100 translate-y-0 `}
                         >
                           <li className="text-white text-sm font-medium hover:text-gray-400 transition-all duration-200">
-                            <Link href="/cursos/presencial">Presenciales</Link>
+                            <Link href="/cursos/presencial">Presencial</Link>
                           </li>
-                          <li className="text-white text-sm font-medium hover:text-gray-400 transition-all duration-200">
+                          {/* <li className="text-white text-sm font-medium hover:text-gray-400 transition-all duration-200">
                             <Link href="/cursos/online">Online</Link>
-                          </li>
+                          </li> */}
                           <li className="text-white text-sm font-medium hover:text-gray-400 transition-all duration-200">
                             <Link href="/cursos/clases">
                               Mira nuestras clases
@@ -270,7 +270,7 @@ export const Header: React.FC = () => {
                                     Presencial
                                   </Link>
                                 </li>
-                                <li className="submenu-item group focus:bg-[#FFD700] active:bg-[#FFD700] p-2 rounded-md transition-all duration-200">
+                                {/* <li className="submenu-item group focus:bg-[#FFD700] active:bg-[#FFD700] p-2 rounded-md transition-all duration-200">
                                   <Link
                                     onClick={() => setIsMenuOpen(false)}
                                     className="text-white text-sm font-medium group-focus:text-black group-active:text-black"
@@ -278,7 +278,7 @@ export const Header: React.FC = () => {
                                   >
                                     Online
                                   </Link>
-                                </li>
+                                </li> */}
                                 <li className="submenu-item group focus:bg-[#FFD700] active:bg-[#FFD700] p-2 rounded-md transition-all duration-200">
                                   <Link
                                     onClick={() => setIsMenuOpen(false)}

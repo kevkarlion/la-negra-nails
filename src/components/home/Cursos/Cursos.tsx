@@ -5,8 +5,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { ButtonLink } from "@/components/shared/Buttons";
 
-
-
 interface SectionProps {
   title: string;
   subtitle: string;
@@ -29,6 +27,7 @@ export const Cursos: React.FC<SectionProps> = ({
 }) => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [fade, setFade] = useState(true);
+  const [showTooltip, setShowTooltip] = useState(false);
 
   useEffect(() => {
     const intervalId = setInterval(() => {
@@ -116,6 +115,7 @@ export const Cursos: React.FC<SectionProps> = ({
         </div>
       </div>
 
+                {/* Desktop */}
       <div className="hidden  md:flex justify-center flex-col">
         <h3 className="hidden md:flex md:self-center md:mt-12 md:mb-6 text-black text-[2rem] font-title sm:text-[3rem]">
           Modalidades
@@ -129,13 +129,19 @@ export const Cursos: React.FC<SectionProps> = ({
               Presencial
             </Link>
           </div>
-          <div className="flex-1 min-w-[calc(50%-1rem)] font-title bg-white p-6 rounded-lg shadow-lg flex items-center justify-center fluid-bg">
-            <Link
-              href="/cursos/online"
-              className="md:text-[27px] lg:text-3xl font-semibold text-black"
-            >
-              Online
-            </Link>
+          <div
+            className="flex-1 min-w-[calc(50%-1rem)] font-title bg-white p-6 rounded-lg shadow-lg flex items-center justify-center fluid-bg relative"
+            onMouseEnter={() => setShowTooltip(true)}
+            onMouseLeave={() => setShowTooltip(false)}
+          >
+            <div className="md:text-[27px] cursor-pointer lg:text-3xl font-semibold text-black">
+              Online (Próximamente)
+            </div>
+            {showTooltip && (
+              <div className="absolute top-full mt-2 font-sans bg-white text-secondary-brightPink text-sm p-2 rounded shadow-lg">
+                Estamos trabajando para ofrecerte una experiencia de aprendizaje desde casa
+              </div>
+            )}
           </div>
         </div>
       </div>
