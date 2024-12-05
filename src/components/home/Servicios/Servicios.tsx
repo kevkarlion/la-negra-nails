@@ -301,6 +301,7 @@ interface Servicio {
   title: string;
   description: string;
   description2?: string;
+  description3?: string,
   image: string;
 }
 
@@ -317,6 +318,8 @@ const servicios: Servicio[] = [
       "La Pedicura Caribeña es una experiencia única que combina cuidado profesional con la frescura y los aromas del Caribe. Este tratamiento está diseñado para embellecer y revitalizar tus pies, priorizando la salud de la piel y las uñas, mientras disfrutas de productos inspirados en ingredientes naturales como coco y aceites naturales.",
     description2:
       "Con un enfoque en la relajación y el bienestar, este servicio incluye exfoliación, hidratación profunda y técnicas avanzadas de pedicura, todo realizado con productos de alta calidad que nutren y reparan. Ideal para quienes desean lucir pies impecables y sentir la frescura del Caribe en cada detalle.",
+      description3:
+      "Déjate llevar por esta experiencia tropical y dale a tus pies el cuidado que merecen.",
     image: "/images/carrusel/pedicura-spa.webp",
   },
   {
@@ -388,7 +391,7 @@ export const Servicios = () => {
   };
 
   return (
-    <section className="px-6 pt-6 pb-24 bg-secondary-mediumPink" id="servicios">
+    <section className="px-6 pt-6 pb-6 md:pb-16 bg-secondary-mediumPink" id="servicios">
       <div className="max-w-screen-lg mx-auto md:pt-28 lg:pt-32">
         {/* Sección de Introducción */}
         <h1 className="font-title mb-2 mt-9 text-center font-bold text-black text-[3.75rem] sm:text-[3rem] md:text-[4rem]">
@@ -423,20 +426,24 @@ export const Servicios = () => {
               </div>
               {/* Contenido */}
               <div className="p-6 flex flex-col justify-items">
-                <h2 className="text-xl font-sans font-bold text-secondary-hotPink mb-4 border-b-2 border-black">
+                <h2 className="text-xl font-sans font-bold text-secondary-hotPink mb-4 border-b-2 border-tertiary">
                   {servicio.title}
                 </h2>
                 <p className="text-gray-700 text-sm font-sans">
                   {servicio.description}
                 </p>
                 {!isMobile && servicio.description2 && (
-                  <p className="text-gray-700 text-sm font-sans mt-2">
+                  <p className="text-gray-700 text-sm font-sans">
                     {servicio.description2}
+                    {<br />}
+                    {servicio.description3}
                   </p>
                 )}
                 {isMobile && expandedCards.includes(index) && servicio.description2 && (
-                  <p className="text-gray-700 text-sm font-sans mt-2">
+                  <p className="text-gray-700 text-sm font-sans">
                     {servicio.description2}
+                    {<br />}
+                    {servicio.description3}
                   </p>
                 )}
                 {isMobile && servicio.description2 && (

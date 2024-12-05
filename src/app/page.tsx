@@ -35,7 +35,7 @@ export default function Home() {
           
           <ButtonLink
             text="Online (Próximamente)"
-            href="/cursos/online"
+            href="#"
             textColor="text-black "
           />
           
