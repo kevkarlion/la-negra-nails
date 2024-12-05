@@ -295,6 +295,7 @@
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { ButtonLink } from "@/components/shared/Buttons"
 
 interface Servicio {
   title: string;
@@ -452,7 +453,7 @@ export const Servicios = () => {
         </div>
 {/* Sección de Preguntas Frecuentes */}
          <div className="mt-16">
-           <h2 className="text-3xl font-sans font-bold text-center text-black mb-6">
+           <h2 className="text-3xl font-sans mt-24 font-bold text-center text-black mb-6">
              Preguntas Frecuentes
            </h2>
            <div className="space-y-6">
@@ -466,19 +467,35 @@ export const Servicios = () => {
             ))}
           </div>
         </div>
+       
+        {/* Botones */}
+         <div className="flex flex-col justify-center items-center mt-8 mb-8 md:hidden">
+          
+          <ButtonLink
+            text="Dónde encontrarnos"
+            href="#footer"
+            textColor="text-black"
+          />
+        </div>
+
         <div className="hidden md:flex justify-center gap-4 w-3/4 mx-auto md:grid-cols-2 mt-14">
+          
           <Link
             href="#footer"
+            
             className="bg-white w-1/2 p-6 rounded-lg shadow-lg flex items-center justify-center fluid-bg"
           >
             <h3
-              className={`md:text-[27px] lg:text-3xl font-title font-semibold text-black`}
+              className={`md:text-[27px] lg:text-3xl font-title  font-semibold text-black`}
             >
               Dónde encontrarnos
             </h3>
           </Link>
+        
         </div>
+      
       </div>
+      
     </section>
   );
 };
