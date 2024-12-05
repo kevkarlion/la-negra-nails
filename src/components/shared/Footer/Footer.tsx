@@ -1,7 +1,7 @@
 // components/Footer.tsx
 import React from 'react';
 import Image from 'next/image';
-import { FaMapMarkerAlt, FaPhoneAlt, FaEnvelope, FaInstagram, FaYoutube, FaFacebook } from 'react-icons/fa';
+import { FaMapMarkerAlt, FaEnvelope, FaInstagram, FaFacebook, FaWhatsapp } from 'react-icons/fa';
 
 export const Footer: React.FC = () => {
   return (
@@ -26,15 +26,15 @@ export const Footer: React.FC = () => {
             <div className="flex flex-col items-center  space-y-2">
               <div className="flex items-center space-x-2">
                 <FaMapMarkerAlt className="text-lg text-gray-400" />
-                <p className="font-sans text-gray-300">Calle Falsa 123</p>
+                <a href="https://maps.app.goo.gl/Z3cmciywEhxdb5mAA" target="_blank" rel="noopener noreferrer"><p className="font-sans text-gray-300">Misiónes 1675, local 4. General Roca - Río Negro</p></a>
               </div>
               <div className="flex items-center space-x-2">
-                <FaPhoneAlt className="text-lg text-gray-400" />
-                <p className="font-sans text-gray-300">(+54) 123-456-789</p>
+                <FaWhatsapp className="text-lg text-gray-400" />
+                <a href="https://wa.me/5492984207525" target="_blank" rel="noopener noreferrer"><p className="font-sans text-gray-300">298-4207525</p></a>
               </div>
               <div className="flex items-center space-x-2">
                 <FaEnvelope className="text-lg text-gray-400" />
-                <p className="font-sans text-gray-300">contacto@tuemprendimiento.com</p>
+                <a href="mailto:maridaniagarciagroup@gmail.com" target="_blank" rel="noopener noreferrer"><p className="font-sans text-gray-300">maridaniagarciagroup@gmail.com</p></a>
               </div>
             </div>
           </div>
@@ -46,8 +46,8 @@ export const Footer: React.FC = () => {
               <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="text-2xl text-gray-300 hover:text-gray-500">
                 <FaInstagram />
               </a>
-              <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" className="text-2xl text-gray-300 hover:text-gray-500">
-                <FaYoutube />
+              <a href="https://wa.me/5492984207525" target="_blank" rel="noopener noreferrer" className="text-2xl text-gray-300 hover:text-gray-500">
+                <FaWhatsapp />
               </a>
               <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="text-2xl text-gray-300 hover:text-gray-500">
                 <FaFacebook />

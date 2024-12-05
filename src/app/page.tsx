@@ -42,8 +42,8 @@ export default function Home() {
         </div>
       </Cursos>
       <Servicios
-        title="Nuestros Servicios"
-        subtitle="Descubre nuestro servicio de uñas diseñados para realzar tu estilo, combinando arte y cuidado profesional para que luzcas manos impecables en cada ocasión"
+        // title="Nuestros Servicios"
+        // subtitle="Descubre nuestro servicio de uñas diseñados para realzar tu estilo, combinando arte y cuidado profesional para que luzcas manos impecables en cada ocasión"
       />
       <Creaciones />
       <Banner logoSrc="/logos/logo-dorado-white-nvo.png" />

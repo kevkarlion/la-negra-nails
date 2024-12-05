@@ -106,7 +106,7 @@ const DetalleServicios = () => {
               />
               {/* Contenido */}
               <div className="p-6">
-                <h2 className="text-xl font-sans font-bold text-gray-900 mb-4">
+                <h2 className="text-xl font-sans font-bold text-secondary-hotPink mb-4 border-b-2 border-black ">
                   {servicio.title}
                 </h2>
                 <p className="text-gray-700 text-sm font-sans">{servicio.description}</p>
