@@ -28,7 +28,7 @@ export const Banner: React.FC<BannerProps> = ({ logoSrc }) => {
               <Image
                 src={logoSrc}
                 alt="Logo del emprendimiento"
-                layout="responsive"
+                
                 width={350}  // Anchura base
                 height={200} // Altura base
                 className="object-contain"

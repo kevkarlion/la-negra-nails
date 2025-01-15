@@ -332,13 +332,13 @@ const servicios: Servicio[] = [
     title: "SOFT gel",
     description:
       "Un tratamiento de uñas que utiliza un gel ligero y flexible, ideal para lograr un acabado natural y duradero.",
-    image: "/images/carrusel/soft-gel.webp",
+    image: "/images/carrusel/soft-gel-blancas.webp",
   },
   {
     title: "Kapping gel",
     description:
       "Técnica que cubre y protege las uñas naturales con una capa de gel, acrílico o polygel, sin extender su longitud.",
-    image: "/images/carrusel/image9.webp",
+    image: "/images/carrusel/image9-kapping.webp",
   },
 ];
 

@@ -11,6 +11,7 @@ export default function Home() {
   return (
     <div className="w-full relative z-0">
       <Hero />
+      <Banner logoSrc="/logos/logo-dorado-white-nvo.png" />
       <Cursos
         title="Cursos Profesionales"
         subtitle="Transforma tu pasión en una profesión. Aprende a proteger la
@@ -46,7 +47,7 @@ export default function Home() {
         // subtitle="Descubre nuestro servicio de uñas diseñados para realzar tu estilo, combinando arte y cuidado profesional para que luzcas manos impecables en cada ocasión"
       />
       <Creaciones />
-      <Banner logoSrc="/logos/logo-dorado-white-nvo.png" />
+      
       <SobreMi />
     </div>
   );

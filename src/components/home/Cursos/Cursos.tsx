@@ -13,10 +13,13 @@ interface SectionProps {
 }
 
 const imagePaths = [
-  "/images/sobre-mi.webp",
-  "/images/sobre-mi1.webp", // Añade más rutas de imágenes
-  "/images/sobre-mi2.webp",
-  "/images/sobre-mi3.webp",
+  "/images/cursos/image1.webp",
+  "/images/cursos/image2.webp", // Añade más rutas de imágenes
+  "/images/cursos/image3.webp",
+  "/images/cursos/image4.webp",
+  "/images/cursos/image5.webp",
+  "/images/cursos/image6.webp"
+  
 ];
 
 export const Cursos: React.FC<SectionProps> = ({
@@ -82,8 +85,9 @@ export const Cursos: React.FC<SectionProps> = ({
             <Image
               src={imagePaths[currentImageIndex]}
               alt="Imagen de la sección"
-              objectFit="cover"
-              layout="fill"
+               fill
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+              style={{objectFit: 'cover'}}
               className={`transition-opacity duration-500 ${
                 fade ? "opacity-100" : "opacity-0"
               }`}

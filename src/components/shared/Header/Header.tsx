@@ -84,7 +84,6 @@ export const Header: React.FC = () => {
     setShowMenu(false);
   };
 
-  console.log(isLoaded);
   return (
     <header>
       {isLoaded && (<div

@@ -1,8 +1,8 @@
 "use client";
-import React, { useState, useEffect } from "react";
+
+import React from "react";
+import { Carousel } from "react-bootstrap";
 import Image from "next/image";
-
-
 
 const images = [
   {
@@ -20,46 +20,85 @@ const images = [
     leftDetail: "Detalle izquierdo 3",
     rightDetail: "Detalle derecho 3",
   },
+  {
+    src: "/images/carrusel/image4.webp",
+    leftDetail: "Detalle izquierdo 3",
+    rightDetail: "Detalle derecho 3",
+  },
+  {
+    src: "/images/carrusel/image5.webp",
+    leftDetail: "Detalle izquierdo 3",
+    rightDetail: "Detalle derecho 3",
+  },
+  {
+    src: "/images/carrusel/image6.webp",
+    leftDetail: "Detalle izquierdo 3",
+    rightDetail: "Detalle derecho 3",
+  },
+  {
+    src: "/images/carrusel/image7.webp",
+    leftDetail: "Detalle izquierdo 3",
+    rightDetail: "Detalle derecho 3",
+  },
+  {
+    src: "/images/carrusel/image8.webp",
+    leftDetail: "Detalle izquierdo 3",
+    rightDetail: "Detalle derecho 3",
+  },
+  {
+    src: "/images/carrusel/image9.webp",
+    leftDetail: "Detalle izquierdo 3",
+    rightDetail: "Detalle derecho 3",
+  },
+  {
+    src: "/images/carrusel/image10.webp",
+    leftDetail: "Detalle izquierdo 3",
+    rightDetail: "Detalle derecho 3",
+  },
+  {
+    src: "/images/carrusel/image11.webp",
+    leftDetail: "Detalle izquierdo 3",
+    rightDetail: "Detalle derecho 3",
+  },
+  {
+    src: "/images/carrusel/image12.webp",
+    leftDetail: "Detalle izquierdo 3",
+    rightDetail: "Detalle derecho 3",
+  },
+  {
+    src: "/images/carrusel/image13.webp",
+    leftDetail: "Detalle izquierdo 3",
+    rightDetail: "Detalle derecho 3",
+  },
+  {
+    src: "/images/carrusel/image14.webp",
+    leftDetail: "Detalle izquierdo 3",
+    rightDetail: "Detalle derecho 3",
+  },
+  {
+    src: "/images/carrusel/image15.webp",
+    leftDetail: "Detalle izquierdo 3",
+    rightDetail: "Detalle derecho 3",
+  },
+  {
+    src: "/images/carrusel/image16.webp",
+    leftDetail: "Detalle izquierdo 3",
+    rightDetail: "Detalle derecho 3",
+  },
+  {
+    src: "/images/carrusel/image17.webp",
+    leftDetail: "Detalle izquierdo 3",
+    rightDetail: "Detalle derecho 3",
+  },
+  {
+    src: "/images/carrusel/image9-kapping.webp",
+    leftDetail: "Detalle izquierdo 3",
+    rightDetail: "Detalle derecho 3",
+  },
+  // Añadir más imágenes según sea necesario
 ];
 
-
 export const Creaciones = () => {
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [rotation, setRotation] = useState<number[]>(
-    Array(images.length).fill(0)
-  );
-
-  useEffect(() => {
-    const checkImageOrientation = async () => {
-      const newRotation = await Promise.all(
-        images.map(async (image) => {
-          const img = document.createElement("img"); // Crea un elemento de imagen HTML
-          img.src = image.src; // Asigna la fuente
-          return new Promise<number>((resolve) => {
-            img.onload = () => {
-              resolve(img.height > img.width ? 90 : 0); // Si es vertical, rota 90°
-            };
-          });
-        })
-      );
-      setRotation(newRotation);
-    };
-
-    checkImageOrientation();
-  }, []);
-
-  const handlePrev = () => {
-    setCurrentIndex((prevIndex) =>
-      prevIndex === 0 ? images.length - 1 : prevIndex - 1
-    );
-  };
-
-  const handleNext = () => {
-    setCurrentIndex((prevIndex) =>
-      prevIndex === images.length - 1 ? 0 : prevIndex + 1
-    );
-  };
-
   return (
     <section
       className="p-6 bg-gradient-to-br from-secondary-brightPink to-secondary-hotPink relative text-white"
@@ -81,72 +120,54 @@ export const Creaciones = () => {
       </div>
 
       <div className="flex items-center justify-center mt-2 p-2 md:m-8">
-        <div className="relative w-full max-w-6xl overflow-hidden">
-          <div
-            className="flex transition-transform duration-700"
-            style={{ transform: `translateX(-${currentIndex * 100}%)` }}
-          >
+        <div className="w-full max-w-6xl">
+          <Carousel>
             {images.map((image, index) => (
-              <div
-                key={index}
-                className="min-w-full h-[400px] md:h-[700px] flex items-center justify-center bg-black"
-                
-              >
-                <Image
-                  src={image.src}
-                  alt={`Imagen ${index + 1}`}
-                  width={800}
-                  height={600}
-                  objectFit="cover"
-                  className="rounded-lg shadow-lg"
-                  style={{
-                    transform: `rotate(${rotation[index]}deg)`, // Rotación dinámica
-                  }}
-                />
-              </div>
+              <Carousel.Item key={index}>
+                <div className="flex justify-center items-center h-[400px] md:h-[700px] bg-black">
+                  <Image
+                    src={image.src}
+                    alt={`Imagen ${index + 1}`}
+                    width={800}
+                    height={1200}
+                    className="rounded-lg shadow-lg"
+                    style={{
+                      objectFit: "contain",
+                      objectPosition: "center",
+                    }}
+                    quality={85}
+                    priority
+                  />
+                </div>
+              
+              </Carousel.Item>
             ))}
-          </div>
-
-          <button
-            onClick={handlePrev}
-            className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-quaternary-red/80 hover:bg-quaternary-darkPink/90 text-white p-3 rounded-full"
-          >
-            ❮
-          </button>
-          <button
-            onClick={handleNext}
-            className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-quaternary-red/80 hover:bg-quaternary-darkPink/90 text-white p-3 rounded-full"
-          >
-            ❯
-          </button>
+          </Carousel>
         </div>
       </div>
 
-            {/* CTA desktop */}
       <div className="hidden md:flex md:justify-center w-full mb-8 mx-auto mt-14">
         <a
-            href="https://wa.me/5492984207525"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="bg-white p-6 w-1/2 rounded-lg shadow-lg flex items-center justify-center fluid-bg"
-          >
-            <h3 className="text-xl md:text-[27px] lg:text-3xl font-title  font-semibold text-black">
-              ¡Reservá tu cita!
-            </h3>
-          </a>
-      </div>
-      {/* Botón de llamada a la acción  mobile*/}
-
-      {/* CTA mobile */}
-      <div className="flex flex-col justify-center items-center mt-8 mb-8 md:hidden">
-      <a
           href="https://wa.me/5492984207525"
           target="_blank"
           rel="noopener noreferrer"
-          className="md:hidden w-[19rem] h-7 relative flex items-center justify-center px-6 py-2 text-md font-semibold transition duration-300 ease-in-out rounded-lg shadow-lg overflow-hidden group fluid-bg text-center mb-4"
+          className="bg-white p-6 w-1/2 rounded-lg shadow-lg flex items-center justify-center fluid-bg"
         >
           <h3 className="text-xl md:text-[27px] lg:text-3xl font-title  font-semibold text-black">
-          ¡Reservá tu cita!
+            ¡Reservá tu cita!
+          </h3>
+        </a>
+      </div>
+
+      <div className="flex flex-col justify-center items-center mt-8 mb-8 md:hidden">
+        <a
+          href="https://wa.me/5492984207525"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="w-[19rem] h-7 relative flex items-center justify-center px-6 py-2 text-md font-semibold transition duration-300 ease-in-out rounded-lg shadow-lg overflow-hidden group fluid-bg text-center mb-4"
+        >
+          <h3 className="text-xl md:text-[27px] lg:text-3xl font-title  font-semibold text-black">
+            ¡Reservá tu cita!
           </h3>
         </a>
       </div>

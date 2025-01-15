@@ -25,7 +25,7 @@ export const Footer: React.FC = () => {
             <h3 className="font-bold font-sans text-xl mb-4">Contacto</h3>
             <div className="flex flex-col items-center  space-y-2">
               <div className="flex items-center space-x-2">
-                <FaMapMarkerAlt className="text-lg text-gray-400" />
+                <FaMapMarkerAlt className="text-lg text-gray-400 self-start" />
                 <a href="https://maps.app.goo.gl/Z3cmciywEhxdb5mAA" target="_blank" rel="noopener noreferrer"><p className="font-sans text-gray-300">Misiónes 1675, local 4. General Roca - Río Negro</p></a>
               </div>
               <div className="flex items-center space-x-2">

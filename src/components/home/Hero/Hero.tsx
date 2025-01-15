@@ -28,8 +28,8 @@ export const Hero: React.FC = () => {
 
         {/* Subtítulo con fuente moderna */}
         <h2 className="text-white mb-4 font-sans text-xl md:text-3xl font-semibold w-4/5 md:w-3/5 leading-snug md:leading-relaxed tracking-wide">
-          Estilo y elegancia con el cuidado que tus uñas merecen. ¡Luce
-          impecable y saludable!
+          Estilo y elegancia con el cuidado que tus uñas merecen. <br /><span>¡Luce
+          impecable y saludable!</span>
         </h2>
 
         {/* Botón de llamada a la acción  mobile*/}

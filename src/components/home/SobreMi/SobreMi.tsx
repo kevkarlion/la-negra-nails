@@ -40,7 +40,7 @@ export const SobreMi: FC = () => {
             </h3>
             <p className="text-center lg:text-left font-sans text-lg lg:text-xl text-white font-light leading-relaxed mt-4">
               Mi nombre es Maridania García, soy nacida en República Dominicana
-              pero vivo en Argentina desde 2010.
+              pero vivo en Argentina desde 2011.
             </p>
             <p className="text-center lg:text-left font-sans text-lg lg:text-xl text-white font-light leading-relaxed mt-4">
               Mi pasión por las uñas empezó cuando tenía 14 años, estudié
@@ -111,25 +111,37 @@ export const SobreMi: FC = () => {
           <div className="flex flex-wrap justify-center gap-6">
             <div className="font-sans w-full sm:w-1/3 p-4 bg-white/30 backdrop-blur-lg rounded-lg shadow-lg text-white">
               <p className="text-lg italic mb-4">
-                ¡Maridania siempre hace magia con mis uñas! Cada diseño refleja
-                exactamente lo que quiero, ¡es una verdadera artista!
+              ¡Increíble servicio y atención al detalle! Mis uñas quedaron espectaculares, y la experiencia fue súper relajante. Sin duda, volveré negrita, besos...
+
               </p>
-              <p className="font-semibold">Lucía M.</p>
+              <p className="font-semibold font-sans">Marcela Beatriz Álvarez
+</p>
             </div>
             <div className="w-full sm:w-1/3 p-4 bg-white/30 backdrop-blur-lg rounded-lg shadow-lg text-white">
               <p className="font-sans text-lg italic mb-4">
-                No solo me encanta el diseño, sino que su atención al detalle y
-                su dedicación me hicieron sentir muy cómoda. ¡Totalmente
-                recomendada!
+              No solo me encantaron mis uñas, sino que también me llevé muchos consejos útiles para el cuidado en casa. El ambiente es muy profesional e higienico
               </p>
-              <p className="font-semibold">Karina S.</p>
+              <p className="font-semibold font-sans">Livia Mexi
+              </p>
+            </div>
+            <div className="w-full sm:w-1/3 p-4 bg-white/30 backdrop-blur-lg rounded-lg shadow-lg text-white">
+              <p className="font-sans text-lg italic mb-4 ">
+              Las capacitaciones fueron excepcionales. Aprendí técnicas modernas y prácticas de negocio que cambiaron mi enfoque profesional. ¡Altamente recomendado!
+              </p>
+              <p className="font-semibold font-sans">Zoe riffo
+              </p>
             </div>
             <div className="w-full sm:w-1/3 p-4 bg-white/30 backdrop-blur-lg rounded-lg shadow-lg text-white">
               <p className="font-sans text-lg italic mb-4">
-                El mejor lugar para hacerme las uñas. Cada visita es una
-                experiencia única, siempre salgo feliz con los resultados.
+              La mejor inversión que he hecho fue inscribirme en este curso. Aprendí todo lo necesario para comenzar mi propio emprendimiento de uñas con seguridad y calidad.
               </p>
-              <p className="font-semibold">Sofía L.</p>
+              <p className="font-semibold font-sans">Marianela packo</p>
+            </div>
+            <div className="w-full sm:w-1/3 p-4 bg-white/30 backdrop-blur-lg rounded-lg shadow-lg text-white">
+              <p className="font-sans text-lg italic mb-4">
+              La creatividad y el profesionalismo que tienes negri es increíble . Siempre salgo feliz con diseños únicos, gracias.
+              </p>
+              <p className="font-semibold font-sans">Poli Ramírez</p>
             </div>
           </div>
         </div>
