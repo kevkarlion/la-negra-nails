@@ -124,12 +124,12 @@ export const Creaciones = () => {
           <Carousel>
             {images.map((image, index) => (
               <Carousel.Item key={index}>
-                <div className="flex justify-center items-center h-[400px] md:h-[700px] bg-black">
+                <div className="flex justify-center items-center h-[600px] md:h-[800px] bg-black">
                   <Image
                     src={image.src}
                     alt={`Imagen ${index + 1}`}
-                    width={800}
-                    height={1200}
+                    width={600}
+                    height={900}
                     className="rounded-lg shadow-lg"
                     style={{
                       objectFit: "contain",
