@@ -320,7 +320,7 @@ const servicios: Servicio[] = [
       "Con un enfoque en la relajación y el bienestar, este servicio incluye exfoliación, hidratación profunda y técnicas avanzadas de pedicura, todo realizado con productos de alta calidad que nutren y reparan. Ideal para quienes desean lucir pies impecables y sentir la frescura del Caribe en cada detalle.",
       description3:
       "Déjate llevar por esta experiencia tropical y dale a tus pies el cuidado que merecen.",
-    image: "/images/carrusel/image17.webp",
+    image: "/images/carrusel/image15.webp",
   },
   {
     title: "Uñas esculpidas",
@@ -332,7 +332,7 @@ const servicios: Servicio[] = [
     title: "SOFT gel",
     description:
       "Un tratamiento de uñas que utiliza un gel ligero y flexible, ideal para lograr un acabado natural y duradero.",
-    image: "/images/carrusel/soft-gel-blancas.webp",
+    image: "/images/carrusel/image17.webp",
   },
   {
     title: "Kapping gel",
