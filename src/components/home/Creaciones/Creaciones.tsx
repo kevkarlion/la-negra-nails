@@ -61,16 +61,6 @@ const images = [
     rightDetail: "Detalle derecho 3",
   },
   {
-    src: "/images/carrusel/image12.webp",
-    leftDetail: "Detalle izquierdo 3",
-    rightDetail: "Detalle derecho 3",
-  },
-  {
-    src: "/images/carrusel/image13.webp",
-    leftDetail: "Detalle izquierdo 3",
-    rightDetail: "Detalle derecho 3",
-  },
-  {
     src: "/images/carrusel/image14.webp",
     leftDetail: "Detalle izquierdo 3",
     rightDetail: "Detalle derecho 3",
@@ -128,8 +118,8 @@ export const Creaciones = () => {
                   <Image
                     src={image.src}
                     alt={`Imagen ${index + 1}`}
-                    width={600}
-                    height={900}
+                    width={1200}
+                    height={700}
                     className="rounded-lg shadow-lg"
                     style={{
                       objectFit: "contain",

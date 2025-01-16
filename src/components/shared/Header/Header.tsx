@@ -106,7 +106,7 @@ export const Header: React.FC = () => {
             <button onClick={() => handleNavigate("#inicio")}>
               <div className="flex items-center">
                 <Image
-                  src="/header/logo-dorado-limpio.png"
+                  src="/header/logo-dorado-limpio.webp"
                   alt="Logo"
                   priority
                   width={150}
