@@ -26,7 +26,7 @@ export const Footer: React.FC = () => {
             <div className="flex flex-col items-center  space-y-2">
               <div className="flex items-center space-x-2">
                 <FaMapMarkerAlt className="text-lg text-gray-400 self-start" />
-                <a href="https://maps.app.goo.gl/Z3cmciywEhxdb5mAA" target="_blank" rel="noopener noreferrer"><p className="font-sans text-gray-300">Misiónes 1675, local 4. General Roca - Río Negro</p></a>
+                <a href="https://maps.app.goo.gl/Z3cmciywEhxdb5mAA" target="_blank" rel="noopener noreferrer"><p className="font-sans text-gray-300">Misiónes 1675, local 3. General Roca - Río Negro</p></a>
               </div>
               <div className="flex items-center space-x-2">
                 <FaWhatsapp className="text-lg text-gray-400" />
@@ -59,9 +59,9 @@ export const Footer: React.FC = () => {
           <div className="space-y-4">
             <h3 className="font-sans font-bold text-xl mb-4">Horarios de atención</h3>
             <div className="flex flex-col items-center text-left space-y-1">
-              <p className="font-sans text-gray-300">Lunes a Viernes: 8hs a 16hs</p>
-              <p className="font-sans text-gray-300">Sábado y Domingo: Cerrado</p>
-              <p className="font-sans text-gray-300">Feriado: Cerrado</p>
+              <p className="font-sans text-gray-300">Lunes a Viernes: 8hs a 20hs</p>
+              <p className="font-sans text-gray-300">Sábado: 9hs a 15hs</p>
+              <p className="font-sans text-gray-300">Domingo y Feriado: Cerrado</p>
             </div>
           </div>
         </div>
