@@ -340,15 +340,15 @@ export const Header = () => {
           </button>
         </div>
 
-        {/* Mobile Navigation - MEJORADO CON SCROLL */}
+        {/* Mobile Navigation - MEJORADO CON SCROLL VERTICAL SOLAMENTE */}
         {isMobileMenuOpen && (
           <div
             ref={mobileMenuRef}
-            className="lg:hidden bg-white/20 backdrop-blur-xl border-t border-white/20 rounded-b-3xl shadow-2xl"
+            className="lg:hidden bg-white/20 backdrop-blur-xl border-t border-white/20 rounded-b-3xl shadow-2xl overflow-hidden"
             onClick={(e) => e.stopPropagation()}
           >
-            {/* Contenedor con scroll máximo de 70vh */}
-            <div className="max-h-[70vh] overflow-y-auto py-6 space-y-3">
+            {/* Contenedor con scroll vertical solamente */}
+            <div className="max-h-[70vh] overflow-y-auto overflow-x-hidden py-6 space-y-3">
               {menuItems.map((item) =>
                 item.label === "Servicios" ? (
                   <div
