@@ -7,9 +7,9 @@ import Image from "next/image";
 import { Inter } from "next/font/google";
 
 const inter = Inter({
-  subsets: ["latin"], // conjunto de caracteres
-  weight: ["400", "700"], // puedes agregar más: 100, 200, 300, 500, 600, 800
-  variable: "--font-inter", // opcional: para usar en CSS
+  subsets: ["latin"],
+  weight: ["400", "700"],
+  variable: "--font-inter",
 });
 
 export const Header = () => {
@@ -25,9 +25,15 @@ export const Header = () => {
   const mobileMenuRef = useRef<HTMLDivElement>(null);
   const servicesButtonRef = useRef<HTMLButtonElement>(null);
 
-  // Efecto para el comportamiento de scroll
+  // Efecto para el comportamiento de scroll - MODIFICADO
   useEffect(() => {
     const handleScroll = () => {
+      // Si el menú móvil está abierto, no ocultar la navbar
+      if (isMobileMenuOpen) {
+        setIsVisible(true);
+        return;
+      }
+
       const currentScrollY = window.scrollY;
 
       setIsScrolled(currentScrollY > 50);
@@ -43,16 +49,14 @@ export const Header = () => {
 
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  }, [isMobileMenuOpen]); // Agregar dependencia
 
   // Efecto simplificado para cerrar menú móvil al hacer click fuera
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
-      // Solo cerrar si el menú móvil está abierto
       if (isMobileMenuOpen) {
         const target = event.target as Node;
 
-        // Si el click fue fuera del menú móvil Y fuera del botón del menú
         if (
           mobileMenuRef.current &&
           !mobileMenuRef.current.contains(target) &&
@@ -98,22 +102,16 @@ export const Header = () => {
     }, 300);
   };
 
-  // Manejar mobile dropdown - SOLUCIÓN DEFINITIVA
+  // Manejar mobile dropdown
   const handleMobileServicesToggle = (e: React.MouseEvent) => {
     e.stopPropagation();
-    console.log("Antes del toggle:", isServicesOpen);
-    setIsServicesOpen((prev) => {
-      const newValue = !prev;
-      console.log("Después del toggle:", newValue);
-      return newValue;
-    });
+    setIsServicesOpen((prev) => !prev);
   };
 
-  // Manejar toggle del menú móvil - CORREGIDO
+  // Manejar toggle del menú móvil
   const handleMobileMenuToggle = () => {
     setIsMobileMenuOpen((prev) => {
       const newValue = !prev;
-      // Si estamos CERRANDO el menú móvil, también cerramos servicios
       if (!newValue) {
         setIsServicesOpen(false);
       }
@@ -342,14 +340,15 @@ export const Header = () => {
           </button>
         </div>
 
-        {/* Mobile Navigation - CORREGIDO */}
+        {/* Mobile Navigation - MEJORADO CON SCROLL */}
         {isMobileMenuOpen && (
           <div
             ref={mobileMenuRef}
             className="lg:hidden bg-white/20 backdrop-blur-xl border-t border-white/20 rounded-b-3xl shadow-2xl"
             onClick={(e) => e.stopPropagation()}
           >
-            <div className="py-6 space-y-3">
+            {/* Contenedor con scroll máximo de 70vh */}
+            <div className="max-h-[70vh] overflow-y-auto py-6 space-y-3">
               {menuItems.map((item) =>
                 item.label === "Servicios" ? (
                   <div
