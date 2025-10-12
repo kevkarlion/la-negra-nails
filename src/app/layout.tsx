@@ -2,12 +2,14 @@ import type { Metadata } from "next";
 import { Header } from '@/components/shared/Header'
 import { Footer } from '@/components/shared/Footer'
 import { SocialCTA } from '@/components/shared/SocialCTA'
-import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 import "./globals.css";
 
 
 import { Dancing_Script } from 'next/font/google';
+
+
 
 // Carga la fuente con pesos específicos
 const title = Dancing_Script({
@@ -15,6 +17,7 @@ const title = Dancing_Script({
   weight: ['400', '700'], // Opcional: ajusta según necesites
   display: 'swap', // Mejora la experiencia de carga
 });
+
 
 
 
