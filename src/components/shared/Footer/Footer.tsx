@@ -10,7 +10,7 @@ export const Footer: React.FC = () => {
         {/* Logo */}
         <div className="flex justify-center mb-8">
           <Image
-            src="/logos/logo-dorado-white.png"
+            src="/logos/logo-dorado-white-nvo.png"
             alt="Logo"
             width={160}
             height={80}
