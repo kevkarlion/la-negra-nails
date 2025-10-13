@@ -1,43 +1,53 @@
-// components/BackgroundWithLogo.tsx
+// // components/BackgroundWithLogo.tsx - VERSIÓN MEJORADA
+// import React from 'react';
+// import Image from 'next/image';
 
-import React from 'react';
-import Image from 'next/image';
+// interface BackgroundWithLogoProps {
+//   backgroundUrl: string;
+//   logoUrl: string;
+// }
 
-interface BackgroundWithLogoProps {
-  backgroundUrl: string;
-  logoUrl: string;
-}
-
-export const BackgroundWithLogo: React.FC<BackgroundWithLogoProps> = ({ backgroundUrl, logoUrl }) => {
-  return (
-    <div className="relative w-full h-[389px] sm:h-[500px] md:h-[700px] lg:h-[850px] xl:h-[1000px] overflow-hidden flex items-start justify-end z-20 	">
+// export const BackgroundWithLogo: React.FC<BackgroundWithLogoProps> = ({ 
+//   backgroundUrl, 
+//   logoUrl 
+// }) => {
+//   return (
+//     <div className="relative w-full h-[389px] sm:h-[500px] md:h-[700px] lg:h-[850px] xl:h-[1000px] overflow-hidden">
       
-      {/* Imagen de fondo */}
-      <div className="absolute inset-0 w-full h-[389px] sm:h-[500px] md:h-[700px] lg:h-[850px] xl:h-[1000px] -z-10 pt-3 overflow-hidden">
-        <Image
-          src={backgroundUrl}
-          alt="Fondo"
-          layout="fill"
-          objectFit="cover"
-          // objectPosition="top" // Esto baja la imagen
-          priority
-          className="w-full h-full top"
-          style={{objectPosition: '50% 10%'}}
-        />
-       
-      </div>
+//       {/* Contenedor de fondo mejorado */}
+//       <div className="absolute inset-0 -z-10">
+//         <Image
+//           src={backgroundUrl}
+//           alt="Fondo"
+//           fill
+//           priority
+//           quality={85}
+//           className="object-cover"
+//           style={{ 
+//             objectPosition: '50% 10%',
+//             // Fondo de respaldo mientras carga
+//             backgroundColor: '#f3f4f6' 
+//           }}
+//           // Solo usar blur si es imagen local
+//           placeholder={backgroundUrl.startsWith('/') ? "blur" : "empty"}
+//           // Para evitar layout shift
+//           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 100vw, 100vw"
+//         />
+//       </div>
 
-      {/* Logo en la esquina superior derecha con tamaños aumentados */}
-      <div className="absolute top-[-0.75rem] md:top-[-0.5rem] -right-1 sm:right-2 md:right-2 w-36 h-32 sm:w-42 sm:h-36 md:w-52 md:h-54 lg:w-64 lg:h-48 xl:w-80 xl:h-52">
-        <Image
-          src={logoUrl}
-          alt="Logo"
-          layout="fill"
-          objectFit="contain"
-        />
-      </div>
+//       {/* Logo */}
+//       <div className="relative z-10 pt-4 pr-4">
+//         <div className="w-36 h-32 sm:w-48 sm:h-40 md:w-56 md:h-48 lg:w-64 lg:h-56 xl:w-72 xl:h-64">
+//           <Image
+//             src={logoUrl}
+//             alt="Logo"
+//             fill
+//             className="object-contain"
+//             priority
+//           />
+//         </div>
+//       </div>
       
-    </div>
-  );
-};
-
+//     </div>
+//   );
+// };
