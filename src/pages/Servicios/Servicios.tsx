@@ -97,54 +97,62 @@ export const Servicios = () => {
   };
 
   return (
-    <section className="px-6 pt-6 pb-6 md:pb-16 bg-secondary-mediumPink" id="servicios">
+    <section className="px-6 pt-6 pb-6 md:pb-16 bg-gradient-to-br from-rose-300 via-pink-300 to-rose-400" id="servicios">
       <div className="max-w-screen-lg mx-auto md:pt-28 lg:pt-32">
-        {/* Sección de Introducción - Estilo similar */}
-        <h1 className="font-title mb-2 mt-9 text-center font-bold text-black text-[3.75rem] sm:text-[3rem] md:text-[4rem]">
-          Descubre Nuestros Servicios
-        </h1>
-        <p className="text-center text-lg md:text-xl font-sans text-black mb-9">
-          Cada uno de nuestros servicios está diseñado para ofrecerte la mejor
-          experiencia en cuidado y belleza. Elige el que mejor se adapte a tus
-          necesidades y déjanos consentirte.
-        </p>
+        {/* Sección de Introducción */}
+        <div className="text-center mb-16">
+          <h1 className="font-title mb-4 font-bold text-gray-800 text-4xl sm:text-5xl md:text-6xl">
+            Descubre Nuestros Servicios
+          </h1>
+          <div className="w-24 h-1 bg-gradient-to-r from-rose-400 to-pink-500 mx-auto mb-6 rounded-full"></div>
+          <p className="text-lg md:text-xl font-sans text-gray-700 max-w-2xl mx-auto leading-relaxed">
+            Cada uno de nuestros servicios está diseñado para ofrecerte la mejor
+            experiencia en cuidado y belleza. Elige el que mejor se adapte a tus
+            necesidades y déjanos consentirte.
+          </p>
+        </div>
 
-        {/* Cards - Estilo similar al original */}
+        {/* Cards con nuevo diseño elegante */}
         <div className="grid grid-cols-1 gap-8">
           {servicios.map((servicio, index) => (
             <div
               key={index}
-              className={`bg-white min-h-[18.75rem] shadow-lg rounded-lg overflow-hidden 
-                          ${!isMobile ? 'transform hover:scale-105 transition-transform' : ''} 
-                          flex flex-col md:flex-row`}
+              className={`bg-white/90 backdrop-blur-sm rounded-2xl shadow-xl border border-white/50 overflow-hidden 
+                          ${!isMobile ? 'transform hover:scale-[1.02] hover:shadow-2xl transition-all duration-300' : ''} 
+                          flex flex-col md:flex-row group`}
             >
-              {/* Imagen */}
-              <div className="relative min-h-[17.68rem] h-auto min-w-[18.75rem] md:w-2/5">
+              {/* Imagen con overlay elegante */}
+              <div className="relative min-h-[17.68rem] h-auto min-w-[18.75rem] md:w-2/5 overflow-hidden">
                 <Image
                   src={servicio.image}
                   alt={servicio.title}
                   fill
                   style={{objectFit:'cover'}}
-                  className="w-full"
+                  className="transition-transform duration-500 group-hover:scale-105"
                 />
+                <div className="absolute inset-0 bg-gradient-to-r from-black/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </div>
               
-              {/* Contenido */}
-              <div className="p-6 flex flex-col justify-center flex-1">
-                <h2 className="text-2xl font-sans font-bold text-gray-800 mb-4 border-b-2 border-tertiary">
-                  {servicio.title}
-                </h2>
-                <p className="text-gray-700 text-sm font-sans mb-4">
+              {/* Contenido con diseño mejorado */}
+              <div className="p-8 flex flex-col justify-center flex-1">
+                <div className="flex items-center mb-4">
+                  <div className="w-3 h-8 bg-gradient-to-b from-rose-500 to-pink-600 rounded-full mr-4"></div>
+                  <h2 className="text-2xl font-sans font-bold text-gray-800">
+                    {servicio.title}
+                  </h2>
+                </div>
+                
+                <p className="text-gray-700 text-base font-sans leading-relaxed mb-4">
                   {servicio.description}
                 </p>
                 
                 {!isMobile && servicio.description2 && (
                   <div className="space-y-3">
-                    <p className="text-gray-700 text-sm font-sans">
+                    <p className="text-gray-600 text-sm font-sans leading-relaxed">
                       {servicio.description2}
                     </p>
                     {servicio.description3 && (
-                      <p className="text-gray-700 text-sm font-sans italic">
+                      <p className="text-gray-600 text-sm font-sans leading-relaxed italic">
                         {servicio.description3}
                       </p>
                     )}
@@ -153,11 +161,11 @@ export const Servicios = () => {
                 
                 {isMobile && expandedCards.includes(index) && servicio.description2 && (
                   <div className="space-y-3">
-                    <p className="text-gray-700 text-sm font-sans">
+                    <p className="text-gray-600 text-sm font-sans leading-relaxed">
                       {servicio.description2}
                     </p>
                     {servicio.description3 && (
-                      <p className="text-gray-700 text-sm font-sans italic">
+                      <p className="text-gray-600 text-sm font-sans leading-relaxed italic">
                         {servicio.description3}
                       </p>
                     )}
@@ -166,10 +174,18 @@ export const Servicios = () => {
                 
                 {isMobile && servicio.description2 && (
                   <button
-                    className="mt-4 font-sans text-secondary-hotPink underline text-sm"
+                    className="mt-4 font-sans text-rose-600 hover:text-rose-700 font-medium text-sm transition-colors duration-300 flex items-center"
                     onClick={() => toggleExpand(index)}
                   >
                     {expandedCards.includes(index) ? "Ver menos" : "Ver más"}
+                    <svg 
+                      className={`w-4 h-4 ml-2 transition-transform duration-300 ${expandedCards.includes(index) ? 'rotate-180' : ''}`}
+                      fill="none" 
+                      stroke="currentColor" 
+                      viewBox="0 0 24 24"
+                    >
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                    </svg>
                   </button>
                 )}
               </div>
@@ -177,43 +193,58 @@ export const Servicios = () => {
           ))}
         </div>
 
-        {/* Sección de Preguntas Frecuentes - Estilo similar */}
-        <div className="mt-16">
-          <h2 className="text-3xl font-sans mt-24 font-bold text-center text-black mb-6">
-            Preguntas Frecuentes
-          </h2>
-          <div className="space-y-6">
+        {/* Sección de Preguntas Frecuentes con nuevo diseño */}
+        <div className="mt-24">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-sans font-bold text-gray-800 mb-4">
+              Preguntas Frecuentes
+            </h2>
+            <div className="w-20 h-1 bg-gradient-to-r from-rose-400 to-pink-500 mx-auto rounded-full"></div>
+          </div>
+          
+          <div className="space-y-6 max-w-4xl mx-auto">
             {faqs.map((faq, index) => (
-              <div key={index} className="bg-white p-6 rounded-lg shadow-md">
-                <h3 className="text-xl font-sans font-semibold text-secondary-hotPink mb-2">
-                  {faq.question}
-                </h3>
-                <p className="text-black font-sans">{faq.answer}</p>
+              <div 
+                key={index} 
+                className="bg-white/80 backdrop-blur-sm p-6 rounded-2xl shadow-lg border border-white/50 hover:shadow-xl transition-all duration-300"
+              >
+                <div className="flex items-start">
+                  <div className="flex-shrink-0 w-6 h-6 bg-gradient-to-br from-rose-400 to-pink-500 rounded-full flex items-center justify-center mt-1 mr-4">
+                    <div className="w-2 h-2 bg-white rounded-full"></div>
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-sans font-semibold text-gray-800 mb-3">
+                      {faq.question}
+                    </h3>
+                    <p className="text-gray-700 font-sans leading-relaxed">{faq.answer}</p>
+                  </div>
+                </div>
               </div>
             ))}
           </div>
         </div>
        
-        {/* Botones - Estilo similar */}
-        <div className="flex flex-col justify-center items-center mt-8 mb-8 md:hidden">
-          <ButtonLink
-            text="Dónde encontrarnos"
-            href="#footer"
-            textColor="text-black"
-          />
+        {/* Botones con nuevo diseño */}
+        <div className="flex flex-col justify-center items-center mt-12 mb-8 md:hidden">
+          <div className="transform hover:scale-105 transition-all duration-300">
+            <ButtonLink
+              text="Dónde encontrarnos"
+              href="#footer"
+              textColor="text-white"
+              bgColor="bg-gradient-to-r from-rose-500 to-pink-600"
+            />
+          </div>
         </div>
 
-        <div className="hidden md:flex justify-center gap-4 w-3/4 mx-auto md:grid-cols-2 mt-14">
-          <Link
-            href="#footer"
-            className="bg-white w-1/2 p-6 rounded-lg shadow-lg flex items-center justify-center fluid-bg"
-          >
-            <h3
-              className={`md:text-[27px] lg:text-3xl font-title font-semibold text-black`}
+        <div className="hidden md:flex justify-center mt-16">
+          <div className="bg-white/90 backdrop-blur-sm rounded-2xl p-8 shadow-2xl border border-white/50 transform hover:scale-105 transition-all duration-300">
+            <Link
+              href="#footer"
+              className="text-2xl lg:text-3xl font-semibold text-transparent bg-gradient-to-r from-rose-500 to-pink-600 bg-clip-text hover:from-rose-600 hover:to-pink-700 transition-all duration-300 px-8 py-4 block text-center"
             >
-              Dónde encontrarnos
-            </h3>
-          </Link>
+              Dónde Encontrarnos ↗
+            </Link>
+          </div>
         </div>
       </div>
     </section>

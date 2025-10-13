@@ -70,7 +70,7 @@ export const Cursos: React.FC<SectionProps> = ({
           </p>
           <ButtonLink
             text="Mirá nuestas clases"
-            href="/cursos/clases"
+            href="/cursos"
             textColor="text-black"
           />
         </div>
@@ -108,7 +108,7 @@ export const Cursos: React.FC<SectionProps> = ({
               </p>
               <div className="font-title bg-white lg:w-[21.37rem] p-6 rounded-lg shadow-lg flex items-center self-center mt-12 justify-center fluid-bg">
                 <Link
-                  href="/cursos/clases"
+                  href="/cursos"
                   className="md:text-[27px] lg:text-3xl  font-semibold text-black"
                 >
                   Mirá nuestras clases
@@ -127,7 +127,7 @@ export const Cursos: React.FC<SectionProps> = ({
         <div className="hidden md:flex flex-wrap gap-4 w-3/4 max-w-screen-lg mx-auto">
           <div className="flex-1 min-w-[calc(50%-1rem)] font-title bg-white p-6 rounded-lg shadow-lg flex items-center justify-center fluid-bg">
             <Link
-              href="/cursos/presencial"
+              href="/cursos"
               className="md:text-[27px] lg:text-3xl font-semibold text-black"
             >
               Presencial

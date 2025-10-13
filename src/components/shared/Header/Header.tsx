@@ -131,34 +131,30 @@ export const Header = () => {
     { label: "Servicios", hash: "#servicios" },
     { label: "Galería", hash: "#creaciones" },
     { label: "Sobre Mí", hash: "#about" },
+    { label: "Cursos", hash: "/cursos" },
     { label: "Contacto", hash: "#footer" },
   ];
 
-  // Servicios de uñas
+  // Servicios de uñas - SOLO INFORMATIVOS
   const serviceItems = [
     {
       label: "Manicura Clásica",
-      href: "/servicios/manicura-clasica",
       description: "Cuidado y belleza tradicional",
     },
     {
       label: "Uñas Esculpidas",
-      href: "/servicios/unas-esculpidas",
       description: "Extensiones perfectas",
     },
     {
       label: "Kapping Gel",
-      href: "/servicios/kapping-gel",
       description: "Fortalecimiento natural",
     },
     {
       label: "Esmaltado Semipermanente",
-      href: "/servicios/semipermanente",
       description: "Color que dura semanas",
     },
     {
       label: "Nail Art",
-      href: "/servicios/nail-art",
       description: "Diseños creativos",
     },
   ];
@@ -229,19 +225,15 @@ export const Header = () => {
                   {isServicesOpen && (
                     <div className="absolute top-full left-0 mt-4 w-80 bg-white/95 backdrop-blur-xl rounded-2xl shadow-2xl border border-white/30 overflow-hidden">
                       <div className="p-4">
+                        {/* Lista de servicios informativos */}
                         {serviceItems.map((service, index) => (
-                          <Link
-                            key={service.href}
-                            href={service.href}
-                            className={`block px-4 py-3 text-gray-800 hover:bg-rose-50 rounded-xl transition-all duration-300 ${
+                          <div
+                            key={`${service.label}-${index}`}
+                            className={`px-4 py-3 text-gray-800 rounded-xl transition-all duration-300 ${
                               index !== serviceItems.length - 1
                                 ? "border-b border-gray-100"
                                 : ""
                             }`}
-                            onClick={() => {
-                              setIsServicesOpen(false);
-                              setIsMobileMenuOpen(false);
-                            }}
                           >
                             <div className="font-semibold text-sm">
                               {service.label}
@@ -249,8 +241,22 @@ export const Header = () => {
                             <div className="text-xs text-gray-600 mt-1">
                               {service.description}
                             </div>
-                          </Link>
+                          </div>
                         ))}
+                        
+                        {/* Botón "Conoce Más" */}
+                        <div className="mt-4 pt-4 border-t border-gray-100">
+                          <Link
+                            href="/servicios"
+                            className="block w-full bg-gradient-to-r from-rose-500 to-pink-600 text-white text-center py-3 px-4 rounded-xl font-semibold text-sm hover:shadow-lg transition-all duration-300 hover:scale-105"
+                            onClick={() => {
+                              setIsServicesOpen(false);
+                              setIsMobileMenuOpen(false);
+                            }}
+                          >
+                            Conoce Más ↗
+                          </Link>
+                        </div>
                       </div>
                     </div>
                   )}
@@ -258,7 +264,16 @@ export const Header = () => {
               ) : (
                 <button
                   key={item.hash}
-                  onClick={() => handleSmoothNavigate(item.hash)}
+                  onClick={() => {
+                    if (item.hash.startsWith('/')) {
+                      // Para la página de cursos, usar navegación normal
+                      router.push(item.hash);
+                      setIsMobileMenuOpen(false);
+                    } else {
+                      // Para las secciones con hash, usar navegación suave
+                      handleSmoothNavigate(item.hash);
+                    }
+                  }}
                   className="text-white hover:text-rose-200 transition-all duration-300 font-medium text-sm uppercase tracking-wider py-3 relative group"
                 >
                   <span className="font-normal">{item.label}</span>
@@ -381,19 +396,27 @@ export const Header = () => {
 
                     {isServicesOpen && (
                       <div className="ml-4 mt-3 space-y-3 bg-white/20 rounded-xl p-4 border border-white/20">
-                        {serviceItems.map((service) => (
-                          <Link
-                            key={service.href}
-                            href={service.href}
-                            className="block text-white hover:text-rose-200 transition-colors duration-300 text-sm py-3 px-4 rounded-lg hover:bg-white/10 border border-white/10"
-                            onClick={closeMobileMenu}
+                        {/* Lista de servicios informativos */}
+                        {serviceItems.map((service, index) => (
+                          <div
+                            key={`${service.label}-${index}`}
+                            className="text-white text-sm py-3 px-4 rounded-lg border border-white/10"
                           >
                             <div className="font-semibold">{service.label}</div>
                             <div className="text-xs text-rose-100/80 mt-1">
                               {service.description}
                             </div>
-                          </Link>
+                          </div>
                         ))}
+                        
+                        {/* Botón "Conoce Más" en móvil */}
+                        <Link
+                          href="/servicios"
+                          className="block w-full bg-gradient-to-r from-rose-500 to-pink-600 text-white text-center py-3 px-4 rounded-lg font-semibold text-sm hover:shadow-lg transition-all duration-300 mt-4"
+                          onClick={closeMobileMenu}
+                        >
+                          Conoce Más ↗
+                        </Link>
                       </div>
                     )}
                   </div>
@@ -401,8 +424,15 @@ export const Header = () => {
                   <button
                     key={item.hash}
                     onClick={() => {
-                      handleSmoothNavigate(item.hash);
-                      closeMobileMenu();
+                      if (item.hash.startsWith('/')) {
+                        // Para la página de cursos, usar navegación normal
+                        router.push(item.hash);
+                        closeMobileMenu();
+                      } else {
+                        // Para las secciones con hash, usar navegación suave
+                        handleSmoothNavigate(item.hash);
+                        closeMobileMenu();
+                      }
                     }}
                     className="block w-full text-left text-white hover:text-rose-200 transition-colors duration-300 font-medium text-sm uppercase tracking-wide py-4 px-4 rounded-xl hover:bg-white/10 mx-4"
                   >

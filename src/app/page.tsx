@@ -25,7 +25,7 @@ export default function Home() {
         <div className="flex flex-col">
           <ButtonLink
             text="Presencial"
-            href="/cursos/presencial"
+            href="/cursos"
             textColor="text-black"
           />
           {/* <ButtonLink
@@ -36,16 +36,13 @@ export default function Home() {
           
           <ButtonLink
             text="Online (Próximamente)"
-            href="#"
+            href="/cursos"
             textColor="text-black "
           />
           
         </div>
       </Cursos>
-      <Servicios
-        // title="Nuestros Servicios"
-        // subtitle="Descubre nuestro servicio de uñas diseñados para realzar tu estilo, combinando arte y cuidado profesional para que luzcas manos impecables en cada ocasión"
-      />
+      <Servicios/>
       <Creaciones />
       
       <SobreMi />
