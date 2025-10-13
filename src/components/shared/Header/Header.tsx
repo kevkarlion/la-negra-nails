@@ -129,7 +129,7 @@ export const Header = () => {
   const menuItems = [
     { label: "Inicio", hash: "#inicio" },
     { label: "Servicios", hash: "#servicios" },
-    { label: "Galería", hash: "#galeria" },
+    { label: "Galería", hash: "#creaciones" },
     { label: "Sobre Mí", hash: "#about" },
     { label: "Contacto", hash: "#footer" },
   ];

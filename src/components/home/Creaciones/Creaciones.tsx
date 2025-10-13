@@ -1,165 +1,292 @@
 "use client";
 
-import React from "react";
-import { Carousel } from "react-bootstrap";
+import React, { useState, useCallback, useEffect } from "react";
 import Image from "next/image";
+import { ChevronLeft, ChevronRight, Play, Pause } from "lucide-react";
 
 const images = [
   {
     src: "/images/carrusel/image1.webp",
-    leftDetail: "Detalle izquierdo 1",
-    rightDetail: "Detalle derecho 1",
+    title: "Diseño Elegante",
+    description: "Uñas esculpidas con técnica premium"
   },
   {
     src: "/images/carrusel/image2.webp",
-    leftDetail: "Detalle izquierdo 2",
-    rightDetail: "Detalle derecho 2",
+    title: "French Moderno",
+    description: "Clásico renovado con detalles únicos"
   },
   {
     src: "/images/carrusel/image3.webp",
-    leftDetail: "Detalle izquierdo 3",
-    rightDetail: "Detalle derecho 3",
+    title: "Artístico",
+    description: "Expresión creativa en cada uña"
   },
   {
     src: "/images/carrusel/image4.webp",
-    leftDetail: "Detalle izquierdo 3",
-    rightDetail: "Detalle derecho 3",
+    title: "Natural & Fresco",
+    description: "Estilo minimalista y sofisticado"
   },
   {
     src: "/images/carrusel/image5.webp",
-    leftDetail: "Detalle izquierdo 3",
-    rightDetail: "Detalle derecho 3",
+    title: "Bold & Beautiful",
+    description: "Colores vibrantes que destacan"
   },
   {
     src: "/images/carrusel/image6.webp",
-    leftDetail: "Detalle izquierdo 3",
-    rightDetail: "Detalle derecho 3",
+    title: "Lujo en Detalles",
+    description: "Perfección en cada aplicación"
   },
   {
     src: "/images/carrusel/image7.webp",
-    leftDetail: "Detalle izquierdo 3",
-    rightDetail: "Detalle derecho 3",
+    title: "Tendencia 2024",
+    description: "Lo último en diseño de uñas"
   },
   {
     src: "/images/carrusel/image8.webp",
-    leftDetail: "Detalle izquierdo 3",
-    rightDetail: "Detalle derecho 3",
+    title: "Clásico Atemporal",
+    description: "Elegancia que nunca pasa de moda"
   },
   {
     src: "/images/carrusel/image9.webp",
-    leftDetail: "Detalle izquierdo 3",
-    rightDetail: "Detalle derecho 3",
+    title: "Festivo",
+    description: "Celebra cada ocasión especial"
   },
   {
     src: "/images/carrusel/image10.webp",
-    leftDetail: "Detalle izquierdo 3",
-    rightDetail: "Detalle derecho 3",
+    title: "Minimalista",
+    description: "Belleza en la simplicidad"
   },
   {
     src: "/images/carrusel/image11.webp",
-    leftDetail: "Detalle izquierdo 3",
-    rightDetail: "Detalle derecho 3",
+    title: "Dramático",
+    description: "Impacto visual inmediato"
   },
   {
     src: "/images/carrusel/image14.webp",
-    leftDetail: "Detalle izquierdo 3",
-    rightDetail: "Detalle derecho 3",
+    title: "Romántico",
+    description: "Delicadeza y suavidad"
   },
   {
     src: "/images/carrusel/image15.webp",
-    leftDetail: "Detalle izquierdo 3",
-    rightDetail: "Detalle derecho 3",
+    title: "Geométrico",
+    description: "Líneas y formas definidas"
   },
   {
     src: "/images/carrusel/image16.webp",
-    leftDetail: "Detalle izquierdo 3",
-    rightDetail: "Detalle derecho 3",
+    title: "Naturaleza",
+    description: "Inspiración en elementos naturales"
   },
   {
     src: "/images/carrusel/image17.webp",
-    leftDetail: "Detalle izquierdo 3",
-    rightDetail: "Detalle derecho 3",
+    title: "Oro & Glamour",
+    description: "Lujo y brillo excepcional"
   },
   {
     src: "/images/carrusel/image9-kapping.webp",
-    leftDetail: "Detalle izquierdo 3",
-    rightDetail: "Detalle derecho 3",
+    title: "Kapping Perfecto",
+    description: "Técnica profesional impecable"
   },
-  // Añadir más imágenes según sea necesario
 ];
 
 export const Creaciones = () => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [isPlaying, setIsPlaying] = useState(true);
+  const [touchStart, setTouchStart] = useState(0);
+  const [touchEnd, setTouchEnd] = useState(0);
+
+  // Funciones estables con useCallback - SIN dependencias innecesarias
+  const nextSlide = useCallback(() => {
+    setCurrentIndex((prev) => (prev + 1) % images.length);
+  }, []); // ✅ images.length es constante
+
+  const prevSlide = useCallback(() => {
+    setCurrentIndex((prev) => (prev - 1 + images.length) % images.length);
+  }, []); // ✅ images.length es constante
+
+  const goToSlide = useCallback((index: number) => {
+    setCurrentIndex(index);
+  }, []);
+
+  // Auto-play corregido - SIN warning
+  useEffect(() => {
+    if (!isPlaying) return;
+
+    const interval = setInterval(() => {
+      setCurrentIndex((prev) => (prev + 1) % images.length);
+    }, 4000);
+
+    return () => clearInterval(interval);
+  }, [isPlaying]); // ✅ Solo depende de isPlaying
+
+  // Touch handlers con useCallback
+  const handleTouchStart = useCallback((e: React.TouchEvent) => {
+    setTouchStart(e.targetTouches[0].clientX);
+  }, []);
+
+  const handleTouchMove = useCallback((e: React.TouchEvent) => {
+    setTouchEnd(e.targetTouches[0].clientX);
+  }, []);
+
+  const handleTouchEnd = useCallback(() => {
+    if (!touchStart || !touchEnd) return;
+
+    const distance = touchStart - touchEnd;
+    const isLeftSwipe = distance > 50;
+    const isRightSwipe = distance < -50;
+
+    if (isLeftSwipe) {
+      nextSlide();
+    } else if (isRightSwipe) {
+      prevSlide();
+    }
+  }, [touchStart, touchEnd, nextSlide, prevSlide]);
+
   return (
     <section
-      className="p-6 bg-gradient-to-br from-secondary-brightPink to-secondary-hotPink relative text-white"
+      className="relative bg-gradient-to-br from-secondary-brightPink to-secondary-hotPink text-white overflow-hidden"
       id="creaciones"
     >
-      <div className="absolute inset-0 bg-[url('/images/marble-texture.png')] opacity-10 pointer-events-none"></div>
+      {/* Background Texture */}
+      <div className="absolute inset-0 bg-[url('/images/marble-texture.png')] opacity-10 pointer-events-none" />
 
-      <div className="max-w-screen-lg pt-9 mx-auto text-center flex flex-col items-center">
-        <h1
-          className={`font-title font-bold text-black text-6xl sm:text-5xl lg:text-[5rem]`}
-        >
+      {/* Header Section */}
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 lg:pt-20 text-center">
+        <h1 className="font-title font-bold text-black text-4xl sm:text-5xl lg:text-7xl xl:text-8xl mb-4">
           Creaciones
         </h1>
-        <p className="mt-2 mb-6 font-sans w-full sm:w-4/6 text-black font-light text-lg sm:text-xl">
-          Cada diseño de uñas es una expresión única de estilo y personalidad.
-          Usamos técnicas innovadoras y productos de alta calidad para ofrecerte
+        <p className="max-w-3xl mx-auto font-sans text-black font-light text-lg sm:text-xl lg:text-2xl leading-relaxed">
+          Cada diseño de uñas es una expresión única de estilo y personalidad. 
+          Usamos técnicas innovadoras y productos de alta calidad para ofrecerte 
           arte y precisión.
         </p>
       </div>
 
-      <div className="flex items-center justify-center mt-2 p-2 md:m-8">
-        <div className="w-full max-w-6xl">
-          <Carousel>
-            {images.map((image, index) => (
-              <Carousel.Item key={index}>
-                <div className="flex justify-center items-center h-[600px] md:h-[800px] bg-black">
+      {/* Enhanced Carousel */}
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 lg:py-16">
+        <div className="relative bg-white/10 backdrop-blur-sm rounded-3xl p-4 sm:p-6 lg:p-8 shadow-2xl">
+          
+          {/* Main Carousel */}
+          <div 
+            className="relative aspect-[4/3] sm:aspect-video rounded-2xl overflow-hidden bg-black/20"
+            onTouchStart={handleTouchStart}
+            onTouchMove={handleTouchMove}
+            onTouchEnd={handleTouchEnd}
+          >
+            {/* Current Image */}
+            <div className="relative w-full h-full">
+              <Image
+                src={images[currentIndex].src}
+                alt={images[currentIndex].title}
+                fill
+                className="object-contain"
+                priority={currentIndex === 0}
+                quality={90}
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 70vw"
+              />
+              
+              {/* Image Info Overlay */}
+              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-4 sm:p-6">
+                <h3 className="font-title font-semibold text-white text-xl sm:text-2xl lg:text-3xl">
+                  {images[currentIndex].title}
+                </h3>
+                <p className="font-sans text-white/90 text-sm sm:text-base lg:text-lg">
+                  {images[currentIndex].description}
+                </p>
+              </div>
+            </div>
+
+            {/* Navigation Arrows */}
+            <button
+              onClick={prevSlide}
+              className="absolute left-2 sm:left-4 top-1/2 transform -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-2 sm:p-3 rounded-full transition-all duration-300 backdrop-blur-sm"
+              aria-label="Imagen anterior"
+            >
+              <ChevronLeft className="w-5 h-5 sm:w-6 sm:h-6" />
+            </button>
+            
+            <button
+              onClick={nextSlide}
+              className="absolute right-2 sm:right-4 top-1/2 transform -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-2 sm:p-3 rounded-full transition-all duration-300 backdrop-blur-sm"
+              aria-label="Siguiente imagen"
+            >
+              <ChevronRight className="w-5 h-5 sm:w-6 sm:h-6" />
+            </button>
+
+            {/* Play/Pause Button */}
+            <button
+              onClick={() => setIsPlaying(!isPlaying)}
+              className="absolute top-4 right-4 bg-black/50 hover:bg-black/70 text-white p-2 rounded-full transition-all duration-300 backdrop-blur-sm"
+              aria-label={isPlaying ? "Pausar carrusel" : "Reproducir carrusel"}
+            >
+              {isPlaying ? (
+                <Pause className="w-4 h-4 sm:w-5 sm:h-5" />
+              ) : (
+                <Play className="w-4 h-4 sm:w-5 sm:h-5" />
+              )}
+            </button>
+          </div>
+
+          {/* Thumbnail Strip */}
+          <div className="mt-6 lg:mt-8">
+            <div className="flex space-x-2 sm:space-x-3 lg:space-x-4 overflow-x-auto pb-4 scrollbar-hide">
+              {images.map((image, index) => (
+                <button
+                  key={index}
+                  onClick={() => goToSlide(index)}
+                  className={`flex-shrink-0 relative aspect-square w-16 h-16 sm:w-20 sm:h-20 lg:w-24 lg:h-24 rounded-lg overflow-hidden transition-all duration-300 ${
+                    index === currentIndex
+                      ? "ring-4 ring-white scale-105"
+                      : "opacity-70 hover:opacity-100 hover:scale-105"
+                  }`}
+                  aria-label={`Ver ${image.title}`}
+                >
                   <Image
                     src={image.src}
-                    alt={`Imagen ${index + 1}`}
-                    width={1200}
-                    height={700}
-                    className="rounded-lg shadow-lg"
-                    style={{
-                      objectFit: "contain",
-                      objectPosition: "center",
-                    }}
-                    quality={85}
-                    priority
+                    alt={image.title}
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 768px) 80px, (max-width: 1024px) 100px, 120px"
                   />
-                </div>
-              
-              </Carousel.Item>
+                </button>
+              ))}
+            </div>
+          </div>
+
+          {/* Progress Indicators */}
+          <div className="flex justify-center space-x-2 mt-4 lg:mt-6">
+            {images.map((_, index) => (
+              <button
+                key={index}
+                onClick={() => goToSlide(index)}
+                className={`w-2 h-2 sm:w-3 sm:h-3 rounded-full transition-all duration-300 ${
+                  index === currentIndex
+                    ? "bg-white scale-125"
+                    : "bg-white/50 hover:bg-white/80"
+                }`}
+                aria-label={`Ir a imagen ${index + 1}`}
+              />
             ))}
-          </Carousel>
+          </div>
         </div>
       </div>
 
-      <div className="hidden md:flex md:justify-center w-full mb-8 mx-auto mt-14">
-        <a
-          href="https://wa.me/5492984207525"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="bg-white p-6 w-1/2 rounded-lg shadow-lg flex items-center justify-center fluid-bg"
-        >
-          <h3 className="text-xl md:text-[27px] lg:text-3xl font-title  font-semibold text-black">
+      {/* CTA Section */}
+      <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pb-12 lg:pb-20">
+        <div className="bg-white rounded-2xl shadow-2xl p-6 sm:p-8 lg:p-12 text-center transform hover:scale-[1.02] transition-transform duration-300">
+          <h3 className="font-title font-semibold text-black text-2xl sm:text-3xl lg:text-4xl mb-4 lg:mb-6">
             ¡Reservá tu cita!
           </h3>
-        </a>
-      </div>
-
-      <div className="flex flex-col justify-center items-center mt-8 mb-8 md:hidden">
-        <a
-          href="https://wa.me/5492984207525"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="w-[19rem] h-7 relative flex items-center justify-center px-6 py-2 text-md font-semibold transition duration-300 ease-in-out rounded-lg shadow-lg overflow-hidden group fluid-bg text-center mb-4"
-        >
-          <h3 className="text-xl md:text-[27px] lg:text-3xl font-title  font-semibold text-black">
-            ¡Reservá tu cita!
-          </h3>
-        </a>
+          <p className="font-sans text-gray-700 text-lg sm:text-xl lg:text-2xl mb-6 lg:mb-8 leading-relaxed">
+            Transformá tus uñas en una obra de arte. Contactanos y empezá tu experiencia de belleza única.
+          </p>
+          <a
+            href="https://wa.me/5492984207525"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white font-semibold text-lg sm:text-xl lg:text-2xl py-4 sm:py-6 px-8 sm:px-12 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
+          >
+            Reservar por WhatsApp
+          </a>
+        </div>
       </div>
     </section>
   );
