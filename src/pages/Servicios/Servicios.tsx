@@ -77,7 +77,7 @@ const faqs: FAQ[] = [
   },
 ];
 
-export const Servicios = () => {
+ const Servicios = () => {
   const [expandedCards, setExpandedCards] = useState<number[]>([]);
   const [isMobile, setIsMobile] = useState<boolean>(false);
 
@@ -250,3 +250,5 @@ export const Servicios = () => {
     </section>
   );
 };
+
+export default Servicios;

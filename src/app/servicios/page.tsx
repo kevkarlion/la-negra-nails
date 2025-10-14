@@ -1,8 +1,8 @@
 "use client";
 
-import  {Servicios}  from "@/pages/Servicios/Servicios";
+import   Servicios   from "@/pages/Servicios/Servicios";
 
-const ServiciosPage = () => {
+ const ServiciosPage = () => {
   return <Servicios />;
 };
 
