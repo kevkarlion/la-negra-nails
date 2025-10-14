@@ -1,5 +1,6 @@
 "use client";
 
+import React from "react";
 import { Dancing_Script, Inter } from "next/font/google";
 import Carrusel from "@/components/Carrusel/Carrusel";
 import { ButtonLink } from "@/components/shared/Buttons";
@@ -19,10 +20,10 @@ const inter = Inter({
 
 const CursosUnificados = () => {
   return (
-    <main className={`bg-gradient-to-br from-rose-50 via-pink-50 to-rose-100 min-h-screen text-gray-800 pt-6 ${inter.className}`}>
+    <main className={`bg-gradient-to-br from-rose-50 via-pink-50 to-rose-100 min-h-screen text-gray-800 ${inter.className}`}>
       {/* Sección Hero con Fondo Elegante */}
       <section
-        className="relative px-4 py-20 md:px-8 md:py-28 lg:py-32 overflow-hidden"
+        className="relative px-6 py-24 md:px-8 md:py-24  overflow-hidden"
         style={{
           backgroundImage: 'url("/background/cursos.svg")',
           backgroundAttachment: "fixed",
@@ -33,9 +34,9 @@ const CursosUnificados = () => {
         <div className="absolute inset-0 bg-gradient-to-r from-white/40 to-pink-100/30 backdrop-blur-[1px]"></div>
         
         {/* Encabezado Elegante */}
-        <div className="relative z-10 text-center">
-          <div className="mb-8">
-            <h1 className={`${dancingScript.className} font-bold text-gray-800 text-5xl sm:text-6xl md:text-7xl lg:text-8xl mb-4 drop-shadow-lg`}>
+        <div className="relative z-10 text-center pt-8">
+          <div className="mb-12">
+            <h1 className={`${dancingScript.className} font-bold text-gray-800 text-4xl sm:text-6xl md:text-7xl  mb-6 drop-shadow-lg`}>
               Cursos Presenciales
             </h1>
             <div className="w-24 h-1 bg-gradient-to-r from-rose-400 to-pink-500 mx-auto mb-6 rounded-full"></div>
@@ -46,7 +47,7 @@ const CursosUnificados = () => {
         </div>
 
         {/* Contenido Principal */}
-        <div className="relative z-10 flex flex-col lg:flex-row items-center justify-center gap-12 mt-16">
+        <div className="relative z-10 flex flex-col lg:flex-row items-center justify-center gap-12 mt-12">
           
           {/* Galería de Imágenes Mejorada */}
           <div className="w-full lg:w-1/2">
@@ -137,7 +138,7 @@ const CursosUnificados = () => {
         </div>
 
         {/* CTA Desktop Mejorado */}
-        <div className="relative z-10 hidden md:flex justify-center mt-12">
+        <div className="relative z-10 hidden md:flex justify-center mt-16">
           <div className="bg-white/90 backdrop-blur-sm rounded-2xl p-8 shadow-2xl border border-white/50 transform hover:scale-105 transition-all duration-300">
             <a
               href="https://wa.me/5492984207525"
@@ -152,16 +153,16 @@ const CursosUnificados = () => {
       </section>
 
       {/* Sección de Metodología Elegante */}
-      <section className="relative px-4 py-20 md:px-8 md:py-24 bg-gradient-to-br from-white via-rose-50/30 to-pink-100/50">
+      <section className="relative px-6 py-20 md:px-8 md:py-24 bg-gradient-to-br from-white via-rose-50/30 to-pink-100/50">
         <div className="max-w-6xl mx-auto">
           
           {/* Encabezado de Metodología */}
           <div className="text-center mb-16">
             <div className="mb-6">
-              <h2 className={`${dancingScript.className} text-4xl md:text-5xl lg:text-6xl font-bold text-gray-800 mb-4`}>
+              <h2 className={`${dancingScript.className} text-4xl md:text-5xl lg:text-6xl font-bold text-gray-800 mb-6`}>
                 Nuestra Esencia
               </h2>
-              <div className="w-20 h-1 bg-gradient-to-r from-rose-400 to-pink-500 mx-auto rounded-full"></div>
+              <div className="w-20 h-1 bg-gradient-to-r from-rose-400 to-pink-500 mx-auto mb-6 rounded-full"></div>
             </div>
             <p className="text-xl md:text-2xl text-gray-700 font-light max-w-4xl mx-auto leading-relaxed">
               Donde la técnica se encuentra con la elegancia, y cada detalle cuenta

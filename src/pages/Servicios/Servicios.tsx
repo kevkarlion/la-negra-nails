@@ -77,7 +77,7 @@ const faqs: FAQ[] = [
   },
 ];
 
- const Servicios = () => {
+const Servicios = () => {
   const [expandedCards, setExpandedCards] = useState<number[]>([]);
   const [isMobile, setIsMobile] = useState<boolean>(false);
 
@@ -97,11 +97,11 @@ const faqs: FAQ[] = [
   };
 
   return (
-    <section className="px-6 pt-6 pb-6 md:pb-16 bg-gradient-to-br from-rose-300 via-pink-300 to-rose-400" id="servicios">
-      <div className="max-w-screen-lg mx-auto md:pt-28 lg:pt-32">
+    <section className="px-6 py-32 md:px-8 md:py-24 bg-gradient-to-br from-rose-300 via-pink-300 to-rose-400" id="servicios">
+      <div className="max-w-screen-lg mx-auto">
         {/* Sección de Introducción */}
-        <div className="text-center mb-16">
-          <h1 className="font-title mb-4 font-bold text-gray-800 text-4xl sm:text-5xl md:text-6xl">
+        <div className="text-center mb-16 md:pt-8">
+          <h1 className="font-title mb-6 font-bold text-gray-800  text-4xl sm:text-6xl md:text-7xl ">
             Descubre Nuestros Servicios
           </h1>
           <div className="w-24 h-1 bg-gradient-to-r from-rose-400 to-pink-500 mx-auto mb-6 rounded-full"></div>
@@ -196,10 +196,10 @@ const faqs: FAQ[] = [
         {/* Sección de Preguntas Frecuentes con nuevo diseño */}
         <div className="mt-24">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-sans font-bold text-gray-800 mb-4">
+            <h2 className="text-3xl md:text-4xl font-sans font-bold text-gray-800 mb-6">
               Preguntas Frecuentes
             </h2>
-            <div className="w-20 h-1 bg-gradient-to-r from-rose-400 to-pink-500 mx-auto rounded-full"></div>
+            <div className="w-20 h-1 bg-gradient-to-r from-rose-400 to-pink-500 mx-auto mb-6 rounded-full"></div>
           </div>
           
           <div className="space-y-6 max-w-4xl mx-auto">
@@ -225,7 +225,7 @@ const faqs: FAQ[] = [
         </div>
        
         {/* Botones con nuevo diseño */}
-        <div className="flex flex-col justify-center items-center mt-12 mb-8 md:hidden">
+        <div className="flex flex-col justify-center items-center mt-16 mb-8 md:hidden">
           <div className="transform hover:scale-105 transition-all duration-300">
             <ButtonLink
               text="Dónde encontrarnos"
