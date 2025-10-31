@@ -26,7 +26,7 @@ export const ButtonLink: React.FC<ButtonLinkProps> = ({
     <Link
       href={href}
       
-      className={`${bgColor} ${textColor} ${margin} ${border} ${borderColor} ${font}  md:hidden w-[19rem] h-7 relative flex items-center justify-center px-6 py-2 text-md font-semibold transition duration-300 ease-in-out rounded-lg shadow-lg overflow-hidden group fluid-bg text-center`}
+      className={`${bgColor} ${textColor} ${margin} ${border} ${borderColor} ${font}  md:hidden w-[19rem] h-10 relative flex items-center justify-center px-6 py-2 text-md font-semibold transition duration-300 ease-in-out rounded-lg shadow-lg overflow-hidden group fluid-bg text-center`}
     >
       {/* Capa de brillo */}
       <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-purple-400 to-pink-400 opacity-0 group-hover:opacity-100 transition duration-300 ease-in-out"></span>
@@ -35,7 +35,7 @@ export const ButtonLink: React.FC<ButtonLinkProps> = ({
       <span className="absolute inset-0 transition-transform duration-300 ease-in-out transform scale-100 group-hover:scale-110 group-hover:-translate-y-1 rounded-md bg-transparent"></span>
 
       {/* Texto del botón */}
-      <span className="relative  z-10 text-center text-title-mobile-sm ">
+      <span className="relative z-10 text-center text-2xl">
         {text}
       </span>
     </Link>

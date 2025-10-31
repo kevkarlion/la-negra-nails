@@ -59,13 +59,13 @@ export const Cursos: React.FC<SectionProps> = ({
     >
       {/* Vista mobile */}
       <div
-        className={`font-title mx-auto text-center mt-9 flex flex-col md:flex-row items-center md:items-start`}
+        className={`font-title mx-auto mt-16 text-center flex flex-col md:flex-row items-center md:items-start`}
       >
         <div className="md:hidden flex flex-col items-center justify-center">
-          <h1 className="font-title text-[3.75rem] font-bold text-black sm:text-[3rem]">
+          <h1 className="font-title text-5xl mb-8 font-bold text-black sm:text-[3rem]">
             {title}
           </h1>
-          <p className="w-full mb-4 sm:w-4/6 mt-2 font-sans text-black font-light  text-lg sm:text-xl md:text-lg lg:text-xl">
+          <p className="leading-relaxed text-balance text-base lg:text-xl lg:tracking-wide tracking-wider w-full mb-8 sm:w-4/6 font-sans text-black font-light ">
             {subtitle}
           </p>
           <ButtonLink
@@ -98,7 +98,7 @@ export const Cursos: React.FC<SectionProps> = ({
               <h1 className="text-start font-bold text-gray-800 text-[3.5rem] sm:text-[4rem] lg:text-[5rem]">
                 {title}
               </h1>
-              <p className="md:text-base md:text-left md:flex lg:text-xl  mt-4 font-sans text-subtitle-mobile-md font-medium text-black">
+              <p className="tracking-wider md:text-base md:text-left md:flex lg:text-lg  mt-4 font-sans text-subtitle-mobile-md font-medium text-black">
                 Transforma tu pasión en una profesión. Aprende a proteger la
                 salud de las uñas mientras dominas técnicas avanzadas y usas
                 materiales de alta calidad. Nuestros cursos combinan fundamentos
@@ -106,7 +106,7 @@ export const Cursos: React.FC<SectionProps> = ({
                 confianza, creatividad y destaque en el mundo de la manicura
                 profesional!
               </p>
-              <div className="font-title bg-white lg:w-[21.37rem] p-6 rounded-lg shadow-lg flex items-center self-center mt-12 justify-center fluid-bg">
+              <div className="font-title  bg-white lg:w-[21.37rem] p-6 rounded-lg shadow-lg flex items-center self-center mt-12 justify-center fluid-bg">
                 <Link
                   href="/cursos"
                   className="md:text-[27px] lg:text-3xl  font-semibold text-black"
@@ -120,7 +120,7 @@ export const Cursos: React.FC<SectionProps> = ({
       </div>
 
                 {/* Desktop */}
-      <div className="hidden  md:flex justify-center flex-col">
+      <div className="hidden  md:flex justify-center flex-col mt-12">
         <h3 className="hidden md:flex md:self-center md:mt-12 md:mb-6 text-black text-[2rem] font-title sm:text-[3rem]">
           Modalidades
         </h3>

@@ -1,11 +1,11 @@
-'use client';
+"use client";
 
-import React, { useState } from 'react';
-import Image from 'next/image';
+import React, { useState } from "react";
+import Image from "next/image";
 
 // Import estático (Next genera blur automático)
-import heroBg from '@/assets/images/la-negra-hero.webp';
-import logo from '@/assets/images/logo-dorado-white-nvo.png';
+import heroBg from "@/assets/images/la-negra-hero.webp";
+import logo from "@/assets/images/logo-dorado-white-nvo.png";
 
 import { Inter } from "next/font/google";
 
@@ -33,7 +33,7 @@ export const Hero: React.FC = () => {
         quality={90}
         onLoadingComplete={() => setIsLoaded(true)}
         className={`object-cover object-top transition-all duration-[1.2s] ease-out ${
-          isLoaded ? 'blur-0 scale-100' : 'blur-2xl scale-105'
+          isLoaded ? "blur-0 scale-100" : "blur-2xl scale-105"
         }`}
       />
 
@@ -54,7 +54,7 @@ export const Hero: React.FC = () => {
         </div>
 
         {/* Subtítulo */}
-        <h2 className="text-white mb-4  font-sans text-xl md:text-3xl  w-4/5 md:w-3/5 leading-snug md:leading-relaxed tracking-wide font-normal">
+        <h2 className="text-white mb-4  font-sans text-base lg:text-xl lg:tracking-wide tracking-wider md:text-3xl  w-4/5 md:w-3/5 leading-snug md:leading-relaxed   font-normal">
           Estilo y elegancia con el cuidado que tus uñas merecen. <br />
           <span>¡Luce impecable y saludable!</span>
         </h2>
@@ -64,10 +64,10 @@ export const Hero: React.FC = () => {
           href="https://wa.me/5492984207525"
           target="_blank"
           rel="noopener noreferrer"
-          className="md:hidden w-[19rem] h-7 flex items-center justify-center px-6 py-2 text-md font-semibold transition duration-300 ease-in-out rounded-lg shadow-lg overflow-hidden group fluid-bg text-center mb-4"
+          className="md:hidden w-[18rem] h-7 flex items-center justify-center py-6 text-md font-semibold transition duration-300 ease-in-out rounded-lg shadow-lg overflow-hidden group fluid-bg text-center mb-4"
         >
-          <h3 className="text-xl font-title font-semibold text-black">
-            ¡Contáctanos!
+          <h3 className="text-2xl font-title font-semibold text-black">
+            Contáctanos
           </h3>
         </a>
 
@@ -78,10 +78,10 @@ export const Hero: React.FC = () => {
               href="https://wa.me/5492984207525"
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-white p-6 w-1/2 rounded-lg shadow-lg flex items-center justify-center fluid-bg"
+              className="bg-white p-6 w-2/3 rounded-lg shadow-lg flex items-center justify-center fluid-bg"
             >
-              <h3 className=" md:text-[27px] lg:text-3xl font-title  font-semibold text-black">
-                ¡Contáctanos!
+              <h3 className=" md:text-[27px] lg:text-2xl font-title  font-semibold text-black">
+                Contáctanos
               </h3>
             </a>
           </div>
