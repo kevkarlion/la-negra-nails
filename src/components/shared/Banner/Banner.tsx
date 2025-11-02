@@ -16,7 +16,7 @@ export const Banner: React.FC<BannerProps> = ({ logoSrc }) => {
 
       {/* Contenido del banner */}
       <div
-        className="absolute inset-0 flex justify-center items-center"
+        className="absolute inset-0 flex justify-center items-center border-black  border-t-2 border-l-2 border-r-2"
       >
         {/* Rectángulo con fondo semi-transparente */}
         <div className="bg-opacity-60 flex justify-center  p-4 md:p-6  w-full h-full">
