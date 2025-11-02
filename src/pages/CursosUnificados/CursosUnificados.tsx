@@ -35,12 +35,12 @@ const CursosUnificados = () => {
         
         {/* Encabezado Elegante */}
         <div className="relative z-10 text-center pt-8">
-          <div className="mb-12 flex flex-col items-center">
+          <div className="lg:mb-12 flex flex-col items-center">
             <h1 className={`${dancingScript.className} mb-2 font-title font-bold text-black text-5xl sm:text-[3rem] md:text-[4rem] `}>
               Cursos Presenciales
             </h1>
             <div className=" mt-2 w-24 h-[2px] bg-gradient-to-r from-rose-400 to-pink-500 mx-auto mb-6 rounded-full"></div>
-            <p className=" text-center text-base lg:text-xl lg:tracking-wide tracking-wider font-sans text-black mb-9 lg:w-4/6">
+            <p className=" text-center text-base lg:text-xl lg:tracking-wide tracking-wider font-sans text-black lg:mb-9 lg:w-4/6">
               Descubre el arte de la manicura profesional en un ambiente íntimo y exclusivo
             </p>
           </div>
@@ -178,11 +178,11 @@ const CursosUnificados = () => {
                 <h3 className="text-2xl md:text-3xl font-bold text-gray-800 mb-6 text-center">
                   Filosofía de <span className="text-transparent bg-gradient-to-r from-rose-500 to-pink-600 bg-clip-text">Enseñanza</span>
                 </h3>
-                <p className="text-lg text-gray-700 leading-relaxed font-light mb-6">
+                <p className="text-center text-base lg:text-xl lg:tracking-wide lg:text-left tracking-wider text-gray-700 leading-relaxed font-light mb-6">
                   Creemos en una formación que va más allá de la técnica. Priorizamos la salud ungueal 
                   y el uso de productos premium para garantizar resultados que perduran en el tiempo.
                 </p>
-                <p className="text-lg text-gray-700 leading-relaxed font-light">
+                <p className="text-center text-base lg:text-xl lg:tracking-wide lg:text-left tracking-wider text-gray-700 leading-relaxed font-light">
                   Cada curso está diseñado meticulosamente para brindarte bases sólidas, desde los 
                   fundamentos de la salud ungueal hasta las tendencias más vanguardistas en diseño.
                 </p>
@@ -200,25 +200,25 @@ const CursosUnificados = () => {
             {/* Información Adicional */}
             <div className="space-y-6">
               <div className="bg-white/70 backdrop-blur-sm rounded-2xl p-8 shadow-lg border border-white/50">
-                <h4 className="text-xl font-semibold text-gray-800 mb-4 text-center">
+                <h4 className="font-semibold text-gray-800 mb-4 text-center text-base lg:text-xl lg:tracking-wide">
                   ¿Por qué elegirnos?
                 </h4>
                 <ul className="space-y-4 text-gray-700 font-light">
                   <li className="flex items-center">
                     <div className="w-3 h-3 bg-gradient-to-r from-rose-400 to-pink-500 rounded-full mr-4"></div>
-                    <span>Enfoque personalizado según tu nivel y objetivos</span>
+                    <span className=" lg:tracking-wide tracking-wider">Enfoque personalizado según tu nivel y objetivos</span>
+                  </li>
+                  <li className="flex items-center">
+                    <div className="w-3 h-3 bg-gradient-to-r from-rose-400 to-pink-500 rounded-full mr-4 text-base lg:text-xl lg:tracking-wide"></div>
+                    <span className=" lg:tracking-wide tracking-wider">Técnicas actualizadas con las últimas tendencias</span>
                   </li>
                   <li className="flex items-center">
                     <div className="w-3 h-3 bg-gradient-to-r from-rose-400 to-pink-500 rounded-full mr-4"></div>
-                    <span>Técnicas actualizadas con las últimas tendencias</span>
+                    <span className=" lg:tracking-wide tracking-wider">Soporte continuo incluso después de finalizar</span>
                   </li>
                   <li className="flex items-center">
                     <div className="w-3 h-3 bg-gradient-to-r from-rose-400 to-pink-500 rounded-full mr-4"></div>
-                    <span>Soporte continuo incluso después de finalizar</span>
-                  </li>
-                  <li className="flex items-center">
-                    <div className="w-3 h-3 bg-gradient-to-r from-rose-400 to-pink-500 rounded-full mr-4"></div>
-                    <span>Ambiente inspirador y equipamiento profesional</span>
+                    <span className=" lg:tracking-wide tracking-wider">Ambiente inspirador y equipamiento profesional</span>
                   </li>
                 </ul>
               </div>
@@ -229,14 +229,14 @@ const CursosUnificados = () => {
                   <h3 className="text-xl font-semibold text-gray-800 mb-3">
                     ¿Lista para comenzar?
                   </h3>
-                  <p className="text-gray-600 font-light mb-4">
+                  <p className="text-gray-600 font-light mb-4 text-center text-base lg:text-xl lg:tracking-wide">
                     Únete a nuestra comunidad de artistas de uñas
                   </p>
                   <div className="transform hover:scale-105 transition-all duration-300">
                     <ButtonLink
                       text="Contactar Ahora"
                       href="https://wa.me/5492984207525"
-                      textColor="text-white"
+                      textColor="text-black"
                       bgColor="bg-gradient-to-r from-rose-500 to-pink-600"
                     />
                   </div>
