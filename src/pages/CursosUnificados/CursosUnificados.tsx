@@ -35,12 +35,12 @@ const CursosUnificados = () => {
         
         {/* Encabezado Elegante */}
         <div className="relative z-10 text-center pt-8">
-          <div className="mb-12">
-            <h1 className={`${dancingScript.className} font-bold text-gray-800 text-4xl sm:text-6xl md:text-7xl  mb-6 drop-shadow-lg`}>
+          <div className="mb-12 flex flex-col items-center">
+            <h1 className={`${dancingScript.className} mb-2 font-title font-bold text-black text-5xl sm:text-[3rem] md:text-[4rem] `}>
               Cursos Presenciales
             </h1>
-            <div className="w-24 h-1 bg-gradient-to-r from-rose-400 to-pink-500 mx-auto mb-6 rounded-full"></div>
-            <p className="text-xl sm:text-2xl md:text-3xl text-gray-700 font-light font-sans max-w-4xl mx-auto leading-relaxed">
+            <div className=" mt-2 w-24 h-[2px] bg-gradient-to-r from-rose-400 to-pink-500 mx-auto mb-6 rounded-full"></div>
+            <p className=" text-center text-base lg:text-xl lg:tracking-wide tracking-wider font-sans text-black mb-9 lg:w-4/6">
               Descubre el arte de la manicura profesional en un ambiente íntimo y exclusivo
             </p>
           </div>
@@ -66,7 +66,7 @@ const CursosUnificados = () => {
                 Transforma tu <span className="text-transparent bg-gradient-to-r from-rose-500 to-pink-600 bg-clip-text">pasión</span> en profesión
               </h2>
               
-              <p className="text-lg text-gray-700 text-center mb-8 leading-relaxed font-light">
+              <p className="text-lg text-gray-700 text-center mb-8 leading-relaxed font-light lg:tracking-wide tracking-wider">
                 Sumérgete en el mundo de la belleza de uñas con nuestra formación integral, 
                 donde combinamos técnica, arte y emprendimiento en cada sesión.
               </p>
@@ -78,7 +78,7 @@ const CursosUnificados = () => {
                     <HiOutlineUserGroup size={28} className="text-white" />
                   </div>
                   <div className="ml-6">
-                    <h3 className="text-xl font-semibold text-gray-800 mb-2">Grupos Exclusivos</h3>
+                    <h3 className="text-xl font-semibold text-gray-800 mb-2 lg:tracking-wide tracking-wider">Grupos Exclusivos</h3>
                     <p className="text-gray-600 font-light leading-relaxed">
                       Clases personalizadas en grupos reducidos para una atención dedicada y aprendizaje óptimo
                     </p>
@@ -91,7 +91,7 @@ const CursosUnificados = () => {
                   </div>
                   <div className="ml-6">
                     <h3 className="text-xl font-semibold text-gray-800 mb-2">Certificación Premium</h3>
-                    <p className="text-gray-600 font-light leading-relaxed">
+                    <p className="text-gray-600 font-light leading-relaxed lg:tracking-wide tracking-wider">
                       Diploma profesional reconocido que avala tu expertise en técnicas modernas de manicura
                     </p>
                   </div>
@@ -103,7 +103,7 @@ const CursosUnificados = () => {
                   </div>
                   <div className="ml-6">
                     <h3 className="text-xl font-semibold text-gray-800 mb-2">Materiales Premium</h3>
-                    <p className="text-gray-600 font-light leading-relaxed">
+                    <p className="text-gray-600 font-light leading-relaxed lg:tracking-wide tracking-wider">
                       Trabaja con productos de primera calidad y herramientas profesionales desde el primer día
                     </p>
                   </div>
@@ -115,7 +115,7 @@ const CursosUnificados = () => {
                   </div>
                   <div className="ml-6">
                     <h3 className="text-xl font-semibold text-gray-800 mb-2">Recursos Exclusivos</h3>
-                    <p className="text-gray-600 font-light leading-relaxed">
+                    <p className="text-gray-600 font-light leading-relaxed lg:tracking-wide tracking-wider">
                       Acceso permanente a nuestra biblioteca digital, tutoriales y comunidad de alumnas
                     </p>
                   </div>
@@ -128,7 +128,7 @@ const CursosUnificados = () => {
                   <ButtonLink
                     text="¡Quiero Empezar!"
                     href="https://wa.me/5492984207525"
-                    textColor="text-white"
+                    textColor="text-black"
                     bgColor="bg-gradient-to-r from-rose-500 to-pink-600"
                   />
                 </div>
@@ -157,14 +157,14 @@ const CursosUnificados = () => {
         <div className="max-w-6xl mx-auto">
           
           {/* Encabezado de Metodología */}
-          <div className="text-center mb-16">
-            <div className="mb-6">
-              <h2 className={`${dancingScript.className} text-4xl md:text-5xl lg:text-6xl font-bold text-gray-800 mb-6`}>
+          <div className="text-center mb-4 flex flex-col items-center">
+            <div className="mb-2">
+              <h2 className={`${dancingScript.className}${dancingScript.className} mb-2 font-title font-bold text-black text-5xl sm:text-[3rem] md:text-[4rem]`}>
                 Nuestra Esencia
               </h2>
-              <div className="w-20 h-1 bg-gradient-to-r from-rose-400 to-pink-500 mx-auto mb-6 rounded-full"></div>
+              <div className="w-20 h-[2px] bg-gradient-to-r from-rose-400 to-pink-500 mx-auto mb-6 rounded-full"></div>
             </div>
-            <p className="text-xl md:text-2xl text-gray-700 font-light max-w-4xl mx-auto leading-relaxed">
+            <p className="text-center text-base lg:text-xl lg:tracking-wide tracking-wider font-sans text-black mb-9 lg:w-4/6">
               Donde la técnica se encuentra con la elegancia, y cada detalle cuenta
             </p>
           </div>

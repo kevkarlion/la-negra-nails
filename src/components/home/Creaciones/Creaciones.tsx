@@ -8,82 +8,82 @@ const images = [
   {
     src: "/images/carrusel/image1.webp",
     title: "Diseño Elegante",
-    description: "Uñas esculpidas con técnica premium"
+    description: "Uñas esculpidas con técnica premium",
   },
   {
     src: "/images/carrusel/image2.webp",
     title: "French Moderno",
-    description: "Clásico renovado con detalles únicos"
+    description: "Clásico renovado con detalles únicos",
   },
   {
     src: "/images/carrusel/image3.webp",
     title: "Artístico",
-    description: "Expresión creativa en cada uña"
+    description: "Expresión creativa en cada uña",
   },
   {
     src: "/images/carrusel/image4.webp",
     title: "Natural & Fresco",
-    description: "Estilo minimalista y sofisticado"
+    description: "Estilo minimalista y sofisticado",
   },
   {
     src: "/images/carrusel/image5.webp",
     title: "Bold & Beautiful",
-    description: "Colores vibrantes que destacan"
+    description: "Colores vibrantes que destacan",
   },
   {
     src: "/images/carrusel/image6.webp",
     title: "Lujo en Detalles",
-    description: "Perfección en cada aplicación"
+    description: "Perfección en cada aplicación",
   },
   {
     src: "/images/carrusel/image7.webp",
     title: "Tendencia 2024",
-    description: "Lo último en diseño de uñas"
+    description: "Lo último en diseño de uñas",
   },
   {
     src: "/images/carrusel/image8.webp",
     title: "Clásico Atemporal",
-    description: "Elegancia que nunca pasa de moda"
+    description: "Elegancia que nunca pasa de moda",
   },
   {
     src: "/images/carrusel/image9.webp",
     title: "Festivo",
-    description: "Celebra cada ocasión especial"
+    description: "Celebra cada ocasión especial",
   },
   {
     src: "/images/carrusel/image10.webp",
     title: "Minimalista",
-    description: "Belleza en la simplicidad"
+    description: "Belleza en la simplicidad",
   },
   {
     src: "/images/carrusel/image11.webp",
     title: "Dramático",
-    description: "Impacto visual inmediato"
+    description: "Impacto visual inmediato",
   },
   {
     src: "/images/carrusel/image14.webp",
     title: "Romántico",
-    description: "Delicadeza y suavidad"
+    description: "Delicadeza y suavidad",
   },
   {
     src: "/images/carrusel/image15.webp",
     title: "Geométrico",
-    description: "Líneas y formas definidas"
+    description: "Líneas y formas definidas",
   },
   {
     src: "/images/carrusel/image16.webp",
     title: "Naturaleza",
-    description: "Inspiración en elementos naturales"
+    description: "Inspiración en elementos naturales",
   },
   {
     src: "/images/carrusel/image17.webp",
     title: "Oro & Glamour",
-    description: "Lujo y brillo excepcional"
+    description: "Lujo y brillo excepcional",
   },
   {
     src: "/images/carrusel/image9-kapping.webp",
     title: "Kapping Perfecto",
-    description: "Técnica profesional impecable"
+    description: "Técnica profesional impecable",
   },
 ];
 
@@ -142,30 +142,29 @@ export const Creaciones = () => {
 
   return (
     <section
-      className="relative bg-gradient-to-br from-secondary-brightPink to-secondary-hotPink text-white overflow-hidden"
+      className="relative bg-secondary-mediumPink text-white overflow-hidden pt-6"
       id="creaciones"
     >
       {/* Background Texture */}
       <div className="absolute inset-0 bg-[url('/images/marble-texture.png')] opacity-10 pointer-events-none" />
 
       {/* Header Section */}
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 lg:pt-20 text-center">
-        <h1 className="font-title font-bold text-black text-4xl sm:text-5xl lg:text-7xl xl:text-8xl mb-4">
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8  lg:pt-12 text-center flex flex-col justify-center items-center">
+        <h1 className="font-title font-bold text-black text-5xl sm:text-[3rem] md:text-[4rem] mb-4 mt-16">
           Creaciones
         </h1>
-        <p className="max-w-3xl mx-auto font-sans text-black font-light text-lg sm:text-xl lg:text-2xl leading-relaxed">
-          Cada diseño de uñas es una expresión única de estilo y personalidad. 
-          Usamos técnicas innovadoras y productos de alta calidad para ofrecerte 
+        <p className="text-center text-base lg:text-xl lg:tracking-wide tracking-wider font-sans text-black mb-9 lg:w-4/6">
+          Cada diseño de uñas es una expresión única de estilo y personalidad.
+          Usamos técnicas innovadoras y productos de alta calidad para ofrecerte
           arte y precisión.
         </p>
       </div>
 
       {/* Enhanced Carousel */}
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 lg:py-16">
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 ">
         <div className="relative bg-white/10 backdrop-blur-sm rounded-3xl p-4 sm:p-6 lg:p-8 shadow-2xl">
-          
           {/* Main Carousel */}
-          <div 
+          <div
             className="relative aspect-[4/3] sm:aspect-video rounded-2xl overflow-hidden bg-black/20"
             onTouchStart={handleTouchStart}
             onTouchMove={handleTouchMove}
@@ -182,7 +181,7 @@ export const Creaciones = () => {
                 quality={90}
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 70vw"
               />
-              
+
               {/* Image Info Overlay */}
               <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-4 sm:p-6">
                 <h3 className="font-title font-semibold text-white text-xl sm:text-2xl lg:text-3xl">
@@ -202,7 +201,7 @@ export const Creaciones = () => {
             >
               <ChevronLeft className="w-5 h-5 sm:w-6 sm:h-6" />
             </button>
-            
+
             <button
               onClick={nextSlide}
               className="absolute right-2 sm:right-4 top-1/2 transform -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-2 sm:p-3 rounded-full transition-all duration-300 backdrop-blur-sm"
@@ -270,19 +269,25 @@ export const Creaciones = () => {
       </div>
 
       {/* CTA Section */}
-      <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pb-12 lg:pb-20">
-        <div className="bg-white rounded-2xl shadow-2xl p-6 sm:p-8 lg:p-12 text-center transform hover:scale-[1.02] transition-transform duration-300">
+      <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pb-12 lg:pb-20 mt-12">
+        <div
+          className="bg-white border-t-2 border-r-2 rounded-2xl shadow-2xl p-6 sm:p-8 lg:p-12 text-center transform hover:scale-[1.02] transition-transform duration-300"
+          style={{
+            background: `linear-gradient(270deg, #FFECB3 0%, #FFE0B2 20%, #FFCDD2 40%, #F8BBD9 60%, #E1BEE7 80%, #D1C4E9 100%)`,
+          }}
+        >
           <h3 className="font-title font-semibold text-black text-2xl sm:text-3xl lg:text-4xl mb-4 lg:mb-6">
             ¡Reservá tu cita!
           </h3>
-          <p className="font-sans text-gray-700 text-lg sm:text-xl lg:text-2xl mb-6 lg:mb-8 leading-relaxed">
-            Transformá tus uñas en una obra de arte. Contactanos y empezá tu experiencia de belleza única.
+          <p className="text-blacktext-base lg:text-xl lg:tracking-wide tracking-wider font-sans text-black mb-6 lg:mb-8 leading-relaxed">
+            Transformá tus uñas en una obra de arte. Contactanos y empezá tu
+            experiencia de belleza única.
           </p>
           <a
             href="https://wa.me/5492984207525"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-block bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white font-semibold text-lg sm:text-xl lg:text-2xl py-4 sm:py-6 px-8 sm:px-12 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
+            className="inline-block border-grey border-t border-r bg-secibdary text-black font-semibold text-lg sm:text-xl lg:text-2xl py-4 sm:py-6 px-8 sm:px-12 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
           >
             Reservar por WhatsApp
           </a>
