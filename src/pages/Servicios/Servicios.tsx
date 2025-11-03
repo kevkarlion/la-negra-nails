@@ -1,7 +1,6 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
-import Link from "next/link";
 import { ButtonLink } from "@/components/shared/Buttons"
 
 interface Servicio {
@@ -97,15 +96,15 @@ const Servicios = () => {
   };
 
   return (
-    <section className="px-6 py-32 md:px-8 md:py-24 bg-gradient-to-br from-rose-300 via-pink-300 to-rose-400" id="servicios">
+    <section className="px-6 pt-32 pb-16 md:px-8 md:py-24 bg-gradient-to-br from-rose-300 via-pink-300 to-rose-400" id="servicios">
       <div className="max-w-screen-lg mx-auto">
         {/* Sección de Introducción */}
-        <div className="text-center mb-16 md:pt-8">
-          <h1 className="font-title mb-6 font-bold text-gray-800  text-4xl sm:text-6xl md:text-7xl ">
+        <div className="text-center mb-6 md:pt-8 flex flex-col items-center">
+          <h1 className="font-title mb-2 font-bold text-black text-5xl sm:text-[3rem] md:text-[4rem]">
             Descubre Nuestros Servicios
           </h1>
-          <div className="w-24 h-1 bg-gradient-to-r from-rose-400 to-pink-500 mx-auto mb-6 rounded-full"></div>
-          <p className="text-lg md:text-xl font-sans text-gray-700 max-w-2xl mx-auto leading-relaxed">
+          <div className="w-24 h-[3px] bg-gradient-to-r from-rose-400 to-pink-500 mx-auto mb-6 rounded-full"></div>
+          <p className="text-center text-base lg:text-xl lg:tracking-wide tracking-wider font-sans text-gray-700 lg:mb-9 lg:w-4/6">
             Cada uno de nuestros servicios está diseñado para ofrecerte la mejor
             experiencia en cuidado y belleza. Elige el que mejor se adapte a tus
             necesidades y déjanos consentirte.
@@ -137,22 +136,22 @@ const Servicios = () => {
               <div className="p-8 flex flex-col justify-center flex-1">
                 <div className="flex items-center mb-4">
                   <div className="w-3 h-8 bg-gradient-to-b from-rose-500 to-pink-600 rounded-full mr-4"></div>
-                  <h2 className="text-2xl font-sans font-bold text-gray-800">
+                  <h2 className="text-xl font-sans font-bold text-gray-800">
                     {servicio.title}
                   </h2>
                 </div>
-                
-                <p className="text-gray-700 text-base font-sans leading-relaxed mb-4">
+
+                <p className="text-center lg:text-left text-base lg:text-xl lg:tracking-wide tracking-wider font-sans text-gray-700 lg:mb-9 lg:w-4/6">
                   {servicio.description}
                 </p>
                 
                 {!isMobile && servicio.description2 && (
                   <div className="space-y-3">
-                    <p className="text-gray-600 text-sm font-sans leading-relaxed">
+                    <p className="text-center lg:text-left  text-base lg:text-xl lg:tracking-wide tracking-wider font-sans text-gray-700 lg:mb-9 lg:w-4/6">
                       {servicio.description2}
                     </p>
                     {servicio.description3 && (
-                      <p className="text-gray-600 text-sm font-sans leading-relaxed italic">
+                      <p className="text-center lg:text-left  text-base lg:text-xl lg:tracking-wide tracking-wider font-sans text-gray-700 lg:mb-9 lg:w-4/6 italic">
                         {servicio.description3}
                       </p>
                     )}
@@ -213,10 +212,10 @@ const Servicios = () => {
                     <div className="w-2 h-2 bg-white rounded-full"></div>
                   </div>
                   <div>
-                    <h3 className="text-xl font-sans font-semibold text-gray-800 mb-3">
+                    <h3 className="text-left text-xl font-sans font-semibold text-gray-800 mb-3">
                       {faq.question}
                     </h3>
-                    <p className="text-gray-700 font-sans leading-relaxed">{faq.answer}</p>
+                    <p className="text-left  text-base lg:text-xl lg:tracking-wide tracking-wider font-sans text-gray-700 lg:mb-9 lg:w-4/6">{faq.answer}</p>
                   </div>
                 </div>
               </div>
@@ -225,26 +224,35 @@ const Servicios = () => {
         </div>
        
         {/* Botones con nuevo diseño */}
-        <div className="flex flex-col justify-center items-center mt-16 mb-8 md:hidden">
+        <div className="flex flex-col justify-center items-center mt-16 md:hidden">
           <div className="transform hover:scale-105 transition-all duration-300">
             <ButtonLink
               text="Dónde encontrarnos"
               href="#footer"
-              textColor="text-white"
+              textColor="text-black"
               bgColor="bg-gradient-to-r from-rose-500 to-pink-600"
             />
           </div>
         </div>
 
         <div className="hidden md:flex justify-center mt-16">
-          <div className="bg-white/90 backdrop-blur-sm rounded-2xl p-8 shadow-2xl border border-white/50 transform hover:scale-105 transition-all duration-300">
-            <Link
-              href="#footer"
-              className="text-2xl lg:text-3xl font-semibold text-transparent bg-gradient-to-r from-rose-500 to-pink-600 bg-clip-text hover:from-rose-600 hover:to-pink-700 transition-all duration-300 px-8 py-4 block text-center"
-            >
-              Dónde Encontrarnos ↗
-            </Link>
-          </div>
+            <div
+          className="bg-white h-auto border-t-2 border-r-2 rounded-2xl shadow-2xl p-6 sm:p-8 lg:p-8 text-center transform hover:scale-[1.02] transition-transform duration-300"
+          style={{
+            background: `linear-gradient(270deg, #FFECB3 0%, #FFE0B2 20%, #FFCDD2 40%, #F8BBD9 60%, #E1BEE7 80%, #D1C4E9 100%)`,
+          }}
+        >
+         
+          <a
+            href="https://wa.me/5492984207525"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block bg-secibdary text-black font-semibold text-lg sm:text-xl lg:text-2xl sm:px-6 rounded-2xl"
+          >
+            Contactar vía WhatsApp
+          </a>
+        </div>
+          
         </div>
       </div>
     </section>
