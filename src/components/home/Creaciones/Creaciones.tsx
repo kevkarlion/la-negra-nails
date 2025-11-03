@@ -182,21 +182,24 @@ export const Creaciones = () => {
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 70vw"
               />
 
-              {/* Image Info Overlay */}
-              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-4 sm:p-6">
-                <h3 className="font-title font-semibold text-white text-xl sm:text-2xl lg:text-3xl">
-                  {images[currentIndex].title}
-                </h3>
-                <p className="font-sans text-white/90 text-sm sm:text-base lg:text-lg">
-                  {images[currentIndex].description}
-                </p>
+              {/* Logo en esquina inferior izquierda */}
+              <div className="absolute bottom-4 left-4 z-20">
+                <div className="bg-white/30 backdrop-blur-sm rounded-xl p-2 shadow-lg">
+                  <Image
+                    src="/logos/logo-text.png"
+                    alt="Logo de la marca"
+                    width={90}
+                    height={90}
+                    className="object-contain"
+                  />
+                </div>
               </div>
             </div>
 
             {/* Navigation Arrows */}
             <button
               onClick={prevSlide}
-              className="absolute left-2 sm:left-4 top-1/2 transform -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-2 sm:p-3 rounded-full transition-all duration-300 backdrop-blur-sm"
+              className="absolute left-2 sm:left-4 top-1/2 transform -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-2 sm:p-3 rounded-full transition-all duration-300 backdrop-blur-sm z-10"
               aria-label="Imagen anterior"
             >
               <ChevronLeft className="w-5 h-5 sm:w-6 sm:h-6" />
@@ -204,7 +207,7 @@ export const Creaciones = () => {
 
             <button
               onClick={nextSlide}
-              className="absolute right-2 sm:right-4 top-1/2 transform -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-2 sm:p-3 rounded-full transition-all duration-300 backdrop-blur-sm"
+              className="absolute right-2 sm:right-4 top-1/2 transform -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-2 sm:p-3 rounded-full transition-all duration-300 backdrop-blur-sm z-10"
               aria-label="Siguiente imagen"
             >
               <ChevronRight className="w-5 h-5 sm:w-6 sm:h-6" />
@@ -213,7 +216,7 @@ export const Creaciones = () => {
             {/* Play/Pause Button */}
             <button
               onClick={() => setIsPlaying(!isPlaying)}
-              className="absolute top-4 right-4 bg-black/50 hover:bg-black/70 text-white p-2 rounded-full transition-all duration-300 backdrop-blur-sm"
+              className="absolute top-4 right-4 bg-black/50 hover:bg-black/70 text-white p-2 rounded-full transition-all duration-300 backdrop-blur-sm z-10"
               aria-label={isPlaying ? "Pausar carrusel" : "Reproducir carrusel"}
             >
               {isPlaying ? (
@@ -245,6 +248,16 @@ export const Creaciones = () => {
                     className="object-cover"
                     sizes="(max-width: 768px) 80px, (max-width: 1024px) 100px, 120px"
                   />
+                  {/* Mini logo en thumbnails */}
+                  <div className="absolute bottom-1 left-1 bg-white/90 rounded p-1">
+                    <Image
+                      src="/logos/logo-dorado-white-nvo.png"
+                      alt="Logo"
+                      width={12}
+                      height={12}
+                      className="object-contain"
+                    />
+                  </div>
                 </button>
               ))}
             </div>

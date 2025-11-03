@@ -201,9 +201,9 @@ export const Header = () => {
                 >
                   <button
                     onClick={() => handleSmoothNavigate(item.hash)}
-                    className="text-white hover:text-rose-200 transition-all duration-300 font-medium text-sm uppercase tracking-wider flex items-center space-x-2 py-3 relative group"
+                    className="text-black hover:text-rose-200 transition-all duration-300 font-medium text-sm uppercase tracking-wider flex items-center space-x-2 py-3 relative group"
                   >
-                    <span className="font-normal">{item.label}</span>
+                    <span className="font-normal text-black">{item.label}</span>
                     <svg
                       className={`w-4 h-4 transition-transform duration-200 ${
                         isServicesOpen ? "rotate-180" : ""
@@ -248,7 +248,7 @@ export const Header = () => {
                         <div className="mt-4 pt-4 border-t border-gray-100">
                           <Link
                             href="/servicios"
-                            className="block w-full bg-gradient-to-r from-rose-500 to-pink-600 text-white text-center py-3 px-4 rounded-xl font-semibold text-sm hover:shadow-lg transition-all duration-300 hover:scale-105"
+                            className="block w-full bg-gradient-to-r from-rose-500 to-pink-600 text-black text-center py-3 px-4 rounded-xl font-semibold text-sm hover:shadow-lg transition-all duration-300 hover:scale-105"
                             onClick={() => {
                               setIsServicesOpen(false);
                               setIsMobileMenuOpen(false);
@@ -274,9 +274,9 @@ export const Header = () => {
                       handleSmoothNavigate(item.hash);
                     }
                   }}
-                  className="text-white hover:text-rose-200 transition-all duration-300 font-medium text-sm uppercase tracking-wider py-3 relative group"
+                  className="text-black hover:text-rose-200 transition-all duration-300 font-medium text-sm uppercase tracking-wider py-3 relative group"
                 >
-                  <span className="font-normal">{item.label}</span>
+                  <span className="font-normal text-black">{item.label}</span>
                   <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-rose-300 transition-all duration-300 group-hover:w-full"></span>
                 </button>
               )
@@ -290,7 +290,7 @@ export const Header = () => {
                 href="https://www.instagram.com/lanegra_bymaridania/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-white hover:text-rose-200 transition-all duration-300 p-2 rounded-full hover:bg-white/10"
+                className="text-black hover:text-rose-200 transition-all duration-300 p-2 rounded-full hover:bg-white/10"
               >
                 <svg
                   className="w-6 h-6"
@@ -304,7 +304,7 @@ export const Header = () => {
                 href="https://wa.me/5492984207525"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-white hover:text-rose-200 transition-all duration-300 p-2 rounded-full hover:bg-white/10"
+                className="text-black hover:text-rose-200 transition-all duration-300 p-2 rounded-full hover:bg-white/10"
               >
                 <svg
                   className="w-6 h-6"
@@ -319,7 +319,7 @@ export const Header = () => {
               href="https://wa.me/5492984207525"
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-gradient-to-r from-rose-400 to-pink-500 text-white px-8 py-3 rounded-full text-sm font-semibold tracking-wide shadow-2xl hover:shadow-3xl transition-all duration-300 hover:scale-105 border border-white/20 inline-block text-center"
+              className="bg-gradient-to-r from-rose-400 to-pink-500 text-black px-8 py-3 rounded-full text-sm font-semibold tracking-wide shadow-2xl hover:shadow-3xl transition-all duration-300 hover:scale-105 border border-white/20 inline-block text-center"
             >
               Reservar Cita
             </a>
@@ -328,7 +328,7 @@ export const Header = () => {
           {/* Mobile Menu Button */}
           <button
             onClick={handleMobileMenuToggle}
-            className="lg:hidden text-white p-3 rounded-xl hover:bg-white/10 transition-colors duration-300 border border-white/10"
+            className="lg:hidden text-black p-3 rounded-xl hover:bg-white/10 transition-colors duration-300 border border-white/10"
           >
             <svg
               className="w-7 h-7"
@@ -374,7 +374,7 @@ export const Header = () => {
                     <button
                       ref={servicesButtonRef}
                       onClick={handleMobileServicesToggle}
-                      className="flex items-center justify-between w-full text-white hover:text-rose-200 transition-colors duration-300 font-medium text-sm uppercase tracking-wide py-4 px-4 rounded-xl hover:bg-white/10"
+                      className="flex items-center justify-between w-full text-black hover:text-rose-200 transition-colors duration-300 font-medium text-sm uppercase tracking-wide py-4 px-4 rounded-xl hover:bg-white/10"
                     >
                       <span className="font-semibold">{item.label}</span>
                       <svg
@@ -400,7 +400,7 @@ export const Header = () => {
                         {serviceItems.map((service, index) => (
                           <div
                             key={`${service.label}-${index}`}
-                            className="text-white text-sm py-3 px-4 rounded-lg border border-white/10"
+                            className="text-black text-sm py-3 px-4 rounded-lg border border-white/10"
                           >
                             <div className="font-semibold">{service.label}</div>
                             <div className="text-xs text-rose-100/80 mt-1">
@@ -412,7 +412,7 @@ export const Header = () => {
                         {/* Botón "Conoce Más" en móvil */}
                         <Link
                           href="/servicios"
-                          className="block w-full bg-gradient-to-r from-rose-500 to-pink-600 text-white text-center py-3 px-4 rounded-lg font-semibold text-sm hover:shadow-lg transition-all duration-300 mt-4"
+                          className="block w-full bg-gradient-to-r from-rose-500 to-pink-600 text-black text-center py-3 px-4 rounded-lg font-semibold text-sm hover:shadow-lg transition-all duration-300 mt-4"
                           onClick={closeMobileMenu}
                         >
                           Conoce Más ↗
@@ -434,7 +434,7 @@ export const Header = () => {
                         closeMobileMenu();
                       }
                     }}
-                    className="block w-full text-left text-white hover:text-rose-200 transition-colors duration-300 font-medium text-sm uppercase tracking-wide py-4 px-4 rounded-xl hover:bg-white/10 mx-4"
+                    className="block w-full text-left text-black hover:text-rose-200 transition-colors duration-300 font-medium text-sm uppercase tracking-wide py-4 px-4 rounded-xl hover:bg-white/10 mx-4"
                   >
                     <span className="font-semibold">{item.label}</span>
                   </button>
@@ -448,7 +448,7 @@ export const Header = () => {
                     handleSmoothNavigate("#footer");
                     closeMobileMenu();
                   }}
-                  className="w-full bg-gradient-to-r from-rose-400 to-pink-500 text-white py-4 rounded-xl text-sm font-semibold tracking-wide shadow-2xl transition-all duration-300 border border-white/20"
+                  className="w-full bg-gradient-to-r from-rose-400 to-pink-500 text-black py-4 rounded-xl text-sm font-semibold tracking-wide shadow-2xl transition-all duration-300 border border-white/20"
                 >
                   Reservar Cita
                 </button>
@@ -460,7 +460,7 @@ export const Header = () => {
                   href="https://www.instagram.com/lanegra_bymaridania/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-white hover:text-rose-200 transition-colors duration-300 p-3 rounded-full hover:bg-white/10 border border-white/10"
+                  className="text-black hover:text-rose-200 transition-colors duration-300 p-3 rounded-full hover:bg-white/10 border border-white/10"
                 >
                   <svg
                     className="w-6 h-6"
@@ -474,7 +474,7 @@ export const Header = () => {
                   href="https://wa.me/5492984207525"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-white hover:text-rose-200 transition-colors duration-300 p-3 rounded-full hover:bg-white/10 border border-white/10"
+                  className="text-black hover:text-rose-200 transition-colors duration-300 p-3 rounded-full hover:bg-white/10 border border-white/10"
                 >
                   <svg
                     className="w-6 h-6"

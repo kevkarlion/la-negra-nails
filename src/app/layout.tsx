@@ -13,9 +13,9 @@ const title = Dancing_Script({
 });
 
 export const metadata: Metadata = {
-  title: "La Negra Uñas | Cuidado y Estética de Uñas en Roca, Río Negro",
-  description: "Servicios profesionales de manicura, pedicura y cuidado integral de uñas en Roca, Río Negro. Uñas esculpidas, semipermanente y tratamientos para la salud ungueal.",
-  keywords: "uñas, manicura, pedicura, Roca Río Negro, uñas esculpidas, esmaltado semipermanente, cuidado de uñas, belleza de manos, La Negra Uñas",
+  title: "La Negra Uñas | Manicura y Pedicura Profesional en Roca, Río Negro",
+  description: "💅 Especialista en uñas esculpidas, semipermanente y cuidado integral en General Roca. Servicios de manicura, pedicura y tratamientos para uñas y pies en Alto Valle, Neuquén y Cipolletti.",
+  keywords: "uñas esculpidas Roca, manicura Río Negro, pedicura Alto Valle, esmaltado semipermanente Neuquén, cuidado de uñas Cipolletti, belleza de manos, pies, La Negra Uñas, acrílico uñas, kapping gel, podología estética",
   authors: [{ name: "La Negra Uñas" }],
   creator: "La Negra Uñas",
   publisher: "La Negra Uñas",
@@ -24,25 +24,31 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL('https://lanegraunias.com.ar'), // Reemplaza con tu dominio real
+  metadataBase: new URL('https://lanegraunias.com.ar'),
   alternates: {
     canonical: '/',
   },
   openGraph: {
-    title: "La Negra Uñas | Cuidado Profesional de Uñas en Roca, Río Negro",
-    description: "Servicios especializados en estética y salud ungueal. Manicura, pedicura, uñas esculpidas y tratamientos personalizados.",
+    title: "La Negra Uñas | Manicura y Pedicura en Roca, Río Negro",
+    description: "💅 Servicios profesionales de uñas esculpidas, semipermanente y tratamientos para manos y pies en General Roca. Atención en Alto Valle, Neuquén y Cipolletti.",
     url: 'https://lanegraunias.com.ar',
     siteName: 'La Negra Uñas',
     locale: 'es_AR',
     type: 'website',
     images: [
       {
-        url: '/images/la-negra-hero.webp',
+        url: '/images/og-image.jpg',
         width: 1200,
         height: 630,
-        alt: 'La Negra Uñas - Servicios profesionales de uñas en Roca, Río Negro',
+        alt: 'La Negra Uñas - Servicios profesionales de manicura y pedicura en General Roca',
       },
     ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: "La Negra Uñas | Cuidado Profesional de Uñas en Roca",
+    description: "Especialista en uñas esculpidas, semipermanente y tratamientos para manos y pies en General Roca, Río Negro",
+    images: ['/images/twitter-image.jpg'],
   },
   robots: {
     index: true,
@@ -56,12 +62,49 @@ export const metadata: Metadata = {
     },
   },
   verification: {
-    // Agrega aquí tus códigos de verificación cuando los tengas
     // google: 'tu-codigo-de-verificacion-google',
-    // yandex: 'tu-codigo-de-verificacion-yandex',
-    // yahoo: 'tu-codigo-de-verificacion-yahoo',
   },
   category: 'beauty & cosmetics',
+  other: {
+    'geo.region': 'AR-R',
+    'geo.placename': 'General Roca, Río Negro',
+    'geo.position': '-39.0333;-67.5833',
+    'ICBM': '-39.0333, -67.5833',
+  }
+};
+
+// Datos estructurados para Local Business
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'NailSalon',
+  name: 'La Negra Uñas',
+  description: 'Salón de belleza especializado en cuidado y estética de uñas en General Roca, Río Negro',
+  url: 'https://lanegraunias.com.ar',
+  telephone: '+54-299-XXXXXXX',
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: 'Tu dirección aquí',
+    addressLocality: 'General Roca',
+    addressRegion: 'Río Negro',
+    addressCountry: 'AR'
+  },
+  geo: {
+    '@type': 'GeoCoordinates',
+    latitude: -39.0333,
+    longitude: -67.5833
+  },
+  areaServed: ['General Roca', 'Río Negro', 'Alto Valle', 'Neuquén', 'Cipolletti'],
+  openingHours: 'Mo-Sa 09:00-20:00',
+  services: [
+    'Manicura profesional',
+    'Pedicura',
+    'Uñas esculpidas',
+    'Esmaltado semipermanente',
+    'Kapping gel',
+    'Acrílico',
+    'Tratamientos para uñas'
+  ],
+  priceRange: '$$'
 };
 
 export default function RootLayout({
@@ -72,10 +115,16 @@ export default function RootLayout({
   return (
     <html lang="es-AR">
       <head>
-        <link rel="preload" href="/images/la-negra-hero.webp" as="image" />
+        <link rel="preload" href="/images/hero-image.webp" as="image" />
         <link rel="icon" href="/favicon.ico" sizes="any" />
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
         <link rel="manifest" href="/site.webmanifest" />
+        
+        {/* JSON-LD Structured Data */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
       </head>
       <body>
         <main className={`${title.className} flex flex-col min-h-screen bg-transparent`}>
