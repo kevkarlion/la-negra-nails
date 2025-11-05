@@ -1,7 +1,15 @@
-import type { NextConfig } from "next";
+// next.config.js
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  output: 'export',
+  trailingSlash: true,
+  images: {
+    unoptimized: true
+  },
+  // Para resolver el problema de fuentes
+  experimental: {
+    optimizeCss: false
+  }
+}
 
-const nextConfig: NextConfig = {
-  /* config options here */
-};
-
-export default nextConfig;
+module.exports = nextConfig
