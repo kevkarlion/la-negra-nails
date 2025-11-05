@@ -30,20 +30,29 @@ export const Cursos: React.FC<SectionProps> = ({
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [fade, setFade] = useState(true);
   const [showTooltip, setShowTooltip] = useState(false);
+  const [isClient, setIsClient] = useState(false);
+
+  // Seteamos isClient a true cuando el componente se monta en el cliente
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
 
   useEffect(() => {
-    const intervalId = setInterval(() => {
-      setFade(false);
-      setTimeout(() => {
-        setCurrentImageIndex(
-          (prevIndex) => (prevIndex + 1) % imagePaths.length
-        );
-        setFade(true);
-      }, 500);
-    }, 3500);
+    // Solo iniciamos el intervalo en el cliente
+    if (isClient) {
+      const intervalId = setInterval(() => {
+        setFade(false);
+        setTimeout(() => {
+          setCurrentImageIndex(
+            (prevIndex) => (prevIndex + 1) % imagePaths.length
+          );
+          setFade(true);
+        }, 500);
+      }, 3500);
 
-    return () => clearInterval(intervalId);
-  }, []);
+      return () => clearInterval(intervalId);
+    }
+  }, [isClient]);
 
   return (
     <div className="min-h-screen w-full bg-white relative overflow-hidden">
@@ -79,6 +88,23 @@ export const Cursos: React.FC<SectionProps> = ({
               href="/cursos"
               textColor="text-black"
             />
+
+            {/* Imágenes en mobile - agregadas después del botón */}
+            <div className="flex justify-center mb-8 mt-8 w-full">
+              <div className="w-[300px] h-[400px] overflow-hidden rounded-lg relative z-20 shadow-2xl">
+                <Image
+                  src={imagePaths[currentImageIndex]}
+                  alt="Imagen de la sección"
+                  fill
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  style={{objectFit: 'cover'}}
+                  className={`transition-opacity duration-500 ${
+                    fade ? "opacity-100" : "opacity-0"
+                  } shadow-2xl `}
+                  priority={currentImageIndex === 0} // Prioriza la primera imagen
+                />
+              </div>
+            </div>
           </div>
           <h2 className="text-[2.25rem] font-title font-semibold text-black md:hidden md:text-xl lg:text-2xl mt-20 mb-3">
             {header}
@@ -87,7 +113,8 @@ export const Cursos: React.FC<SectionProps> = ({
 
           {/* Vista Desktop */}
           <div className="hidden md:flex w-full justify-around items-center md:px-8 lg:px-16">
-            <div className="my-6 w-[300px] h-[600px] xl:w-[450px] xl:h-[800px] overflow-hidden rounded-lg relative z-20">
+            {/* Contenedor de imagen modificado - 30% más ancho */}
+            <div className="my-6 w-[390px] h-[600px] xl:w-[455px] xl:h-[700px] overflow-hidden rounded-lg relative z-20 shadow-2xl">
               <Image
                 src={imagePaths[currentImageIndex]}
                 alt="Imagen de la sección"
@@ -96,7 +123,8 @@ export const Cursos: React.FC<SectionProps> = ({
                 style={{objectFit: 'cover'}}
                 className={`transition-opacity duration-500 ${
                   fade ? "opacity-100" : "opacity-0"
-                }`}
+                } shadow-2xl `}
+                priority={currentImageIndex === 0} // Prioriza la primera imagen
               />
             </div>
             <div className="flex flex-col items-start justify-start w-1/2 z-20">
@@ -104,7 +132,7 @@ export const Cursos: React.FC<SectionProps> = ({
                 <h1 className="text-start font-bold text-gray-800 text-[3.5rem] sm:text-[4rem] lg:text-[4rem]">
                   {title}
                 </h1>
-                <p className="tracking-wider md:text-base md:text-left md:flex lg:text-lg mt-4 font-sans text-subtitle-mobile-md font-medium text-black">
+                <p className="tracking-wider lg:tracking-wide md:text-base md:text-left md:flex lg:text-lg mt-4 font-sans text-subtitle-mobile-md font-medium text-black">
                   Transforma tu pasión en una profesión. Aprende a proteger la
                   salud de las uñas mientras dominas técnicas avanzadas y usas
                   materiales de alta calidad. Nuestros cursos combinan fundamentos

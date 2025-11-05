@@ -290,7 +290,7 @@ export const Header = () => {
                 href="https://www.instagram.com/lanegra_bymaridania/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-black hover:text-rose-200 transition-all duration-300 p-2 rounded-full hover:bg-white/10"
+                className="text-black hover:text-rose-200 transition-all duration-300 p-1 rounded-full hover:bg-white/10"
               >
                 <svg
                   className="w-6 h-6"
@@ -304,7 +304,7 @@ export const Header = () => {
                 href="https://wa.me/5492984207525"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-black hover:text-rose-200 transition-all duration-300 p-2 rounded-full hover:bg-white/10"
+                className="text-black hover:text-rose-200 transition-all duration-300 p-1 rounded-full hover:bg-white/10"
               >
                 <svg
                   className="w-6 h-6"

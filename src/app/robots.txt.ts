@@ -23,11 +23,8 @@ export default function robots(): MetadataRoute.Robots {
       },
     ],
     sitemap: [
-      'https://lanegraunias.com.ar/sitemap.xml',
-      'https://lanegraunias.com.ar/sitemap-pages.xml',
-      'https://lanegraunias.com.ar/sitemap-services.xml',
-      'https://lanegraunias.com.ar/sitemap-locations.xml'
+      'https://maridaniagarcia.com.ar/sitemap.xml',
     ],
-    host: 'https://lanegraunias.com.ar',
+    host: 'https://maridaniagarcia.com.ar',
   }
 }

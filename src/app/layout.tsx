@@ -12,27 +12,31 @@ const title = Dancing_Script({
   display: 'swap',
 });
 
+
+const domain = "https://maridaniagarcia.com.ar";
+const description = "💅 Marida Garcia - Especialista en uñas esculpidas, semipermanente y cuidado integral en General Roca. Servicios de manicura, pedicura y tratamientos para uñas y pies en Alto Valle, Neuquén y Cipolletti.";
+
 export const metadata: Metadata = {
-  title: "La Negra Uñas | Manicura y Pedicura Profesional en Roca, Río Negro",
-  description: "💅 Especialista en uñas esculpidas, semipermanente y cuidado integral en General Roca. Servicios de manicura, pedicura y tratamientos para uñas y pies en Alto Valle, Neuquén y Cipolletti.",
-  keywords: "uñas esculpidas Roca, manicura Río Negro, pedicura Alto Valle, esmaltado semipermanente Neuquén, cuidado de uñas Cipolletti, belleza de manos, pies, La Negra Uñas, acrílico uñas, kapping gel, podología estética",
-  authors: [{ name: "La Negra Uñas" }],
-  creator: "La Negra Uñas",
-  publisher: "La Negra Uñas",
+  title: "Marida Garcia - La Negra Uñas | Manicura y Pedicura Profesional en Roca, Río Negro",
+  description: description,
+  keywords: "Marida Garcia uñas, La Negra Uñas, uñas esculpidas Roca, manicura Río Negro, pedicura Alto Valle, esmaltado semipermanente Neuquén, cuidado de uñas Cipolletti, belleza de manos, pies, acrílico uñas, kapping gel, podología estética",
+  authors: [{ name: "Marida Garcia - La Negra Uñas" }],
+  creator: "Marida Garcia - La Negra Uñas",
+  publisher: "Marida Garcia - La Negra Uñas",
   formatDetection: {
     email: false,
     address: false,
     telephone: false,
   },
-  metadataBase: new URL('https://lanegraunias.com.ar'),
+  metadataBase: new URL(domain),
   alternates: {
     canonical: '/',
   },
   openGraph: {
-    title: "La Negra Uñas | Manicura y Pedicura en Roca, Río Negro",
-    description: "💅 Servicios profesionales de uñas esculpidas, semipermanente y tratamientos para manos y pies en General Roca. Atención en Alto Valle, Neuquén y Cipolletti.",
-    url: 'https://lanegraunias.com.ar',
-    siteName: 'La Negra Uñas',
+    title: "Marida Garcia - La Negra Uñas | Manicura y Pedicura en Roca, Río Negro",
+    description: "💅 Marida Garcia - Servicios profesionales de uñas esculpidas, semipermanente y tratamientos para manos y pies en General Roca. Atención en Alto Valle, Neuquén y Cipolletti.",
+    url: domain,
+    siteName: 'Marida Garcia - La Negra Uñas',
     locale: 'es_AR',
     type: 'website',
     images: [
@@ -40,14 +44,14 @@ export const metadata: Metadata = {
         url: '/images/og-image.jpg',
         width: 1200,
         height: 630,
-        alt: 'La Negra Uñas - Servicios profesionales de manicura y pedicura en General Roca',
+        alt: 'Marida Garcia - La Negra Uñas - Servicios profesionales de manicura y pedicura en General Roca',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: "La Negra Uñas | Cuidado Profesional de Uñas en Roca",
-    description: "Especialista en uñas esculpidas, semipermanente y tratamientos para manos y pies en General Roca, Río Negro",
+    title: "Marida Garcia - La Negra Uñas | Cuidado Profesional de Uñas en Roca",
+    description: "Marida Garcia - Especialista en uñas esculpidas, semipermanente y tratamientos para manos y pies en General Roca, Río Negro",
     images: ['/images/twitter-image.jpg'],
   },
   robots: {
@@ -77,9 +81,10 @@ export const metadata: Metadata = {
 const jsonLd = {
   '@context': 'https://schema.org',
   '@type': 'NailSalon',
-  name: 'La Negra Uñas',
-  description: 'Salón de belleza especializado en cuidado y estética de uñas en General Roca, Río Negro',
-  url: 'https://lanegraunias.com.ar',
+  name: 'La Negra Uñas - Marida Garcia',
+  alternateName: ['La Negra Uñas', 'Marida Garcia'],
+  description: 'Marida Garcia - Salón de belleza especializado en cuidado y estética de uñas en General Roca, Río Negro',
+  url: domain,
   telephone: '+54-299-XXXXXXX',
   address: {
     '@type': 'PostalAddress',

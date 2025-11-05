@@ -2,9 +2,9 @@ import { MetadataRoute } from 'next'
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: 'La Negra Uñas - Cuidado y Estética de Uñas',
+    name: 'Marida Garcia - La Negra Uñas | Cuidado y Estética de Uñas',
     short_name: 'La Negra Uñas',
-    description: 'Servicios profesionales de manicura, pedicura y cuidado integral de uñas en Roca, Río Negro',
+    description: 'Marida Garcia - Servicios profesionales de manicura, pedicura y cuidado integral de uñas en Roca, Río Negro',
     start_url: '/',
     display: 'standalone',
     background_color: '#ffffff',

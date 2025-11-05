@@ -1,7 +1,7 @@
 import { MetadataRoute } from 'next'
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://lanegraunias.com.ar'
+  const baseUrl = 'https://maridaniagarcia.com.ar'
   
   // Páginas principales
   const mainPages = [
@@ -52,6 +52,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: new Date(),
       changeFrequency: 'weekly' as const,
       priority: 0.6,
+    },
+    {
+      url: `${baseUrl}/sobre-mi`,
+      lastModified: new Date(),
+      changeFrequency: 'yearly' as const,
+      priority: 0.8,
     },
   ]
 

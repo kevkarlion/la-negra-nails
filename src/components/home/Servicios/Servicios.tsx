@@ -107,7 +107,7 @@ export const Servicios = () => {
         <h1 className="font-title mb-8 mt-16 text-center font-bold text-black text-5xl sm:text-[3rem] md:text-[4rem]">
           Descubre Nuestros Servicios
         </h1>
-        <p className="text-center text-base lg:text-xl lg:tracking-wide tracking-wider font-sans text-black mb-9 lg:w-4/6">
+        <p className="text-center text-base lg:text-xl tracking-wider lg:tracking-wide  font-sans text-black mb-9 lg:w-4/6">
           Cada uno de nuestros servicios está diseñado para ofrecerte la mejor
           experiencia en cuidado y belleza. Elige el que mejor se adapte a tus
           necesidades y déjanos consentirte.

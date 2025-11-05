@@ -26,7 +26,7 @@ export const ButtonLink: React.FC<ButtonLinkProps> = ({
     <Link
       href={href}
       
-      className={`${bgColor} ${textColor} ${margin} ${border} ${borderColor} ${font}  md:hidden w-[19rem] h-10 relative flex items-center justify-center px-6 py-2 text-md font-semibold transition duration-300 ease-in-out rounded-lg shadow-lg overflow-hidden group fluid-bg text-center`}
+      className={`${bgColor} ${textColor} ${margin} ${border} ${borderColor} ${font}  md:hidden w-[19rem] h-10 relative flex items-center justify-center px-6 py-2 text-md font-semibold transition duration-300 ease-in-out rounded-lg overflow-hidden group fluid-bg text-center shadow-2xl`}
     >
       {/* Capa de brillo */}
       <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-purple-400 to-pink-400 opacity-0 group-hover:opacity-100 transition duration-300 ease-in-out"></span>

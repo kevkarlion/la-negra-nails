@@ -22,14 +22,15 @@ export const SobreMi: FC = () => {
 
         <div className="xl:flex xl:justify-between  xl:items-start gap-12">
           {/* Imagen de Maridania */}
-          <div className="xl:w-1/2 mb-8 lg:mb-0">
+          <div className="relative xl:w-1/2 mb-8 lg:mb-0 shadow-2xl">
             <Image
               src="/images/sobre-mi.webp"
               alt="Maridania García"
-              width={500}
-              height={500}
-              className="w-full h-auto object-cover border-2 rounded-lg border-white shadow-2xl"
+              width={400}
+              height={400}
+              className=" w-full h-auto object-cover border-2 rounded-lg border-white shadow-2xl"
             />
+            <div className="absolute inset-0 bg-black/5 z-10"></div>
           </div>
 
           {/* Información sobre Maridania */}
