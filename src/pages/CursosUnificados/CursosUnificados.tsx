@@ -1,8 +1,8 @@
 "use client";
 
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Dancing_Script, Inter } from "next/font/google";
-import Carrusel from "@/components/Carrusel/Carrusel";
+import Image from "next/image";
 import { ButtonLink } from "@/components/shared/Buttons";
 import { HiOutlineUserGroup, HiOutlineBadgeCheck } from "react-icons/hi";
 import { RiToolsLine, RiBookOpenLine } from "react-icons/ri";
@@ -19,13 +19,32 @@ const inter = Inter({
 });
 
 const CursosUnificados = () => {
+  // 👉 Control del cambio de imagen
+  const imagePaths = [
+    "/clases/image1.webp",
+    "/clases/image2.webp",
+    "/clases/image3.webp",
+    "/clases/image4.webp",
+    "/clases/image5.webp",
+    "/clases/image6.webp",
+  ];
+
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prev) => (prev + 1) % imagePaths.length);
+    }, 4000);
+    return () => clearInterval(interval);
+  }, [imagePaths.length]);
+
   return (
     <main
       className={`bg-gradient-to-br from-rose-50 via-pink-50 to-rose-100 min-h-screen text-gray-800 ${inter.className}`}
     >
       {/* Sección Hero con Fondo Elegante */}
       <section
-        className="relative px-6 py-24 md:px-8 md:py-24  overflow-hidden"
+        className="relative px-6 py-24 md:px-8 md:py-24 overflow-hidden"
         style={{
           backgroundImage: 'url("/background/cursos.svg")',
           backgroundAttachment: "fixed",
@@ -39,12 +58,12 @@ const CursosUnificados = () => {
         <div className="relative z-10 text-center pt-8">
           <div className="lg:mb-12 flex flex-col items-center">
             <h1
-              className={`${dancingScript.className} mb-2 font-title font-bold text-black text-5xl sm:text-[3rem] md:text-[4rem] `}
+              className={`${dancingScript.className} mb-2 font-title font-bold text-black text-5xl sm:text-[3rem] md:text-[4rem]`}
             >
               Cursos Presenciales
             </h1>
-             <div className="w-24 h-[3px] bg-gradient-to-r from-rose-400 to-pink-500 mx-auto mb-6 rounded-full"></div>
-            <p className=" text-center text-base lg:text-xl lg:tracking-wide tracking-wider font-sans text-gray-700 lg:mb-9 lg:w-4/6">
+            <div className="w-24 h-[3px] bg-gradient-to-r from-rose-400 to-pink-500 mx-auto mb-6 rounded-full"></div>
+            <p className="text-center text-base lg:text-xl lg:tracking-wide tracking-wider font-sans text-gray-700 lg:mb-9 lg:w-4/6">
               Descubre el arte de la manicura profesional en un ambiente íntimo
               y exclusivo
             </p>
@@ -53,12 +72,27 @@ const CursosUnificados = () => {
 
         {/* Contenido Principal */}
         <div className="relative z-10 flex flex-col lg:flex-row items-center justify-center gap-12 mt-8">
-          {/* Galería de Imágenes Mejorada */}
+          {/* Galería de Imágenes con Transición */}
           <div className="w-full lg:w-1/2">
             <div className="relative group">
               <div className="absolute -inset-4 bg-gradient-to-r from-rose-200 to-pink-300 rounded-2xl blur-lg opacity-50 group-hover:opacity-75 transition-opacity duration-300"></div>
               <div className="relative h-[500px] md:h-[600px] lg:h-[700px] overflow-hidden rounded-xl shadow-2xl border border-white/50 backdrop-blur-sm">
-                <Carrusel />
+                {imagePaths.map((src, index) => (
+                  <Image
+                    key={index}
+                    src={src}
+                    alt={`Imagen ${index + 1}`}
+                    fill
+                    sizes="(max-width: 1200px) 50vw, 33vw"
+                    style={{ objectFit: "cover" }}
+                    priority={index === 0}
+                    className={`absolute inset-0 transition-opacity duration-700 ease-in-out ${
+                      index === currentImageIndex
+                        ? "opacity-100"
+                        : "opacity-0"
+                    }`}
+                  />
+                ))}
               </div>
             </div>
           </div>
@@ -150,9 +184,13 @@ const CursosUnificados = () => {
             </div>
           </div>
         </div>
+
         {/* CTA Desktop Mejorado */}
         <div className="relative z-10 hidden md:flex justify-center mt-16">
-          <div className="bg-white/90 backdrop-blur-sm rounded-2xl p-8 shadow-2xl border border-white/50 transform hover:scale-105 transition-all duration-300">
+          <div className=" backdrop-blur-sm rounded-2xl p-8 shadow-2xl border  transform hover:scale-105 transition-all duration-300"
+          style={{
+            background: `linear-gradient(270deg, #FFECB3 0%, #FFE0B2 20%, #FFCDD2 40%, #F8BBD9 60%, #E1BEE7 80%, #D1C4E9 100%)`,
+          }}>
             <a
               href="https://wa.me/5492984207525"
               target="_blank"
@@ -165,8 +203,7 @@ const CursosUnificados = () => {
         </div>
       </section>
 
-      {/* Sección de Metodología Elegante */}
-      <section className="relative px-6 py-20 md:px-8 md:py-24 bg-gradient-to-br from-white via-rose-50/30 to-pink-100/50">
+         <section className="relative px-6 py-20 md:px-8 md:py-24 bg-gradient-to-br from-white via-rose-50/30 to-pink-100/50">
         <div className="max-w-6xl mx-auto">
           {/* Encabezado de Metodología */}
           <div className="text-center mb-4 flex flex-col items-center">
