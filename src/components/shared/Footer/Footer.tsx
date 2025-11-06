@@ -49,13 +49,13 @@ export const Footer: React.FC = () => {
           <div className="space-y-4">
             <h3 className="font-sans font-bold text-xl mb-4 text-center md:text-left lg:tracking-wide tracking-wider">Síguenos en Redes</h3>
             <div className="flex justify-center md:justify-start space-x-6">
-              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="text-2xl text-gray-300 hover:text-gray-500 transition-colors">
+              <a href="https://www.instagram.com/lanegra_bymaridania" target="_blank" rel="noopener noreferrer" className="text-2xl text-gray-300 hover:text-gray-500 transition-colors">
                 <FaInstagram />
               </a>
               <a href="https://wa.me/5492984207525" target="_blank" rel="noopener noreferrer" className="text-2xl text-gray-300 hover:text-gray-500 transition-colors">
                 <FaWhatsapp />
               </a>
-              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="text-2xl text-gray-300 hover:text-gray-500 transition-colors">
+              <a href="https://www.facebook.com/lanegraunas" target="_blank" rel="noopener noreferrer" className="text-2xl text-gray-300 hover:text-gray-500 transition-colors">
                 <FaFacebook />
               </a>
             </div>

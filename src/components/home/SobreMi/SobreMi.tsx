@@ -125,14 +125,14 @@ export const SobreMi: FC = () => {
               <p className="font-sans text-lg italic mb-4 ">
               Las capacitaciones fueron excepcionales. Aprendí técnicas modernas y prácticas de negocio que cambiaron mi enfoque profesional. ¡Altamente recomendado!
               </p>
-              <p className="font-semibold font-sans">Zoe riffo
+              <p className="font-semibold font-sans">Zoe Riffo
               </p>
             </div>
             <div className="w-full sm:w-1/3 p-4 bg-white/30 backdrop-blur-lg rounded-lg shadow-lg text-white">
               <p className="font-sans text-lg italic mb-4">
               La mejor inversión que he hecho fue inscribirme en este curso. Aprendí todo lo necesario para comenzar mi propio emprendimiento de uñas con seguridad y calidad.
               </p>
-              <p className="font-semibold font-sans">Marianela packo</p>
+              <p className="font-semibold font-sans">Marianela Packo</p>
             </div>
             <div className="w-full sm:w-1/3 p-4 bg-white/30 backdrop-blur-lg rounded-lg shadow-lg text-white">
               <p className="font-sans text-lg italic mb-4">
